@@ -9,11 +9,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
-
-
-import { MonoText } from '../components/StyledText';
 import { LinearGradient } from 'expo-linear-gradient';
+// import Carousel from 'react-native-snap-carousel';
+// import { MonoText } from '../components/StyledText';
 
 
 export default function HomeScreen() {
