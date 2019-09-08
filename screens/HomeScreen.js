@@ -9,10 +9,12 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Carousel from 'react-native-snap-carousel';
 
 
 import { MonoText } from '../components/StyledText';
 import { LinearGradient } from 'expo-linear-gradient';
+
 
 export default function HomeScreen() {
   return (
@@ -40,19 +42,25 @@ export default function HomeScreen() {
             style={styles.welcomeImage}
           />
         </View>
-
-        <View style={styles.getStartedContainer}>
+        {/* <Carousel
+              ref={(c) => { this._carousel = c; }}
+              data={this.state.entries}
+              renderItem={this._renderItem}
+              sliderWidth={sliderWidth}
+              itemWidth={itemWidth}
+            /> */}
+        {/* <View style={styles.getStartedContainer}>
           {/* <DevelopmentModeNotice /> */}
-          <Text style={styles.getStartedText}>
+          {/* <Text style={styles.getStartedText}>
             Musability
-          </Text>
+          </Text> */}
 
-          <Text style={styles.getStartedText}>A free-wheelin’ community to find accessible venues for music lovers. Made for you by you</Text>
+          {/* <Text style={styles.getStartedText}>A free-wheelin’ community to find accessible venues for music lovers. Made for you by you</Text> */}
 
-        </View>
+        {/* </View> */}
       </ScrollView>
 
-      <View style={styles.tabBarInfoContainer}>
+      {/* <View style={styles.tabBarInfoContainer}>
       <LinearGradient
           colors={['rgba(0,0,0,0.8)', 'transparent']}
           style={{
@@ -66,7 +74,7 @@ export default function HomeScreen() {
         <Text style={styles.tabBarInfoText}>
           Tab bar
         </Text>
-      </View>
+      </View> */}
     </View>
   );
 }
@@ -123,7 +131,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 30,
+    paddingTop: 10,
   },
   welcomeContainer: {
     alignItems: 'center',
@@ -131,11 +139,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   welcomeImage: {
-    width: 400,
-    height: 400,
+    width: 250,
+    height: 300,
     resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
+    marginTop: -30,
+    marginLeft: 160,
   },
   getStartedContainer: {
     alignItems: 'center',
@@ -196,5 +204,12 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: '#2e78b7',
+  },
+  cardContainer: {
+    flex: 1,
+    paddingTop: 15,
+    height: 250,
+    width: 150,
+    backgroundColor: '#808080',
   },
 });
