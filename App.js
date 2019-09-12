@@ -1,14 +1,39 @@
 import { AppLoading } from 'expo';
+import firebase from 'react-native-firebase'
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import venues from './components/venueJSON';
 
 import AppNavigator from './navigation/AppNavigator';
 
+
+
 export default function App(props) {
+  // react hooks
   const [isLoadingComplete, setLoadingComplete] = useState(false);
+
+  useEffect(() => {
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAHhnWeyBtUHJTtigUNMwQv5naDfNwqoOQ",
+      authDomain: "musability-91b3d.firebaseapp.com",
+      databaseURL: "https://musability-91b3d.firebaseio.com",
+      projectId: "musability-91b3d",
+      storageBucket: "",
+      messagingSenderId: "168169604472",
+      appId: "1:168169604472:web:32bccbafe468799ff2b48d"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    console.log(firebase);
+  })
+
+
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
