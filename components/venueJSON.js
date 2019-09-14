@@ -1,9 +1,13 @@
+// import { url } from "inspector";
+// import { URL } from "url";
+
 
 const VENUES = [
     {
         venue: "(le) poisson rouge",
         href: "https://lpr.com/",
         address: "158 Bleecker St, New York, NY 10012",
+        image : []
     },
     {
         venue: "Arlene's Grocery",
@@ -18,12 +22,14 @@ const VENUES = [
         restroomKey: false,
         restroomsComment: "one on first floor",
         overallComment: "no elevators, bands play in basement. Will have to be carried.",
+        image: []
     },
     {
         venue: "Baby's All Right",
         href: "http://babysallright.com/",
         address: "146 Broadway, Brooklyn, NY 11211",
         rampComment: "single floor venue",
+        image: []
     },
     {
         venue: "Brooklyn Bazaar",
@@ -38,7 +44,7 @@ const VENUES = [
         restroomKey: false,
         restroomsComment: "one on first floor",
         overallComment: "no elevators, sometimes bands play fourth floor. Will have to be carried.",
-        image: "./assets/images/venues/Brooklyn Bazaar/BK-Bazaar-Outside.jpg",
+        image: ["../assets/images/venues/Brooklyn Bazaar/BK-Bazaar-Outside.jpg"]
     },
     {
         venue: "Brooklyn Bowl",
@@ -53,7 +59,30 @@ const VENUES = [
         restroomKey: false,
         restroomsComment: "two accessible restrooms downstairs",
         overallComment: "first floor where bands play and bowling is all have ramps",
-        image: "./assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl21.jpg",
+        image: [
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl1.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl2.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl3.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl4.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl5.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl6.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl7.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl8.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl9.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl10.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl11.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl12.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl13.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl14.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl15.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl16.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl17.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl18.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl19.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl20.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl21.jpg",
+            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl22.jpg",            
+        ]
     },
     {
         venue: "Brooklyn Steel",
@@ -64,11 +93,13 @@ const VENUES = [
         elevator: true,
         ramps: true,
         rampComment: "accessible entrances",
+        image: []
     },
     {
         venue: "Forest Hills Stadium",
         href: "http://foresthillsstadium.com/",
         address: "1 Tennis Place, Queens, NY 11375",
+        image: []
     },
     {
         venue: "Great Hill (Central Park)",
@@ -83,12 +114,26 @@ const VENUES = [
         restroomKey: false,
         restroomsComment: "portable and regular park ones available",
         overallComment: "request accomodation prior to events by calling 212.446.2242",
-        image: "./assets/images/venues/Central Park-Great Hill/Great-Hill9.jpg",
+        image: [
+            "../assets/images/venues/Central Park-Great Hill/Great-Hill1.jpg",
+            "../assets/images/venues/Central Park-Great Hill/Great-Hill2.jpg",
+            "../assets/images/venues/Central Park-Great Hill/Great-Hill3.jpg",
+            "../assets/images/venues/Central Park-Great Hill/Great-Hill4.jpg",
+            "../assets/images/venues/Central Park-Great Hill/Great-Hill5.jpg",
+            "../assets/images/venues/Central Park-Great Hill/Great-Hill6.jpg",
+            "../assets/images/venues/Central Park-Great Hill/Great-Hill7.jpg",
+            "../assets/images/venues/Central Park-Great Hill/Great-Hill8.jpg",
+            "../assets/images/venues/Central Park-Great Hill/Great-Hill9.jpg",
+            "../assets/images/venues/Central Park-Great Hill/Great-Hill10.jpg",
+            "../assets/images/venues/Central Park-Great Hill/Great-Hill11.jpg",
+            "../assets/images/venues/Central Park-Great Hill/Great-Hill12.jpg",
+        ] 
     },
     {
         venue: "Hammerstein Ballroom",
         href: "https://mc34.com/",
         address: "311 W 34th St, New York, NY 10001",
+        image: []
     },
     {
         venue: "Industry City",
@@ -103,7 +148,18 @@ const VENUES = [
         restroomKey: false,
         restroomsComment: "large restrooms with accessible stalls",
         overallComment: "Large venue with 8 buildings total. To go from one end to the other would be a lot of weaving around ramps. Courtyard 1/2 is where the bandshell is and a little food. Can sit in the VIP to see the show.",
-        image: "./assets/images/venues/Industry City/Industry-City9.jpg",
+        image: [
+            "../assets/images/venues/Industry City/Industry-City1.jpg",
+            "../assets/images/venues/Industry City/Industry-City2.jpg",
+            "../assets/images/venues/Industry City/Industry-City3.jpg",
+            "../assets/images/venues/Industry City/Industry-City4.jpg",
+            "../assets/images/venues/Industry City/Industry-City5.jpg",
+            "../assets/images/venues/Industry City/Industry-City6.jpg",
+            "../assets/images/venues/Industry City/Industry-City7.jpg",
+            "../assets/images/venues/Industry City/Industry-City8.jpg",
+            "../assets/images/venues/Industry City/Industry-City9.jpg",
+            "../assets/images/venues/Industry City/Industry-City10.jpg",
+        ]
     },
     {
         venue: "Joe's Pub",
@@ -115,13 +171,19 @@ const VENUES = [
         ramps: true,
         rampComment: "single floor venue with ramps in between buildings",
         overallComment: "The website has good information: please contact us at 212.967.7555 (voice) or accessibility@publictheater.org.",
-        image: "./assets/images/venues/Joe's Pub/Joes-Pub1.jpg",
+        image: [
+            "../assets/images/venues/Joe's Pub/Joes-Pub1.jpg",
+            "../assets/images/venues/Joe's Pub/Joes-Pub2.jpg",
+            "../assets/images/venues/Joe's Pub/Joes-Pub3.jpg",
+            "../assets/images/venues/Joe's Pub/Joes-Pub4.jpg"
+        ]
     },
     {
         venue: "King's Theater",
         href: "http://www.kingstheatre.com/",
         address: "1027 Flatbush Ave, Brooklyn, NY 11226",
         elevator: false,
+        image: []
     },
     {
         venue: "The Knitting Factory - Brooklyn",
@@ -136,13 +198,30 @@ const VENUES = [
         restroomKey: false,
         restroomsComment: "stall restrooms, not really fit for accessibility",
         overallComment: "one floor venue that's pretty small. Not hard to see the band even when sitting though there's some nice side spaces if having trouble. There's a step up outside for the bar area.",
-        image: "./assets/images/venues/Knitting Factory/Knitting-Factory14.jpg",
+        image: [
+            "../assets/images/venues/Knitting Factory/Knitting-Factory1.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory2.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory3.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory4.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory5.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory6.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory7.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory8.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory9.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory10.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory11.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory12.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory13.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory14.jpg",
+            "../assets/images/venues/Knitting Factory/Knitting-Factory15.jpg",
+        ]
     },
     {
         venue: "Market Hotel",
         href: "https://www.markethotel.org/",
         address: "1140 Myrtle Ave, Brooklyn, NY 11221",
         ramps: false,
+        image: []
     },
     {
         venue: "Music Hall of Williamsburg",
@@ -157,6 +236,7 @@ const VENUES = [
         restroomKey: false,
         restroomsComment: "accessible stalls",
         overallComment: "multi-level venue, with access to view show above main floor",
+        image: []
     },
     {
         venue: "Rockwood Music Hall",
@@ -171,7 +251,15 @@ const VENUES = [
         restroomKey: false,
         restroomsComment: "large enough restrooms",
         overallComment: "Stage 2 is only accessible on Orchard St. Both stage 1 and 2 are one floor.",
-        image: "./assets/images/venues/Rockwood/Rockwood6.jpg",
+        image: [
+            "../assets/images/venues/Rockwood/Rockwood1.jpg",
+            "../assets/images/venues/Rockwood/Rockwood2.jpg",
+            "../assets/images/venues/Rockwood/Rockwood3.jpg",
+            "../assets/images/venues/Rockwood/Rockwood4.jpg",
+            "../assets/images/venues/Rockwood/Rockwood5.jpg",
+            "../assets/images/venues/Rockwood/Rockwood6.jpg",
+            "../assets/images/venues/Rockwood/Rockwood7.jpg",
+        ]
     },
     {
         venue: "Rough Trade NYC",
@@ -186,18 +274,35 @@ const VENUES = [
         restroomKey: false,
         restroomsComment: "accessible stalls",
         overallComment: "there is no elevator to the balcony and no place to be where it'd provide a nice view for someone in a chair if it's a packed show.",
-        image: "./assets/images/venues/Rough Trade/Rough-TradeBK14.jpg",
+        image: [
+            "../assets/images/venues/Rough Trade/Rough-TradeBK1.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK2.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK3.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK4.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK5.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK6.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK7.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK8.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK9.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK10.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK11.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK12.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK13.jpg",
+            "../assets/images/venues/Rough Trade/Rough-TradeBK14.jpg",
+        ]
     },
     {
         venue: "Saint Vitus Bar",
         href: "https://www.saintvitusbar.com/",
         address: "1120 Manhattan Ave, Brooklyn, NY 11222",
+        image: []
     },
     {
         venue: "Shea Stadium",
         href: "http://liveatsheastadium.com/",
         address: "20 Meadow St, Brooklyn, NY 11206",
         elevator: false,
+        image: []
     },
     {
         venue: "Sunnyvale BK",
@@ -206,6 +311,7 @@ const VENUES = [
         elevator: false,
         ramps: true,
         rampComment: "single floor venue",
+        image: []
     },
     {
         venue: "The Bell House",
@@ -214,6 +320,7 @@ const VENUES = [
         elevator: false,
         ramps: true,
         rampComment: "single floor venue",
+        image: []
     },
     {
         venue: "The Gutter - Brooklyn",
@@ -228,7 +335,13 @@ const VENUES = [
         restroomKey: true,
         restroomsComment: "get bathroom key, one accessible bathroom",
         overallComment: "There is no ramp to go bowling and there are several stairs to climb",
-        image: "./assets/images/venues/The Gutter-BK/Gutter-BK5.jpg",
+        image: [
+            "../assets/images/venues/The Gutter-BK/Gutter-BK1.jpg",
+            "../assets/images/venues/The Gutter-BK/Gutter-BK2.jpg",
+            "../assets/images/venues/The Gutter-BK/Gutter-BK3.jpg",
+            "../assets/images/venues/The Gutter-BK/Gutter-BK4.jpg",
+            "../assets/images/venues/The Gutter-BK/Gutter-BK5.jpg",
+        ]
     },
     {
         venue: "The Kingsland Bar",
@@ -237,6 +350,7 @@ const VENUES = [
         elevator: false,
         ramps: false,
         rampComment: "single floor venue, but one step to get in",
+        image: []
     },
     {
         venue: "The Mercury Lounge",
@@ -251,7 +365,17 @@ const VENUES = [
         restroomKey: false,
         restroomsComment: "accessible bathrooms, small area to open the door next to the bar.",
         overallComment: "one floor venue with a decent view if sitting down. There are benches along the sides.",
-        image: "./assets/images/venues/Mercury Lounge/Mercury-Lounge5.jpg",
+        image: [
+            "../assets/images/venues/Mercury Lounge/Mercury-Lounge1.jpg",
+            "../assets/images/venues/Mercury Lounge/Mercury-Lounge2.jpg",
+            "../assets/images/venues/Mercury Lounge/Mercury-Lounge3.jpg",
+            "../assets/images/venues/Mercury Lounge/Mercury-Lounge4.jpg",
+            "../assets/images/venues/Mercury Lounge/Mercury-Lounge5.jpg",
+            "../assets/images/venues/Mercury Lounge/Mercury-Lounge6.jpg",
+            "../assets/images/venues/Mercury Lounge/Mercury-Lounge7.jpg",
+            "../assets/images/venues/Mercury Lounge/Mercury-Lounge8.jpg",
+            "../assets/images/venues/Mercury Lounge/Mercury-Lounge9.jpg",
+        ]
     },  
     {
         venue: "Union Hall",
@@ -265,7 +389,23 @@ const VENUES = [
         restroomKey: false,
         restroomsComment: "accessible bathrooms, small area to open the door next to the bar.",
         overallComment: "this venue is not accessible. There's a step up to get in and an accessible bathroom on the main floor. But shows are downstairs with no elevator access. You will have to be carried.",
-        image: "./assets/images/venues/Union Hall/Union-Hall7.jpg",
+        image: [
+            "../assets/images/venues/Union Hall/Union-Hall1.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall2.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall3.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall4.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall5.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall6.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall7.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall8.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall9.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall10.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall11.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall12.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall13.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall14.jpg",
+            "../assets/images/venues/Union Hall/Union-Hall15.jpg"
+        ]
     }, 
     {
         venue: "Union Pool",
@@ -280,13 +420,24 @@ const VENUES = [
         restroomKey: false,
         restroomsComment: "not labeled, though large. Doors open in",
         overallComment: "backyard music free outside all summer, one level venue inside",
-        image: "./assets/images/venues/Union Pool/Union-Pool8.jpg",
+        image: [
+            "../assets/images/venues/Union Pool/Union-Pool1.jpg",
+            "../assets/images/venues/Union Pool/Union-Pool2.jpg",
+            "../assets/images/venues/Union Pool/Union-Pool3.jpg",
+            "../assets/images/venues/Union Pool/Union-Pool4.jpg",
+            "../assets/images/venues/Union Pool/Union-Pool5.jpg",
+            "../assets/images/venues/Union Pool/Union-Pool6.jpg",
+            "../assets/images/venues/Union Pool/Union-Pool7.jpg",
+            "../assets/images/venues/Union Pool/Union-Pool8.jpg",
+            
+        ]
     },
     {
         venue: "Webster Hall",
         href: "https://websterhall.com/",
         address: "125 E. 11th Street, New York, NY 10003",
-    },
+        image: []
+    }
 ]
 
 export default VENUES;
