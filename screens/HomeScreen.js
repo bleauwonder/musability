@@ -1,5 +1,5 @@
 import * as WebBrowser from 'expo-web-browser';
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Image,
   Platform,
@@ -8,118 +8,108 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Dimensions
 } from 'react-native';
+import Carousel from 'react-native-snap-carousel';
 import { LinearGradient } from 'expo-linear-gradient';
-// import Carousel from 'react-native-snap-carousel';
-// import { MonoText } from '../components/StyledText';
+import { Card, Button } from 'react-native-elements';
+import { Rating } from 'react-native-elements';
 
+const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 
-export default function HomeScreen() {
-  return (
-    <View style={styles.container}>
-      <ScrollView
-        style={styles.container}
-        contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
-        <LinearGradient
-          colors={['rgba(0,0,0,1)', 'transparent']}
-          style={{
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            top: 0,
-            height: 300,
-          }}
-        />
-          <Image
-            source={
-              __DEV__
-                ? require('../assets/images/musability-app.png')
-                : require('../assets/images/musability-app.png')
-            }
-            style={styles.welcomeImage}
-          />
-        </View>
-        {/* <Carousel
-              ref={(c) => { this._carousel = c; }}
-              data={this.state.entries}
-              renderItem={this._renderItem}
-              sliderWidth={sliderWidth}
-              itemWidth={itemWidth}
-            /> */}
-        {/* <View style={styles.getStartedContainer}>
-          {/* <DevelopmentModeNotice /> */}
-          {/* <Text style={styles.getStartedText}>
-            Musability
-          </Text> */}
-
-          {/* <Text style={styles.getStartedText}>A free-wheelin’ community to find accessible venues for music lovers. Made for you by you</Text> */}
-
-        {/* </View> */}
-      </ScrollView>
-
-      {/* <View style={styles.tabBarInfoContainer}>
-      <LinearGradient
-          colors={['rgba(0,0,0,0.8)', 'transparent']}
-          style={{
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            top: 0,
-            height: 300,
-          }}
-        />
-        <Text style={styles.tabBarInfoText}>
-          Tab bar
+export default class HomeScreen extends Component {
+  _renderItem ({item, index}) {
+    return (
+      <View>
+        <Text>
+        {item.title}
         </Text>
-      </View> */}
-    </View>
-  );
-}
+        <Card containerStyle={{ borderRadius: 20 }}
 
-HomeScreen.navigationOptions = {
-  header: null,
-};
-
-function DevelopmentModeNotice() {
-  if (__DEV__) {
-    const learnMoreButton = (
-      <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        Learn more
-      </Text>
-    );
-
-    return (
-      <Text style={styles.developmentModeText}>
-        Development mode is enabled: your app will be slower but you can use
-        useful development tools. {learnMoreButton}
-      </Text>
-    );
-  } else {
-    return (
-      <Text style={styles.developmentModeText}>
-        You are not in development mode: your app will run at full speed.
-      </Text>
-    );
+          image={require('../assets/images/venues/Rockwood/Rockwood1.jpg')}
+          title='Rockwood Music Hall'>
+          <Rating
+            type='custom'
+            ratingImage={MUSIC_IMAGE}
+            onFinishRating={this.ratingCompleted}
+            ratingColor='#800022'
+            ratingBackgroundColor='#c8c7c8'
+            ratingCount={5}
+            imageSize={20}
+            style={{ paddingVertical: 10 }}
+          />
+          {/* <Button
+            buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor: '#800022' }}
+            title='VIEW MORE' /> */}
+        </Card>
+      </View>
+    )
   }
-}
+  render () {
+    return (
+      <View style={styles.container}>
+        <ScrollView
+          style={styles.container}
+          contentContainerStyle={styles.contentContainer}>
+          <View style={styles.welcomeContainer}>
+              <LinearGradient
+                colors={['rgba(255, 255, 255, 4)','transparent']}
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  right: 0,
+                  top: -30,
+                  height: 600,
+                }}
+              />
+                <Image
+                  source={
+                    __DEV__
+                      ? require('../assets/images/musability-app.png')
+                      : require('../assets/images/musability-app.png')
+                  }
+                  style={styles.welcomeImage}
+                />
+        {/* search bar goes here, on left side */}
+      
+            <Carousel
+                ref={(c) => { this._carousel = c; }}
+                data={[{title:"1"}, {title: "2"}, {title: "3"}]}
+                renderItem={(args)=>{
+                  return this._renderItem(args);
+                }}
+                sliderWidth={Dimensions.get('window').width}
+                itemWidth={Dimensions.get('window').width-70}
+                // itemHeight={Dimensions.get('window').height-300}
+                layout={'stack'}
+            />
 
-function handleLearnMorePress() {
-  WebBrowser.openBrowserAsync(
-    'https://docs.expo.io/versions/latest/workflow/development-mode/'
+            <Carousel
+                ref={(c) => { this._carousel = c; }}
+                data={[{title:"1"}, {title: "2"}, {title: "3"}]}
+                renderItem={(args)=>{
+                  return this._renderItem(args);
+                }}
+                sliderWidth={Dimensions.get('window').width}
+                itemWidth={Dimensions.get('window').width-70}
+                // itemHeight={Dimensions.get('window').height-300}
+                layout={'stack'}
+            />
+
+          </View>
+        </ScrollView>
+      </View>
   );
 }
-
-function handleHelpPress() {
-  WebBrowser.openBrowserAsync(
-    'https://docs.expo.io/versions/latest/workflow/up-and-running/#cant-see-your-changes'
-  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#851414',
+    backgroundColor: '#800022',
+  },
+  venueCard: {
+    borderRadius: 25,
   },
   developmentModeText: {
     marginBottom: 20,
@@ -137,10 +127,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   welcomeImage: {
-    width: 250,
-    height: 300,
+    width: 200,
+    height: 200,
     resizeMode: 'contain',
-    marginTop: -30,
+    marginTop: -70,
     marginLeft: 160,
   },
   getStartedContainer: {
@@ -181,13 +171,17 @@ const styles = StyleSheet.create({
       },
     }),
     alignItems: 'center',
-    backgroundColor: '#fbfbfb',
+    backgroundColor: '#000',
     paddingVertical: 20,
   },
   tabBarInfoText: {
     fontSize: 17,
     color: 'rgb(56, 51, 51)',
     textAlign: 'center',
+  },
+  tabBarOptions: {
+     height: 55,
+     backgroundColor: '#000'
   },
   navigationFilename: {
     marginTop: 5,
@@ -206,8 +200,8 @@ const styles = StyleSheet.create({
   cardContainer: {
     flex: 1,
     paddingTop: 15,
-    height: 250,
-    width: 150,
+    height: 200,
+    width: 100,
     backgroundColor: '#808080',
   },
 });
