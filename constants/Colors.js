@@ -4,7 +4,7 @@ export default {
   tintColor,
   tabIconDefault: '#ccc',
   tabIconSelected: tintColor,
-  tabBar: '#851414',
+  tabBar: '#3a121a',
   errorBackground: 'red',
   errorText: '#fff',
   warningBackground: '#EAEB5E',
