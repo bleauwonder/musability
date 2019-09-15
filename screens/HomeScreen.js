@@ -25,13 +25,14 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: 'white',
     padding: 5,
+    margin: 10,
   },
   container: {
     flex: 1,
     backgroundColor: '#8e2138',
   },
   venueCard: {
-    backgroundColor: '#808080',
+    color: 'red',
     shadowColor: 'rgb(56, 51, 51)',
     shadowOffset: { width: 0, height: -3 },
     shadowOpacity: 0.1,
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
       },
     }),
     alignItems: 'center',
-    backgroundColor: '#000',
+    backgroundColor: '#000000',
     paddingVertical: 20,
   },
   tabBarInfoText: {
@@ -108,7 +109,7 @@ const styles = StyleSheet.create({
   },
   tabBarOptions: {
      height: 55,
-     backgroundColor: '#000'
+     backgroundColor: '#000000'
   },
   navigationFilename: {
     marginTop: 5,
@@ -121,8 +122,8 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
   },
   helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
+    fontSize: 5,
+    color: '#8e2138',
   },
   cardContainer: {
     flex: 1,
@@ -141,7 +142,7 @@ export default class HomeScreen extends Component {
             {/* <Text>
             {item.title}
             </Text> */}
-              <Card style={styles.venueCard}
+              <Card style={styles.venueCard} containerStyle={{borderRadius: 20}}
                 image={require('../assets/images/venues/Rockwood/Rockwood1.jpg')}
                 title='Rockwood Music Hall'>
                 <Rating
