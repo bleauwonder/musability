@@ -39,6 +39,7 @@
     "moment": "^2.24.0",
     "mongodb-stitch-react-native-sdk": "^4.5.0",
     "react": "16.8.3",
+    "react-animated-text": "^0.1.4",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
     "react-native-animated-linear-gradient": "^1.2.0",

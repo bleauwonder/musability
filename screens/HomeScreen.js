@@ -14,23 +14,29 @@ import Carousel from 'react-native-snap-carousel';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Card, Button } from 'react-native-elements';
 import { Rating } from 'react-native-elements';
-// import { Col, Row, Grid } from "react-native-easy-grid";
-
+import { Wave } from 'react-animated-text';
+import { Col, Row, Grid } from "react-native-easy-grid";
 const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 
 
 const styles = StyleSheet.create({
+  titleText: {
+    fontFamily: 'Helvetica',
+    fontSize: 30,
+    color: 'white',
+    padding: 5,
+  },
   container: {
     flex: 1,
     backgroundColor: '#8e2138',
   },
   venueCard: {
-    borderRadius: 25,
     backgroundColor: '#808080',
     shadowColor: 'rgb(56, 51, 51)',
     shadowOffset: { width: 0, height: -3 },
     shadowOpacity: 0.1,
     shadowRadius: 3,
+    borderRadius: 30,
   },
   developmentModeText: {
     marginBottom: 20,
@@ -132,10 +138,10 @@ export default class HomeScreen extends Component {
   _renderItem ({item, index}) {
     return (
       <View>
-            <Text>
-            {/* {item.title} */}
-            </Text>
-              <Card containerStyle={{borderRadius: 20}} 
+            {/* <Text>
+            {item.title}
+            </Text> */}
+              <Card style={styles.venueCard}
                 image={require('../assets/images/venues/Rockwood/Rockwood1.jpg')}
                 title='Rockwood Music Hall'>
                 <Rating
@@ -172,6 +178,14 @@ export default class HomeScreen extends Component {
                   height: 600,
                 }}
               />
+                {/* <Wave
+                  text="Musability"
+                  effect="verticalFadeOut"
+                  effectChange={2.5}
+                  effectDirection='up'
+                  iterations={1}
+                  // paused={this.state.paused}
+                /> */}
                 <Image
                   source={
                     __DEV__
@@ -181,7 +195,13 @@ export default class HomeScreen extends Component {
                   style={styles.welcomeImage}
                 />
         {/* search bar goes here, on left side */}
-      
+      <Grid>
+        <Row>
+          <Text style={styles.titleText}>
+            Manhattan Venues
+          </Text>
+        </Row>
+        <Row>
             <Carousel
                 ref={(c) => { this._carousel = c; }}
                 data={[{title:"1"}, {title: "2"}, {title: "3"}]}
@@ -193,7 +213,13 @@ export default class HomeScreen extends Component {
                 // itemHeight={Dimensions.get('window').height-300}
                 layout={'stack'}
             />
-
+          </Row>
+        <Row>
+          <Text style={styles.titleText}>
+            Brooklyn Sites
+          </Text>
+        </Row>
+        <Row>
             <Carousel
                 ref={(c) => { this._carousel = c; }}
                 data={[{title:"1"}, {title: "2"}, {title: "3"}]}
@@ -205,6 +231,8 @@ export default class HomeScreen extends Component {
                 // itemHeight={Dimensions.get('window').height-300}
                 layout={'stack'}
             />
+            </Row>
+        </ Grid>
 
           </View>
         </ScrollView>
