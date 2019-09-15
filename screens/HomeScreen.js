@@ -178,14 +178,6 @@ export default class HomeScreen extends Component {
                   height: 600,
                 }}
               />
-                {/* <Wave
-                  text="Musability"
-                  effect="verticalFadeOut"
-                  effectChange={2.5}
-                  effectDirection='up'
-                  iterations={1}
-                  // paused={this.state.paused}
-                /> */}
                 <Image
                   source={
                     __DEV__
