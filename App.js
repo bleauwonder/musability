@@ -15,8 +15,7 @@ export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
   
   useEffect(() => {
-    // Your web app's Firebase configuration
-    var firebaseConfig = { 
+    var firebaseConfig = {
       apiKey: "AIzaSyAHhnWeyBtUHJTtigUNMwQv5naDfNwqoOQ",
       authDomain: "musability-91b3d.firebaseapp.com",
       databaseURL: "https://musability-91b3d.firebaseio.com",
@@ -24,15 +23,16 @@ export default function App(props) {
       storageBucket: "",
       messagingSenderId: "168169604472",
       appId: "1:168169604472:web:32bccbafe468799ff2b48d"
-    };  
+    };
 
     // // Initialize Firebase
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
     }
-    console.log(VENUES);
+    // console.log(VENUES.length);
 
     const database = firebase.database();
+
     //Code to initially load all the data from venue.JSON into Firbase, needed only to run once.
 
     // VENUES.forEach(element => {
@@ -54,7 +54,7 @@ export default function App(props) {
     //     }
       
 
-      // database.ref("/venues").push(venue);
+    //   // database.ref("/venues").push(venue)
      
 
     // })
