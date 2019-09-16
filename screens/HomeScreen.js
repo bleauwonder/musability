@@ -18,123 +18,7 @@ import { Rating } from 'react-native-elements';
 import { Wave } from 'react-animated-text';
 import { Col, Row, Grid } from "react-native-easy-grid";
 const MUSIC_IMAGE = require('../assets/images/musicnote.png');
-
 import * as firebase from 'firebase';
-
-const MUSIC_IMAGE = require('../assets/images/musicnote.png');
-
-export default class HomeScreen extends Component {
-
-
-  _renderItem({ item, index }) {
-    
-
-    // database.ref('/venues').on("value", snapshot => {
-    //   console.log("here");
-    //   snapshot.forEach(venue => {
-    //     console.log(venue.val().name);
-    //   })
-
-
-    // }), (errorObject) => {
-    //   console.log("The read failed:" + errorObject.code);
-    // }
-
-    return (
-      <View>
-        <Text>
-          {item.title}
-        </Text>
-        <Card containerStyle={{ borderRadius: 20 }}
-
-          image={require('../assets/images/venues/Rockwood/Rockwood1.jpg')}
-          title='Rockwood Music Hall'>
-          <Rating
-            type='custom'
-            ratingImage={MUSIC_IMAGE}
-            onFinishRating={this.ratingCompleted}
-            ratingColor='#800022'
-            ratingBackgroundColor='#c8c7c8'
-            ratingCount={5}
-            imageSize={20}
-            style={{ paddingVertical: 10 }}
-          />
-          {/* <Button
-            buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor: '#800022' }}
-            title='VIEW MORE' /> */}
-        </Card>
-      </View>
-    )
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <ScrollView
-          style={styles.container}
-          contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
-            <LinearGradient
-              colors={['rgba(255, 255, 255, 4)', 'transparent']}
-              style={{
-                position: 'absolute',
-                left: 0,
-                right: 0,
-                top: -30,
-                height: 600,
-              }}
-            />
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/musability-app.png')
-                  : require('../assets/images/musability-app.png')
-              }
-              style={styles.welcomeImage}
-            />
-
-            <TextInput
-              // onChangeText={text => onChangeText(text)}
-              // value={value}
-              style={{ height: 40, borderColor: 'white', borderWidth: 1, backgroundColor: 'white', width: 375 }}
-            />
-            <Button
-              buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor: '#800022' }}
-              title='Search'/>
-        
-
-            {/* search bar goes here, on left side */}
-
-            <Carousel
-              ref={(c) => { this._carousel = c; }}
-              data={[{ title: "1" }, { title: "2" }, { title: "3" }]}
-              renderItem={(args) => {
-                return this._renderItem(args);
-              }}
-              sliderWidth={Dimensions.get('window').width}
-              itemWidth={Dimensions.get('window').width - 70}
-              // itemHeight={Dimensions.get('window').height-300}
-              layout={'stack'}
-            />
-
-            {/* <Carousel
-              ref={(c) => { this._carousel = c; }}
-              data={[{ title: "1" }, { title: "2" }, { title: "3" }]}
-              renderItem={(args) => {
-                return this._renderItem(args);
-              }}
-              sliderWidth={Dimensions.get('window').width}
-              itemWidth={Dimensions.get('window').width - 70}
-              // itemHeight={Dimensions.get('window').height-300}
-              layout={'stack'}
-            /> */}
-
-          </View>
-        </ScrollView>
-      </View>
-    );
-  }
-}
-
 
 const styles = StyleSheet.create({
   titleText: {
@@ -254,7 +138,19 @@ const styles = StyleSheet.create({
 
 export default class HomeScreen extends Component {
   _renderItem ({item, index}) {
+        // database.ref('/venues').on("value", snapshot => {
+    //   console.log("here");
+    //   snapshot.forEach(venue => {
+    //     console.log(venue.val().name);
+    //   })
+
+
+    // }), (errorObject) => {
+    //   console.log("The read failed:" + errorObject.code);
+    // }
+
     return (
+      
       <View>
             {/* <Text>
             {item.title}
@@ -307,10 +203,22 @@ export default class HomeScreen extends Component {
         {/* search bar goes here, on left side */}
       <Grid>
         <Row>
+          <TextInput
+                // onChangeText={text => onChangeText(text)}
+                // value={value}
+                style={{ height: 40, borderColor: 'white', borderWidth: 1, backgroundColor: 'white', width: 375 }}
+              />
+              <Button
+                buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor: '#800022' }}
+                title='Search'/>
+        </Row>
+        
+        <Row>
           <Text style={styles.titleText}>
             Manhattan Venues
           </Text>
         </Row>
+
         <Row>
             <Carousel
                 ref={(c) => { this._carousel = c; }}
