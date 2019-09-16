@@ -206,10 +206,10 @@ export default class HomeScreen extends Component {
           <TextInput
                 // onChangeText={text => onChangeText(text)}
                 // value={value}
-                style={{ height: 40, borderColor: 'white', borderWidth: 1, backgroundColor: 'white', width: 375 }}
+                style={{ height: 40, borderColor: 'white', borderRadius: 10, borderWidth: 1, backgroundColor: 'white', width: 300, marginLeft: 2 }}
               />
               <Button
-                buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor: '#800022' }}
+                buttonStyle={{ borderRadius: 10, marginLeft: 5, marginRight: 0, marginBottom: 0, backgroundColor: '#000000' }}
                 title='Search'/>
         </Row>
         
