@@ -1,6 +1,6 @@
 const React = require('react');
 const { Button, StyleSheet, Text, View } = require('react-native');
-const { Stitch, AnonymousCredential } = require('mongodb-stitch-react-native-sdk');
+// const { Stitch, AnonymousCredential } = require('mongodb-stitch-react-native-sdk');
 
 
 export default class App extends React.Component {

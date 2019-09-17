@@ -1,8 +1,8 @@
 {
   "hostType": "lan",
   "lanType": "ip",
-  "dev": true,
-  "minify": false,
-  "urlRandomness": "nj-iu5",
+  "dev": false,
+  "minify": true,
+  "urlRandomness": "kq-acb",
   "https": false
 }
