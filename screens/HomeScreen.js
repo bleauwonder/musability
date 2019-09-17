@@ -19,11 +19,11 @@ import styles, { colors } from '../src/style/index.style'
 import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import { ENTRIES1, ENTRIES2 } from '../static/entries';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 import * as firebase from 'firebase';
 
 const IS_ANDROID = Platform.OS === 'android';
 const SLIDER_1_FIRST_ITEM = 1;
+const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 
 export default class HomeScreen extends Component {
 
