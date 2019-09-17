@@ -4,23 +4,31 @@ import {
   Image,
   Platform,
   ScrollView,
+  StatusBar,
+  SafeAreaView,
   Text,
   TouchableOpacity,
   View,
   Dimensions,
   TextInput
 } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
+import Carousel, { props } from 'react-native-snap-carousel';
+import MyCarousel from '../components/MyCarousel'
 import { LinearGradient } from 'expo-linear-gradient';
 import { Card, Button } from 'react-native-elements';
-import { Rating } from 'react-native-elements';
+// import { Rating } from 'react-native-elements';
 import styles, { colors } from '../src/style/index.style'
 import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
+import { ENTRIES1, ENTRIES2 } from '../static/entries';
 import { Col, Row, Grid } from 'react-native-easy-grid';
+// import * as firebase from 'firebase';
+
+const IS_ANDROID = Platform.OS === 'android';
+const SLIDER_1_FIRST_ITEM = 1;
 const MUSIC_IMAGE = require('../assets/images/musicnote.png');
-import * as firebase from 'firebase';
 
 export default class HomeScreen extends Component {
+  
 
   constructor (props) {
     super(props);
@@ -30,12 +38,12 @@ export default class HomeScreen extends Component {
 }
 
 _renderItem ({item, index}) {
-    return <SliderEntry data={item} even={(index + 1) % 2 === 0} />;
+    return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
 }
 
 _renderItemWithParallax ({item, index}, parallaxProps) {
     return (
-        <SliderEntry
+        <MyCarousel
           data={item}
           even={(index + 1) % 2 === 0}
           parallax={true}
@@ -45,33 +53,40 @@ _renderItemWithParallax ({item, index}, parallaxProps) {
 }
 
 _renderLightItem ({item, index}) {
-    return <SliderEntry data={item} even={false} />;
+    return <MyCarousel data={item} even={false} />;
 }
 
 _renderDarkItem ({item, index}) {
-    return <SliderEntry data={item} even={true} />;
+    return <MyCarousel data={item} even={true} />;
 }
-  _renderItem ({item, index}) {
-    return <SliderEntry data={item} even={(index + 1) % 2 === 0} />;
-  }
-        // database.ref('/venues').on("value", snapshot => {
-    //   console.log("here");
-    //   snapshot.forEach(venue => {
-    //     console.log(venue.val().name);
-    //   })
+
+// THIS IS STILL TO BE COMMENTED OUT 
+  // _renderItem ({item, index}) {
+  //   return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
+  // }
+  //       database.ref('/venues').on("value", snapshot => {
+  //     console.log("here");
+  //     snapshot.forEach(venue => {
+  //       console.log(venue.val().name);
+  //     })
 
 
     // }), (errorObject) => {
     //   console.log("The read failed:" + errorObject.code);
     // }
+    //ABOVE STILL TO BE COMMENTED OUT 
       
       // changing the venue card to what is on the react native car thing 
         venueCard (number, title, type) {
         const isTinder = type === 'tinder';
         return (
             <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
-                <Text style={[styles.title, isTinder ? {} : styles.titleDark]}>{`Example ${number}`}</Text>
-                <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>{title}</Text>
+                <Text style={[styles.title, isTinder ? {} : styles.titleDark]}> 
+                {`Example ${number}`}
+                </Text>
+                <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
+                {title}
+                </Text>
                 <Carousel
                   data={isTinder ? ENTRIES2 : ENTRIES1}
                   renderItem={isTinder ? this._renderLightItem : this._renderItem}
@@ -85,6 +100,7 @@ _renderDarkItem ({item, index}) {
             </View>
         );
     };
+  
 
               /* <Card style={styles.venueStyle} containerStyle={{borderRadius: 20}}
                 image={require('../assets/images/venues/Rockwood/Rockwood1.jpg')}
@@ -104,7 +120,7 @@ _renderDarkItem ({item, index}) {
                   title='VIEW MORE' /> */
               /* </Card> */
 
-  render () {
+     render () {
     const renderCard = this.venueCard(4, '"Tinder-like" layout | Loop', 'tinder');
 
     return (
@@ -151,7 +167,24 @@ _renderDarkItem ({item, index}) {
         </Row>
 
         <Row>
-            <Carousel
+        <SafeAreaView style={styles.safeArea}>
+                <View style={styles.container}>
+                    <StatusBar
+                      translucent={true}
+                      backgroundColor={'rgba(0, 0, 0, 0.3)'}
+                      barStyle={'light-content'}
+                    />
+                    { this.gradient }
+                    <ScrollView
+                      style={styles.scrollview}
+                      scrollEventThrottle={200}
+                      directionalLockEnabled={true}
+                    >
+                        { renderCard }
+                    </ScrollView>
+                </View>
+            </SafeAreaView>
+            {/* <Carousel
                 ref={(c) => { this._carousel = c; }}
                 data={[{title:"1"}, {title: "2"}, {title: "3"}]}
                 renderItem={(args)=>{
@@ -161,7 +194,7 @@ _renderDarkItem ({item, index}) {
                 itemWidth={Dimensions.get('window').width-70}
                 // itemHeight={Dimensions.get('window').height-300}
                 layout={'satack'}
-            />
+            /> */}
           </Row>
         <Row>
           <Text style={styles.titleText}>
@@ -169,7 +202,7 @@ _renderDarkItem ({item, index}) {
           </Text>
         </Row>
         <Row>
-            <Carousel
+            {/* <Carousel
                 ref={(c) => { this._carousel = c; }}
                 data={[{title:"1"}, {title: "2"}, {title: "3"}]}
                 renderItem={(args)=>{
@@ -179,13 +212,13 @@ _renderDarkItem ({item, index}) {
                 itemWidth={Dimensions.get('window').width-70}
                 // itemHeight={Dimensions.get('window').height-300}
                 layout={'stack'}
-            />
+            /> */}
             </Row>
         </ Grid>
 
           </View>
         </ScrollView>
       </View>
-  );
+  );  
 }
 };

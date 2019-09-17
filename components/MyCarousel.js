@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
-import { Dimensions, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
+import VENUES from '../components/venueJSON'
+import PropTypes from 'prop-types';
+import styles from '../src/style/SliderEntry.style';
+
 
 export class MyCarousel extends Component {
 
