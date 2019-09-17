@@ -20,6 +20,9 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 import * as firebase from 'firebase';
 
+const IS_ANDROID = Platform.OS === 'android';
+const SLIDER_1_FIRST_ITEM = 1;
+
 export default class HomeScreen extends Component {
 
   constructor (props) {
