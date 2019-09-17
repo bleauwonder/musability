@@ -56,14 +56,14 @@ _renderLightItem ({item, index}) {
 _renderDarkItem ({item, index}) {
     return <MyCarousel data={item} even={true} />;
 }
-  _renderItem ({item, index}) {
-    return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
-  }
-        // database.ref('/venues').on("value", snapshot => {
-    //   console.log("here");
-    //   snapshot.forEach(venue => {
-    //     console.log(venue.val().name);
-    //   })
+  // _renderItem ({item, index}) {
+  //   return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
+  // }
+  //       database.ref('/venues').on("value", snapshot => {
+  //     console.log("here");
+  //     snapshot.forEach(venue => {
+  //       console.log(venue.val().name);
+  //     })
 
 
     // }), (errorObject) => {
@@ -156,7 +156,24 @@ _renderDarkItem ({item, index}) {
         </Row>
 
         <Row>
-            <Carousel
+        <SafeAreaView style={styles.safeArea}>
+                <View style={styles.container}>
+                    <StatusBar
+                      translucent={true}
+                      backgroundColor={'rgba(0, 0, 0, 0.3)'}
+                      barStyle={'light-content'}
+                    />
+                    { this.gradient }
+                    <ScrollView
+                      style={styles.scrollview}
+                      scrollEventThrottle={200}
+                      directionalLockEnabled={true}
+                    >
+                        { renderCard }
+                    </ScrollView>
+                </View>
+            </SafeAreaView>
+            {/* <Carousel
                 ref={(c) => { this._carousel = c; }}
                 data={[{title:"1"}, {title: "2"}, {title: "3"}]}
                 renderItem={(args)=>{
@@ -166,7 +183,7 @@ _renderDarkItem ({item, index}) {
                 itemWidth={Dimensions.get('window').width-70}
                 // itemHeight={Dimensions.get('window').height-300}
                 layout={'satack'}
-            />
+            /> */}
           </Row>
         <Row>
           <Text style={styles.titleText}>
@@ -174,7 +191,7 @@ _renderDarkItem ({item, index}) {
           </Text>
         </Row>
         <Row>
-            <Carousel
+            {/* <Carousel
                 ref={(c) => { this._carousel = c; }}
                 data={[{title:"1"}, {title: "2"}, {title: "3"}]}
                 renderItem={(args)=>{
@@ -184,7 +201,7 @@ _renderDarkItem ({item, index}) {
                 itemWidth={Dimensions.get('window').width-70}
                 // itemHeight={Dimensions.get('window').height-300}
                 layout={'stack'}
-            />
+            /> */}
             </Row>
         </ Grid>
 
