@@ -18,7 +18,7 @@ export default StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#8e2138',
+    // backgroundColor: 'transparent',
   },
   venueStyle: {
     color: 'red',
@@ -136,13 +136,17 @@ export default StyleSheet.create({
     scrollview: {
         flex: 1
     },
+    //not this
     exampleContainer: {
-        paddingVertical: 30
+        paddingVertical: 30,
+        backgroundColor: 'transparent'
     },
+    //not this
     exampleContainerDark: {
         backgroundColor: 'transparent'
     },
     //background for the card carousel component 
+    //not this
     exampleContainerLight: {
         backgroundColor: 'transparent'
     },
@@ -168,11 +172,13 @@ export default StyleSheet.create({
     },
     slider: {
         marginTop: 15,
-        overflow: 'visible' // for custom animations
+        overflow: 'visible', // for custom animations
     },
+    //not this
     sliderContentContainer: {
         paddingVertical: 10 // for custom animation
     },
+    //not this
     paginationContainer: {
         paddingVertical: 8
     },

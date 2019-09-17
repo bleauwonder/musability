@@ -102,7 +102,7 @@ _renderDarkItem ({item, index}) {
     };
   
 
-              /* <Card style={styles.venueStyle} containerStyle={{borderRadius: 20}}
+              /* <Card style={[styles.venueStyle, borderRadius: 20]}}
                 image={require('../assets/images/venues/Rockwood/Rockwood1.jpg')}
                 title='Rockwood Music Hall'>
                 <Rating
@@ -202,18 +202,24 @@ _renderDarkItem ({item, index}) {
           </Text> */}
         </Row>
         <Row>
-            {/* <Carousel
-                ref={(c) => { this._carousel = c; }}
-                data={[{title:"1"}, {title: "2"}, {title: "3"}]}
-                renderItem={(args)=>{
-                  return this._renderItem(args);
-                }}
-                sliderWidth={Dimensions.get('window').width}
-                itemWidth={Dimensions.get('window').width-70}
-                // itemHeight={Dimensions.get('window').height-300}
-                layout={'stack'}
-            /> */}
-            </Row>
+        <SafeAreaView style={styles.safeArea}>
+                <View style={styles.container}>
+                    <StatusBar
+                      translucent={true}
+                      backgroundColor={'rgba(58, 18, 26, .8)'}
+                      barStyle={'light-content'}
+                    />
+                    { this.gradient }
+                    <ScrollView
+                      style={styles.scrollview}
+                      scrollEventThrottle={200}
+                      directionalLockEnabled={true}
+                    >
+                        { renderCard }
+                    </ScrollView>
+                </View>
+            </SafeAreaView>
+        </Row>
         </ Grid>
 
           </View>
