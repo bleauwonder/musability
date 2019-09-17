@@ -11,11 +11,13 @@ import {
   TextInput
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
+import MyCarousel from '../components/MyCarousel'
 import { LinearGradient } from 'expo-linear-gradient';
 import { Card, Button } from 'react-native-elements';
 import { Rating } from 'react-native-elements';
 import styles, { colors } from '../src/style/index.style'
 import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
+import { ENTRIES1, ENTRIES2 } from '../static/entries';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 import * as firebase from 'firebase';
@@ -33,12 +35,12 @@ export default class HomeScreen extends Component {
 }
 
 _renderItem ({item, index}) {
-    return <SliderEntry data={item} even={(index + 1) % 2 === 0} />;
+    return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
 }
 
 _renderItemWithParallax ({item, index}, parallaxProps) {
     return (
-        <SliderEntry
+        <MyCarousel
           data={item}
           even={(index + 1) % 2 === 0}
           parallax={true}
@@ -48,14 +50,14 @@ _renderItemWithParallax ({item, index}, parallaxProps) {
 }
 
 _renderLightItem ({item, index}) {
-    return <SliderEntry data={item} even={false} />;
+    return <MyCarousel data={item} even={false} />;
 }
 
 _renderDarkItem ({item, index}) {
-    return <SliderEntry data={item} even={true} />;
+    return <MyCarousel data={item} even={true} />;
 }
   _renderItem ({item, index}) {
-    return <SliderEntry data={item} even={(index + 1) % 2 === 0} />;
+    return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
   }
         // database.ref('/venues').on("value", snapshot => {
     //   console.log("here");
