@@ -82,10 +82,10 @@ _renderDarkItem ({item, index}) {
         return (
             <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
                 <Text style={[styles.title, isTinder ? {} : styles.titleDark]}> 
-                {`Example ${number}`}
+                {`Venues`}
                 </Text>
                 <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
-                {title}
+                Manhattan 
                 </Text>
                 <Carousel
                   data={isTinder ? ENTRIES2 : ENTRIES1}
@@ -121,7 +121,7 @@ _renderDarkItem ({item, index}) {
               /* </Card> */
 
      render () {
-    const renderCard = this.venueCard(4, '"Tinder-like" layout | Loop', 'tinder');
+    const renderCard = this.venueCard(3, '"Stack of cards" layout | Loop', 'stack');
 
     return (
       <View style={styles.container}>
@@ -161,9 +161,9 @@ _renderDarkItem ({item, index}) {
         </Row>
         
         <Row>
-          <Text style={styles.titleText}>
+          {/* <Text style={styles.titleText}>
             Manhattan Venues
-          </Text>
+          </Text> */}
         </Row>
 
         <Row>
@@ -171,7 +171,7 @@ _renderDarkItem ({item, index}) {
                 <View style={styles.container}>
                     <StatusBar
                       translucent={true}
-                      backgroundColor={'rgba(0, 0, 0, 0.3)'}
+                      backgroundColor={'rgba(58, 18, 26, .8)'}
                       barStyle={'light-content'}
                     />
                     { this.gradient }
@@ -197,9 +197,9 @@ _renderDarkItem ({item, index}) {
             /> */}
           </Row>
         <Row>
-          <Text style={styles.titleText}>
+          {/* <Text style={styles.titleText}>
             Brooklyn Sites
-          </Text>
+          </Text> */}
         </Row>
         <Row>
             {/* <Carousel

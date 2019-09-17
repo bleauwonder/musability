@@ -3,8 +3,8 @@ import { StyleSheet, Dimensions, Platform } from 'react-native';
 export const colors = {
     black: '#1a1917',
     gray: '#888888',
-    background1: '#B721FF',
-    background2: '#21D4FD'
+    background1: '#8e2138',
+    background2: '#3a121a'
 };
 
 export default StyleSheet.create({
@@ -140,10 +140,11 @@ export default StyleSheet.create({
         paddingVertical: 30
     },
     exampleContainerDark: {
-        backgroundColor: colors.black
+        backgroundColor: 'transparent'
     },
+    //background for the card carousel component 
     exampleContainerLight: {
-        backgroundColor: 'white'
+        backgroundColor: 'transparent'
     },
     title: {
         paddingHorizontal: 30,
