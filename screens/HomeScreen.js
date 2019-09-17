@@ -15,7 +15,6 @@ import Carousel from 'react-native-snap-carousel';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Card, Button } from 'react-native-elements';
 import { Rating } from 'react-native-elements';
-import { Wave } from 'react-animated-text';
 import { Col, Row, Grid } from "react-native-easy-grid";
 const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 import * as firebase from 'firebase';
@@ -152,9 +151,6 @@ export default class HomeScreen extends Component {
     return (
       
       <View>
-            {/* <Text>
-            {item.title}
-            </Text> */}
               <Card style={styles.venueCard} containerStyle={{borderRadius: 20}}
                 image={require('../assets/images/venues/Rockwood/Rockwood1.jpg')}
                 title='Rockwood Music Hall'>
@@ -206,7 +202,7 @@ export default class HomeScreen extends Component {
           <TextInput
                 // onChangeText={text => onChangeText(text)}
                 // value={value}
-                style={{ height: 40, borderColor: 'white', borderRadius: 10, borderWidth: 1, backgroundColor: 'white', width: 300, marginLeft: 2 }}
+                style={{ height: 40, borderColor: 'white', borderRadius: 10, borderWidth: 1, backgroundColor: 'white', width: 300, marginLeft: 20 }}
               />
               <Button
                 buttonStyle={{ borderRadius: 10, marginLeft: 5, marginRight: 0, marginBottom: 0, backgroundColor: '#000000' }}
