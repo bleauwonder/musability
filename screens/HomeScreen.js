@@ -4,13 +4,15 @@ import {
   Image,
   Platform,
   ScrollView,
+  StatusBar,
+  SafeAreaView,
   Text,
   TouchableOpacity,
   View,
   Dimensions,
   TextInput
 } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
+import Carousel, { props } from 'react-native-snap-carousel';
 import MyCarousel from '../components/MyCarousel'
 import { LinearGradient } from 'expo-linear-gradient';
 import { Card, Button } from 'react-native-elements';
@@ -26,6 +28,7 @@ const SLIDER_1_FIRST_ITEM = 1;
 const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 
 export default class HomeScreen extends Component {
+  
 
   constructor (props) {
     super(props);
@@ -34,28 +37,28 @@ export default class HomeScreen extends Component {
     };
 }
 
-// _renderItem ({item, index}) {
-//     return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
-// }
+_renderItem ({item, index}) {
+    return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
+}
 
-// _renderItemWithParallax ({item, index}, parallaxProps) {
-//     return (
-//         <MyCarousel
-//           data={item}
-//           even={(index + 1) % 2 === 0}
-//           parallax={true}
-//           parallaxProps={parallaxProps}
-//         />
-//     );
-// }
+_renderItemWithParallax ({item, index}, parallaxProps) {
+    return (
+        <MyCarousel
+          data={item}
+          even={(index + 1) % 2 === 0}
+          parallax={true}
+          parallaxProps={parallaxProps}
+        />
+    );
+}
 
-// _renderLightItem ({item, index}) {
-//     return <MyCarousel data={item} even={false} />;
-// }
+_renderLightItem ({item, index}) {
+    return <MyCarousel data={item} even={false} />;
+}
 
-// _renderDarkItem ({item, index}) {
-//     return <MyCarousel data={item} even={true} />;
-// }
+_renderDarkItem ({item, index}) {
+    return <MyCarousel data={item} even={true} />;
+}
 
 // THIS IS STILL TO BE COMMENTED OUT 
   // _renderItem ({item, index}) {
@@ -74,29 +77,29 @@ export default class HomeScreen extends Component {
     //ABOVE STILL TO BE COMMENTED OUT 
       
       // changing the venue card to what is on the react native car thing 
-        // venueCard (number, title, type) {
-        // const isTinder = type === 'tinder';
-        // return (
-        //     <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
-        //         <Text style={[styles.title, isTinder ? {} : styles.titleDark]}> EXAMPLE
-        //         {/* {`Example ${number}`} */}
-        //         </Text>
-        //         <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>TITLE
-        //         {/* {title} */}
-        //         </Text>
-        //         <Carousel
-        //           data={isTinder ? ENTRIES2 : ENTRIES1}
-        //           renderItem={isTinder ? this._renderLightItem : this._renderItem}
-        //           sliderWidth={sliderWidth}
-        //           itemWidth={itemWidth}
-        //           containerCustomStyle={styles.slider}
-        //           contentContainerCustomStyle={styles.sliderContentContainer}
-        //           layout={type}
-        //           loop={true}
-        //         />
-        //     </View>
-        // );
-    // };
+        venueCard (number, title, type) {
+        const isTinder = type === 'tinder';
+        return (
+            <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
+                <Text style={[styles.title, isTinder ? {} : styles.titleDark]}> 
+                {`Example ${number}`}
+                </Text>
+                <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
+                {title}
+                </Text>
+                <Carousel
+                  data={isTinder ? ENTRIES2 : ENTRIES1}
+                  renderItem={isTinder ? this._renderLightItem : this._renderItem}
+                  sliderWidth={sliderWidth}
+                  itemWidth={itemWidth}
+                  containerCustomStyle={styles.slider}
+                  contentContainerCustomStyle={styles.sliderContentContainer}
+                  layout={type}
+                  loop={true}
+                />
+            </View>
+        );
+    };
   
 
               /* <Card style={styles.venueStyle} containerStyle={{borderRadius: 20}}
@@ -118,7 +121,7 @@ export default class HomeScreen extends Component {
               /* </Card> */
 
      render () {
-    // const renderCard = this.venueCard(4, '"Tinder-like" layout | Loop', 'tinder');
+    const renderCard = this.venueCard(4, '"Tinder-like" layout | Loop', 'tinder');
 
     return (
       <View style={styles.container}>
@@ -145,7 +148,7 @@ export default class HomeScreen extends Component {
                   style={styles.welcomeImage}
                 />
         {/* search bar goes here, on left side */}
-      {/* <Grid>
+      <Grid>
         <Row>
           <TextInput
                 // onChangeText={text => onChangeText(text)}
@@ -180,7 +183,7 @@ export default class HomeScreen extends Component {
                         { renderCard }
                     </ScrollView>
                 </View>
-            </SafeAreaView> */}
+            </SafeAreaView>
             {/* <Carousel
                 ref={(c) => { this._carousel = c; }}
                 data={[{title:"1"}, {title: "2"}, {title: "3"}]}
@@ -192,13 +195,13 @@ export default class HomeScreen extends Component {
                 // itemHeight={Dimensions.get('window').height-300}
                 layout={'satack'}
             /> */}
-          {/* </Row>
+          </Row>
         <Row>
           <Text style={styles.titleText}>
             Brooklyn Sites
           </Text>
         </Row>
-        <Row> */}
+        <Row>
             {/* <Carousel
                 ref={(c) => { this._carousel = c; }}
                 data={[{title:"1"}, {title: "2"}, {title: "3"}]}
@@ -210,8 +213,8 @@ export default class HomeScreen extends Component {
                 // itemHeight={Dimensions.get('window').height-300}
                 layout={'stack'}
             /> */}
-            {/* </Row>
-        </ Grid> */}
+            </Row>
+        </ Grid>
 
           </View>
         </ScrollView>
