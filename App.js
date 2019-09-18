@@ -38,23 +38,26 @@ export default function App(props) {
 
       snapshot.forEach((venue) => {
 
-        <View>
-          <Card style={styles.venueCard} containerStyle={{ borderRadius: 20 }}
-            image={venue.val().image.length ? venue.val().image[0] : "./assets/images/musability-app.png"}
-            title={venue.val().name}>
-            <Rating
-              type='custom'
-              ratingImage={"./assets/images/musicnote.png"}
-              onFinishRating={this.ratingCompleted}
-              ratingColor='#800022'
-              ratingBackgroundColor='#c8c7c8'
-              ratingCount={5}
-              imageSize={20}
-              defaultRating={parseInt(venue.val().overallRating[0])}
-              style={{ paddingVertical: 10 }}
-            />
-          </Card>
-        </View>
+        <div>
+          <View>
+            <Card style={styles.venueCard} containerStyle={{ borderRadius: 20 }}
+              image={venue.val().image.length ? venue.val().image[0] : "./assets/images/musability-app.png"}
+              title={venue.val().name}>
+              <Rating
+                type='custom'
+                ratingImage={"./assets/images/musicnote.png"}
+                onFinishRating={this.ratingCompleted}
+                ratingColor='#800022'
+                ratingBackgroundColor='#c8c7c8'
+                ratingCount={5}
+                imageSize={20}
+                defaultRating={parseInt(venue.val().overallRating[0])}
+                style={{ paddingVertical: 10 }}
+              />
+            </Card>
+          </View>
+        </div>
+
       })
 
     }), (errorObject) => {
