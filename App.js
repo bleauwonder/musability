@@ -34,8 +34,8 @@ export default function App(props) {
 
     const database = firebase.database();
 
-    database.ref("/venues").on("value", snapshot => {
-      
+     database.ref("/venues").on("value", snapshot => {
+    
       snapshot.forEach((venue) => {
        
         <div>
@@ -57,7 +57,7 @@ export default function App(props) {
           </Card>
         </View>
         </div>
-    
+        
       })
 
     }), (errorObject) => {
@@ -94,7 +94,7 @@ export default function App(props) {
 
 
 
-
+  
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
