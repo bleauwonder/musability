@@ -138,16 +138,7 @@ const styles = StyleSheet.create({
 
 export default class HomeScreen extends Component {
   _renderItem ({item, index}) {
-        // database.ref('/venues').on("value", snapshot => {
-    //   console.log("here");
-    //   snapshot.forEach(venue => {
-    //     console.log(venue.val().name);
-    //   })
-
-
-    // }), (errorObject) => {
-    //   console.log("The read failed:" + errorObject.code);
-    // }
+     
 
     return (
       
@@ -175,6 +166,7 @@ export default class HomeScreen extends Component {
       </View>
     )
   }
+  
   render () {
     return (
       <View style={styles.container}>
