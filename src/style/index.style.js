@@ -3,7 +3,7 @@ import { StyleSheet, Dimensions, Platform } from 'react-native';
 export const colors = {
     black: '#1a1917',
     gray: '#888888',
-    white: '#FFFFFF',
+    white: '#ffffff',
     background1: '#8e2138',
     background2: '#3a121a'
 };
@@ -16,10 +16,6 @@ export default StyleSheet.create({
     color: 'white',
     padding: 5,
     margin: 10,
-  },
-  container: {
-    flex: 1,
-    // backgroundColor: 'transparent',
   },
   venueStyle: {
     color: 'blue',
@@ -127,11 +123,11 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: 'transparent'
     },
+    //changes the main background color 
+    
     container: {
         flex: 1,
-        borderRadius: 10,
         backgroundColor: colors.background1
-        // ['rgba(58, 18, 26, .8)', 'rgba(98, 20, 36, .8)', 'transparent']
     },
     gradient: {
         ...StyleSheet.absoluteFillObject
