@@ -3,6 +3,7 @@ import { StyleSheet, Dimensions, Platform } from 'react-native';
 export const colors = {
     black: '#1a1917',
     gray: '#888888',
+    white: '#FFFFFF',
     background1: '#8e2138',
     background2: '#3a121a'
 };
@@ -120,15 +121,17 @@ export default StyleSheet.create({
     height: 200,
     width: 500,
     borderRadius: 20,
-    backgroundColor: '#808080',
+    // backgroundColor: '#808080',
   },
     safeArea: {
         flex: 1,
-        backgroundColor: colors.black
+        backgroundColor: 'transparent'
     },
     container: {
         flex: 1,
+        borderRadius: 10,
         backgroundColor: colors.background1
+        // ['rgba(58, 18, 26, .8)', 'rgba(98, 20, 36, .8)', 'transparent']
     },
     gradient: {
         ...StyleSheet.absoluteFillObject
@@ -143,13 +146,15 @@ export default StyleSheet.create({
     },
     //not this
     exampleContainerDark: {
+        margin: 10,
         backgroundColor: 'transparent'
     },
     //background for the card carousel component 
-    //not this
+    //THIS ONE
     exampleContainerLight: {
-        backgroundColor: 'transparent'
-    },
+      margin: 10,
+      backgroundColor: 'transparent'
+      },
     title: {
         paddingHorizontal: 30,
         backgroundColor: 'transparent',
@@ -159,7 +164,7 @@ export default StyleSheet.create({
         textAlign: 'center'
     },
     titleDark: {
-        color: colors.black
+        color: colors.white
     },
     subtitle: {
         marginTop: 5,
