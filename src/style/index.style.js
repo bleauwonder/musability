@@ -124,7 +124,7 @@ export default StyleSheet.create({
         backgroundColor: 'transparent'
     },
     //changes the main background color 
-    
+
     container: {
         flex: 1,
         backgroundColor: colors.background1
@@ -137,18 +137,16 @@ export default StyleSheet.create({
     },
     //not this
     exampleContainer: {
-        paddingVertical: 30,
+        paddingVertical: 25,
         backgroundColor: 'transparent'
     },
     //not this
     exampleContainerDark: {
-        margin: 10,
         backgroundColor: 'transparent'
     },
     //background for the card carousel component 
     //THIS ONE
     exampleContainerLight: {
-      margin: 10,
       backgroundColor: 'transparent'
       },
     title: {
