@@ -2,7 +2,7 @@
 // import { URL } from "url";
 
 
-const VENUES = [
+export const VENUES = [
     {
         venue: "(le) poisson rouge",
         href: "https://lpr.com/",

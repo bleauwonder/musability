@@ -9,7 +9,7 @@ import styles from '../src/style/SliderEntry.style';
 export class MyCarousel extends Component {
 
     static propTypes = {
-        data: PropTypes.object.isRequired,
+        data: PropTypes.object,
         even: PropTypes.bool,
         parallax: PropTypes.bool,
         parallaxProps: PropTypes.object
@@ -52,7 +52,8 @@ export class MyCarousel extends Component {
             <TouchableOpacity
               activeOpacity={1}
               style={styles.slideInnerContainer}
-              onPress={() => { alert(`You've clicked '${title}'`); }}
+            //   add modal here
+            //   onPress={() => { alert(`You've clicked '${title}'`); }}
               >
                 <View style={styles.shadow} />
                 <View style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>
