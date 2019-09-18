@@ -21,7 +21,7 @@ export default StyleSheet.create({
     // backgroundColor: 'transparent',
   },
   venueStyle: {
-    color: 'red',
+    color: 'blue',
     shadowColor: 'rgb(56, 51, 51)',
     shadowOffset: { width: 0, height: -3 },
     shadowOpacity: 0.1,
