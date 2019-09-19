@@ -151,14 +151,22 @@ export default StyleSheet.create({
       },
     title: {
         paddingHorizontal: 30,
+        padding: 5,
         backgroundColor: 'transparent',
         color: 'rgba(255, 255, 255, 0.9)',
         fontSize: 20,
         fontWeight: 'bold',
-        textAlign: 'center'
+        // fontStyle: 'italic',
+        textAlign: 'center',
+        textTransform: 'uppercase',
+        letterSpacing: 1,
+        borderStyle: 'solid',
+        borderWidth: 1.5,
+        borderRadius: 10,
+        borderColor: 'white'
     },
     titleDark: {
-        color: colors.white
+      color: colors.white
     },
     subtitle: {
         marginTop: 5,
