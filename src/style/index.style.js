@@ -3,6 +3,7 @@ import { StyleSheet, Dimensions, Platform } from 'react-native';
 export const colors = {
     black: '#1a1917',
     gray: '#888888',
+    white: '#ffffff',
     background1: '#8e2138',
     background2: '#3a121a'
 };
@@ -15,10 +16,6 @@ export default StyleSheet.create({
     color: 'white',
     padding: 5,
     margin: 10,
-  },
-  container: {
-    flex: 1,
-    // backgroundColor: 'transparent',
   },
   venueStyle: {
     color: 'blue',
@@ -120,12 +117,14 @@ export default StyleSheet.create({
     height: 200,
     width: 500,
     borderRadius: 20,
-    backgroundColor: '#808080',
+    // backgroundColor: '#808080',
   },
     safeArea: {
         flex: 1,
-        backgroundColor: colors.black
+        backgroundColor: 'transparent'
     },
+    //changes the main background color 
+
     container: {
         flex: 1,
         backgroundColor: colors.background1
@@ -138,7 +137,7 @@ export default StyleSheet.create({
     },
     //not this
     exampleContainer: {
-        paddingVertical: 30,
+        paddingVertical: 25,
         backgroundColor: 'transparent'
     },
     //not this
@@ -146,20 +145,28 @@ export default StyleSheet.create({
         backgroundColor: 'transparent'
     },
     //background for the card carousel component 
-    //not this
+    //THIS ONE
     exampleContainerLight: {
-        backgroundColor: 'transparent'
-    },
+      backgroundColor: 'transparent'
+      },
     title: {
         paddingHorizontal: 30,
+        padding: 5,
         backgroundColor: 'transparent',
         color: 'rgba(255, 255, 255, 0.9)',
         fontSize: 20,
         fontWeight: 'bold',
-        textAlign: 'center'
+        // fontStyle: 'italic',
+        textAlign: 'center',
+        textTransform: 'uppercase',
+        letterSpacing: 1,
+        borderStyle: 'solid',
+        borderWidth: 1.5,
+        borderRadius: 10,
+        borderColor: 'white'
     },
     titleDark: {
-        color: colors.black
+      color: colors.white
     },
     subtitle: {
         marginTop: 5,

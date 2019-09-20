@@ -186,13 +186,13 @@ _renderDarkItem ({item, index}) {
               buttonStyle={{ borderRadius: 10, marginLeft: 5, marginRight: 0, marginBottom: 0, backgroundColor: '#000000' }}
               title='Search'/>
         </Row>
-{/*         
+{/*
         <Row>
         </Row> */}
 
         <Row>
           <SafeAreaView style={styles.safeArea}>
-            <View style={styles.container}>
+            <View>
               <StatusBar
                 translucent={true}
                 backgroundColor={'rgba(58, 18, 26, .8)'}
@@ -205,32 +205,12 @@ _renderDarkItem ({item, index}) {
                 directionalLockEnabled={true}
               >
                 { renderCard }
-              </ScrollView>
-            </View>
-          </SafeAreaView>
-        </Row>
-        {/* <Row>
-
-        </Row> */}
-        <Row>
-          <SafeAreaView style={styles.safeArea}>
-            <View style={styles.container}>
-              <StatusBar
-                translucent={true}
-                backgroundColor={'rgba(58, 18, 26, .8)'}
-                barStyle={'light-content'}
-              />
-                { this.gradient }
-              <ScrollView
-                style={styles.scrollview}
-                scrollEventThrottle={200}
-                directionalLockEnabled={true}
-              >
                 { renderCard2 }
               </ScrollView>
             </View>
           </SafeAreaView>
         </Row>
+
       </ Grid>
     </View>
   </ScrollView>
