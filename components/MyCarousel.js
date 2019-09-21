@@ -8,6 +8,7 @@ import Modal from "react-native-modal";
 import ModalContent, {renderModalContent} from '../components/ModalContent';
 import { Card, Button, Rating } from 'react-native-elements';
 import { Col, Row, Grid } from 'react-native-easy-grid';
+import MUSIC_IMAGE from '../assets/images/musicnote.png'
 
 
 export class MyCarousel extends Component {
@@ -27,9 +28,21 @@ export class MyCarousel extends Component {
         renderModalContent = () => (
             <View style={styles.modalContent}>  
                 <Text>IMAGES</Text>
-                <Text>Rating</Text>
-                <Text># of Reviews</Text>
+
+                <Text>RATING</Text>
+                <Rating
+                  type='custom'
+                  ratingImage={MUSIC_IMAGE}
+                  onFinishRating={this.ratingCompleted}
+                  ratingColor='#000'
+                  ratingBackgroundColor='#800022'
+                  ratingCount={5}
+                  imageSize={20}
+                  style={{ paddingVertical: 10 }}
+                  />
+
                 <Text>Description</Text>
+                
                 <Text>Reviews</Text>
 
                 <Button
