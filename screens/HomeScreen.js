@@ -39,7 +39,7 @@ export default class HomeScreen extends Component {
     };
   }
 
- 
+
 
   _renderItem({ item, index }) {
     return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
@@ -70,7 +70,7 @@ export default class HomeScreen extends Component {
   //ABOVE STILL TO BE COMMENTED OUT 
 
   // changing the venue card to what is on the react native card thing 
-  venueCard(number, title, type, venueArray) {
+  venueCard(number, title, type) {
     const isTinder = type === 'tinder';
     return (
       <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
@@ -80,7 +80,7 @@ export default class HomeScreen extends Component {
         <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
         </Text>
         <Carousel
-          data={isTinder? ENTRIES1 : ENTRIES2 }
+          data={isTinder ? ENTRIES2 : ENTRIES1}
           renderItem={isTinder ? this._renderLightItem : this._renderItem}
           sliderWidth={sliderWidth}
           itemWidth={itemWidth}
@@ -185,7 +185,7 @@ export default class HomeScreen extends Component {
 
               <Row>
                 <SafeAreaView style={styles.safeArea}>
-                  <View style={styles.container}>
+                  <View>
                     <StatusBar
                       translucent={true}
                       backgroundColor={'rgba(58, 18, 26, .8)'}
@@ -198,80 +198,17 @@ export default class HomeScreen extends Component {
                       directionalLockEnabled={true}
                     >
                       {renderCard}
-                    </ScrollView>
-                  </View>
-                </SafeAreaView>
-              </Row>
-              {/* <Row>
-
-        </Row> */}
-              <Row>
-                <SafeAreaView style={styles.safeArea}>
-                  <View style={styles.container}>
-                    <StatusBar
-                      translucent={true}
-                      backgroundColor={'rgba(58, 18, 26, .8)'}
-                      barStyle={'light-content'}
-                    />
-                    {this.gradient}
-                    <ScrollView
-                      style={styles.scrollview}
-                      scrollEventThrottle={200}
-                      directionalLockEnabled={true}
-                    >
                       {renderCard2}
                     </ScrollView>
                   </View>
                 </SafeAreaView>
               </Row>
-            </ Grid>
+            </Grid>
           </View>
         </ScrollView>
       </View>
     );
   }
 };
-
-
-
-{/* <Carousel
-                ref={(c) => { this._carousel = c; }}
-                data={[{title:"1"}, {title: "2"}, {title: "3"}]}
-                renderItem={(args)=>{
-                  return this._renderItem(args);
-                }}
-                sliderWidth={Dimensions.get('window').width}
-                itemWidth={Dimensions.get('window').width-70}
-                // itemHeight={Dimensions.get('window').height-300}
-                layout={'satack'}
-            /> */}
-
-{/* <Text style={styles.titleText}>
-            Brooklyn Sites
-          </Text> */}
-
-{/* <Text style={styles.titleText}>
-            Manhattan Venues
-          </Text> */}
-
-
-/* <Card style={[styles.venueStyle, borderRadius: 20]}}
-  image={require('../assets/images/venues/Rockwood/Rockwood1.jpg')}
-  title='Rockwood Music Hall'>
-  <Rating
-    type='custom'
-    ratingImage={MUSIC_IMAGE}
-    onFinishRating={this.ratingCompleted}
-    ratingColor='#800022'
-    ratingBackgroundColor='#c8c7c8'
-    ratingCount={5}
-    imageSize={20}
-    style={{ paddingVertical: 10 }}
-  />
-  {/* <Button
-    buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor: '#800022' }}
-    title='VIEW MORE' /> */
-/* </Card> */
-
 
 
