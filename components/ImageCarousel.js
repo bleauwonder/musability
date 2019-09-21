@@ -3,7 +3,7 @@ import Carousel, { ParallaxImage, isTinder } from 'react-native-snap-carousel';
 import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from '../src/style/SliderEntry.style';
-import { VENUES, image } from '../components/venueJSON';
+import VENUES, { data, image } from '../components/venueJSON';
 
 
 
@@ -33,7 +33,7 @@ export class ImageCarousel extends Component {
             />
         ) : (
             <Image
-              source={{ uri: image }}
+              source={{ uri: 'https://i.imgur.com/l49aYS3l.jpg' }}
               style={styles.image}
             />
         );
