@@ -21,6 +21,7 @@ import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import { ENTRIES1, ENTRIES2, ENTRIES3, ENTRIES4 } from '../static/entries';
 import { VENUES } from '../components/venueJSON'
 import { Col, Row, Grid } from 'react-native-easy-grid';
+import Modal from "react-native-modal";
 // import * as firebase from 'firebase';
 
 const IS_ANDROID = Platform.OS === 'android';
@@ -33,9 +34,21 @@ export default class HomeScreen extends Component {
   constructor (props) {
     super(props);
     this.state = {
-        slider1ActiveSlide: SLIDER_1_FIRST_ITEM
+        slider1ActiveSlide: SLIDER_1_FIRST_ITEM,
+        visibleModalId: null,
     };
 }
+
+renderModalContent = () => (
+  <View>
+    <Text>Hi 👋!</Text>
+    <Button
+      onPress={() => this.setState({ visibleModal: null })}
+      title="Close"
+    />
+  </View>
+);
+
 
 _renderItem ({item, index}) {
     return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
@@ -87,7 +100,7 @@ _renderDarkItem ({item, index}) {
           <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
           </Text>
             <Carousel
-                  data={isTinder ? ENTRIES2 : ENTRIES1}
+                  data={ENTRIES1}
                   renderItem={isTinder ? this._renderLightItem : this._renderItem}
                   sliderWidth={sliderWidth}
                   itemWidth={itemWidth}
@@ -95,7 +108,9 @@ _renderDarkItem ({item, index}) {
                   contentContainerCustomStyle={styles.sliderContentContainer}
                   layout={type}
                   loop={true}
+                  onPress={() => this.setState({ visibleModal: 'fancy' })}
             />
+            
             {/* <Rating
                   type='custom'
                   ratingImage={MUSIC_IMAGE}
@@ -106,9 +121,23 @@ _renderDarkItem ({item, index}) {
                   imageSize={20}
                   style={{ paddingVertical: 10 }}
             /> */}
+          <Modal
+            isVisible={this.state.visibleModal === 'fancy'}
+            backdropColor="#B4B3DB"
+            backdropOpacity={0.8}
+            animationIn="zoomInDown"
+            animationOut="zoomOutUp"
+            animationInTiming={600}
+            animationOutTiming={600}
+            backdropTransitionInTiming={600}
+            backdropTransitionOutTiming={600}
+          >
+            {this.renderModalContent()}
+          </Modal>
         </View>
         );
     };
+
 
     venueCard2 (number, title, type) {
       const isTinder = type === 'tinder';
@@ -120,7 +149,7 @@ _renderDarkItem ({item, index}) {
             <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
             </Text>
               <Carousel
-                    data={isTinder ? ENTRIES4 : ENTRIES3}
+                    data={ENTRIES3}
                     renderItem={isTinder ? this._renderLightItem : this._renderItem}
                     sliderWidth={sliderWidth}
                     itemWidth={itemWidth}
