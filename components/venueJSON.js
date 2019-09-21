@@ -8,7 +8,7 @@ export const VENUES = [
         state: "New York",
         zip: "10012",
         image : [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Arlene's Grocery",
@@ -27,7 +27,7 @@ export const VENUES = [
         restroomsComment: "one on first floor",
         overallComment: "no elevators, bands play in basement. Will have to be carried.",
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Baby's All Right",
@@ -38,7 +38,7 @@ export const VENUES = [
         zip: "11211",
         rampComment: "single floor venue",
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Brooklyn Bazaar",
@@ -57,7 +57,7 @@ export const VENUES = [
         restroomsComment: "one on first floor",
         overallComment: "no elevators, sometimes bands play fourth floor. Will have to be carried.",
         image: ["../assets/images/venues/Brooklyn Bazaar/BK-Bazaar-Outside.jpg"],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/Sc3UDZ1.jpg"
     },
     {
         name: "Brooklyn Bowl",
@@ -76,28 +76,30 @@ export const VENUES = [
         restroomsComment: "two accessible restrooms downstairs",
         overallComment: "first floor where bands play and bowling is all have ramps",
         image: [
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl1.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl2.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl3.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl4.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl5.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl6.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl7.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl8.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl9.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl10.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl11.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl12.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl13.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl14.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl15.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl16.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl17.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl18.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl19.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl20.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl21.jpg",
-            "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl22.jpg",            
+            "https://i.imgur.com/kEtwwdE.jpg",
+            "https://i.imgur.com/3fyYMSV.jpg",
+            "https://i.imgur.com/u9UYwWL.jpg",
+            "https://i.imgur.com/E1HjGP7.jpg",
+            "https://i.imgur.com/42z4zwM.jpg",
+            "https://i.imgur.com/qy5fW3X.jpg",
+            "https://i.imgur.com/O8WljZn.jpg",
+            "https://i.imgur.com/oz1lEW7.jpg",
+            "https://i.imgur.com/7OiGG6c.jpg",
+            "https://i.imgur.com/vkbk7mb.jpg",
+            "https://i.imgur.com/yGuEG47.jpg",
+            "https://i.imgur.com/CXf6VUo.jpg",
+            "https://i.imgur.com/4RVEPzx.jpg",
+            "https://i.imgur.com/7G70P2R.jpg",
+            "https://i.imgur.com/XxSmp18.jpg",
+            "https://i.imgur.com/KDheEK1.jpg",
+            "https://i.imgur.com/rqlKoFa.jpg",
+            "https://i.imgur.com/xkm3h2s.jpg",
+            "https://i.imgur.com/AAqunjG.jpg",
+            "https://i.imgur.com/V014M2V.jpg",
+            "https://i.imgur.com/1UG1koq.jpg",
+            "https://i.imgur.com/chHwA1B.jpg",  
+            "https://i.imgur.com/kEtwwdE.jpg",
+            "https://i.imgur.com/u9UYwWL.jpg",
         ],
         baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
@@ -114,7 +116,7 @@ export const VENUES = [
         ramps: true,
         rampComment: "accessible entrances",
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Forest Hills Stadium",
@@ -124,7 +126,7 @@ export const VENUES = [
         state: "NY",
         zip: "11375",
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Great Hill (Central Park)",
@@ -143,19 +145,20 @@ export const VENUES = [
         restroomsComment: "portable and regular park ones available",
         overallComment: "request accomodation prior to events by calling 212.446.2242",
         image: [
-            "../assets/images/venues/Central Park-Great Hill/Great-Hill1.jpg",
-            "../assets/images/venues/Central Park-Great Hill/Great-Hill2.jpg",
-            "../assets/images/venues/Central Park-Great Hill/Great-Hill3.jpg",
-            "../assets/images/venues/Central Park-Great Hill/Great-Hill4.jpg",
-            "../assets/images/venues/Central Park-Great Hill/Great-Hill5.jpg",
-            "../assets/images/venues/Central Park-Great Hill/Great-Hill6.jpg",
-            "../assets/images/venues/Central Park-Great Hill/Great-Hill7.jpg",
-            "../assets/images/venues/Central Park-Great Hill/Great-Hill8.jpg",
-            "../assets/images/venues/Central Park-Great Hill/Great-Hill9.jpg",
-            "../assets/images/venues/Central Park-Great Hill/Great-Hill10.jpg",
-            "../assets/images/venues/Central Park-Great Hill/Great-Hill11.jpg",
-            "../assets/images/venues/Central Park-Great Hill/Great-Hill12.jpg",
-        ] 
+            "https://i.imgur.com/KUX9y7E.jpg",
+            "https://i.imgur.com/Rc9cjMG.jpg",
+            "https://i.imgur.com/M71LC4G.jpg",
+            "https://i.imgur.com/vMRA9T3.jpg",
+            "https://i.imgur.com/DjHA3yK.jpg",
+            "https://i.imgur.com/X07IXl2.jpg",
+            "https://i.imgur.com/Ex4zpJh.jpg",
+            "https://i.imgur.com/TEGQNed.jpg",
+            "https://i.imgur.com/iHcVLgH.jpg",
+            "https://i.imgur.com/qji5kF4.jpg",
+            "https://i.imgur.com/kIgsMJq.jpg",
+            "https://i.imgur.com/KtAZx0g.jpg",
+        ],
+        baseImage: "https://i.imgur.com/KUX9y7E.jpg"
     },
     {
         name: "Hammerstein Ballroom",
@@ -165,7 +168,7 @@ export const VENUES = [
         state: "New York",
         zip: "10001",
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Industry City",
@@ -184,18 +187,18 @@ export const VENUES = [
         restroomsComment: "large restrooms with accessible stalls",
         overallComment: "Large venue with 8 buildings total. To go from one end to the other would be a lot of weaving around ramps. Courtyard 1/2 is where the bandshell is and a little food. Can sit in the VIP to see the show.",
         image: [
-            "../assets/images/venues/Industry City/Industry-City1.jpg",
-            "../assets/images/venues/Industry City/Industry-City2.jpg",
-            "../assets/images/venues/Industry City/Industry-City3.jpg",
-            "../assets/images/venues/Industry City/Industry-City4.jpg",
-            "../assets/images/venues/Industry City/Industry-City5.jpg",
-            "../assets/images/venues/Industry City/Industry-City6.jpg",
-            "../assets/images/venues/Industry City/Industry-City7.jpg",
-            "../assets/images/venues/Industry City/Industry-City8.jpg",
-            "../assets/images/venues/Industry City/Industry-City9.jpg",
-            "../assets/images/venues/Industry City/Industry-City10.jpg",
+            "https://i.imgur.com/zRHLqWb.jpg",
+            "https://i.imgur.com/zKsZkr5.jpg",
+            "https://i.imgur.com/7wCmsQQ.jpg",
+            "https://i.imgur.com/ctFOJd6.jpg",
+            "https://i.imgur.com/pLMph1K.jpg",
+            "https://i.imgur.com/1BWtCBG.jpg",
+            "https://i.imgur.com/IiCtFtg.jpg",
+            "https://i.imgur.com/zPfnxAx.jpg",
+            "https://i.imgur.com/A1Gh2yM.jpg",
+            "https://i.imgur.com/M8KW93O.jpg",
         ],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/ctFOJd6.jpg"
     },
     {
         name: "Joe's Pub",
@@ -211,12 +214,12 @@ export const VENUES = [
         rampComment: "single floor venue with ramps in between buildings",
         overallComment: "The website has good information: please contact us at 212.967.7555 (voice) or accessibility@publictheater.org.",
         image: [
-            "../assets/images/venues/Joe's Pub/Joes-Pub1.jpg",
-            "../assets/images/venues/Joe's Pub/Joes-Pub2.jpg",
-            "../assets/images/venues/Joe's Pub/Joes-Pub3.jpg",
-            "../assets/images/venues/Joe's Pub/Joes-Pub4.jpg"
+            "https://i.imgur.com/wDzvuak.jpg",
+            "https://i.imgur.com/zZM4TtY.jpg",
+            "https://i.imgur.com/WSUunPW.jpg",
+            "https://i.imgur.com/oPdIhNH.jpg"
         ],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/wDzvuak.jpg"
     },
     {
         name: "King's Theater",
@@ -227,7 +230,7 @@ export const VENUES = [
         zip: "11226",
         elevator: false,
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "The Knitting Factory - Brooklyn",
@@ -246,23 +249,23 @@ export const VENUES = [
         restroomsComment: "stall restrooms, not really fit for accessibility",
         overallComment: "one floor venue that's pretty small. Not hard to see the band even when sitting though there's some nice side spaces if having trouble. There's a step up outside for the bar area.",
         image: [
-            "../assets/images/venues/Knitting Factory/Knitting-Factory1.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory2.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory3.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory4.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory5.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory6.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory7.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory8.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory9.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory10.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory11.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory12.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory13.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory14.jpg",
-            "../assets/images/venues/Knitting Factory/Knitting-Factory15.jpg",
+            "https://i.imgur.com/vqWRdqS.jpg",
+            "https://i.imgur.com/Dzxi17z.jpg",
+            "https://i.imgur.com/oXeuOn3.jpg",
+            "https://i.imgur.com/4lcFpsw.jpg",
+            "https://i.imgur.com/5W9Ar3m.jpg",
+            "https://i.imgur.com/hlB6HLA.jpg",
+            "https://i.imgur.com/GaWZJGN.jpg",
+            "https://i.imgur.com/G2xJU22.jpg",
+            "https://i.imgur.com/KljMvga.jpg",
+            "https://i.imgur.com/UcfXu6L.jpg",
+            "https://i.imgur.com/Ha8Z0u7.jpg",
+            "https://i.imgur.com/PzFer6h.jpg",
+            "https://i.imgur.com/BYWP3YA.jpg",
+            "https://i.imgur.com/W7hTCWI.jpg",
+            "https://i.imgur.com/HWcY0hU.jpg",
         ],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/vqWRdqS.jpg"
     },
     {
         name: "Market Hotel",
@@ -273,7 +276,7 @@ export const VENUES = [
         zip: "11221",
         ramps: false,
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Music Hall of Williamsburg",
@@ -292,7 +295,7 @@ export const VENUES = [
         restroomsComment: "accessible stalls",
         overallComment: "multi-level venue, with access to view show above main floor",
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Rockwood Music Hall",
@@ -311,15 +314,15 @@ export const VENUES = [
         restroomsComment: "large enough restrooms",
         overallComment: "Stage 2 is only accessible on Orchard St. Both stage 1 and 2 are one floor.",
         image: [
-            "../assets/images/venues/Rockwood/Rockwood1.jpg",
-            "../assets/images/venues/Rockwood/Rockwood2.jpg",
-            "../assets/images/venues/Rockwood/Rockwood3.jpg",
-            "../assets/images/venues/Rockwood/Rockwood4.jpg",
-            "../assets/images/venues/Rockwood/Rockwood5.jpg",
-            "../assets/images/venues/Rockwood/Rockwood6.jpg",
-            "../assets/images/venues/Rockwood/Rockwood7.jpg",
+            "https://i.imgur.com/bJUi82a.jpg",
+            "https://i.imgur.com/xHLYs84.jpg",
+            "https://i.imgur.com/qOLzgds.jpg",
+            "https://i.imgur.com/lsqDNdW.jpg",
+            "https://i.imgur.com/PMV6IWX.jpg",
+            "https://i.imgur.com/hTEQIaf.jpg",
+            "https://i.imgur.com/B71h6Jc.jpg",
         ],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/hTEQIaf.jpg"
     },
     {
         name: "Rough Trade NYC",
@@ -338,22 +341,22 @@ export const VENUES = [
         restroomsComment: "accessible stalls",
         overallComment: "there is no elevator to the balcony and no place to be where it'd provide a nice view for someone in a chair if it's a packed show.",
         image: [
-            "../assets/images/venues/Rough Trade/Rough-TradeBK1.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK2.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK3.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK4.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK5.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK6.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK7.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK8.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK9.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK10.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK11.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK12.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK13.jpg",
-            "../assets/images/venues/Rough Trade/Rough-TradeBK14.jpg",
+            "https://i.imgur.com/lBEQrOJ.jpg",
+            "https://i.imgur.com/vKDh9YQ.jpg",
+            "https://i.imgur.com/pxi7Lg6.jpg",
+            "https://i.imgur.com/y5qxJbO.jpg",
+            "https://i.imgur.com/jQxfTMh.jpg",
+            "https://i.imgur.com/zPj6n1t.jpg",
+            "https://i.imgur.com/LAyQxHG.jpg",
+            "https://i.imgur.com/7NLQeYr.jpg",
+            "https://i.imgur.com/yMbqjOj.jpg",
+            "https://i.imgur.com/Nl2FJbr.jpg",
+            "https://i.imgur.com/eTa8N8m.jpg",
+            "https://i.imgur.com/oB9a8Cu.jpg",
+            "https://i.imgur.com/GD08rLC.jpg",
+            "https://i.imgur.com/A8YtYoY.jpg",
         ],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/lBEQrOJ.jpg"
     },
     {
         name: "Saint Vitus Bar",
@@ -363,7 +366,7 @@ export const VENUES = [
         state: "NY",
         zip: "11222",
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Shea Stadium",
@@ -374,7 +377,7 @@ export const VENUES = [
         zip: "11206",
         elevator: false,
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Sunnyvale BK",
@@ -387,7 +390,7 @@ export const VENUES = [
         ramps: true,
         rampComment: "single floor venue",
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "The Bell House",
@@ -400,7 +403,7 @@ export const VENUES = [
         ramps: true,
         rampComment: "single floor venue",
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "The Gutter - Brooklyn",
@@ -419,13 +422,13 @@ export const VENUES = [
         restroomsComment: "get bathroom key, one accessible bathroom",
         overallComment: "There is no ramp to go bowling and there are several stairs to climb",
         image: [
-            "../assets/images/venues/The Gutter-BK/Gutter-BK1.jpg",
-            "../assets/images/venues/The Gutter-BK/Gutter-BK2.jpg",
-            "../assets/images/venues/The Gutter-BK/Gutter-BK3.jpg",
-            "../assets/images/venues/The Gutter-BK/Gutter-BK4.jpg",
-            "../assets/images/venues/The Gutter-BK/Gutter-BK5.jpg",
+            "https://i.imgur.com/q07qT6c.jpg",
+            "https://i.imgur.com/UkPRmd6.jpg",
+            "https://i.imgur.com/ItQ6mKc.jpg",
+            "https://i.imgur.com/zLrnX4N.jpg",
+            "https://i.imgur.com/VAgdM2J.jpg",
         ],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/zLrnX4N.jpg"
     },
     {
         name: "The Kingsland Bar",
@@ -438,7 +441,7 @@ export const VENUES = [
         ramps: false,
         rampComment: "single floor venue, but one step to get in",
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "The Mercury Lounge",
@@ -457,17 +460,17 @@ export const VENUES = [
         restroomsComment: "accessible bathrooms, small area to open the door next to the bar.",
         overallComment: "one floor venue with a decent view if sitting down. There are benches along the sides.",
         image: [
-            "../assets/images/venues/Mercury Lounge/Mercury-Lounge1.jpg",
-            "../assets/images/venues/Mercury Lounge/Mercury-Lounge2.jpg",
-            "../assets/images/venues/Mercury Lounge/Mercury-Lounge3.jpg",
-            "../assets/images/venues/Mercury Lounge/Mercury-Lounge4.jpg",
-            "../assets/images/venues/Mercury Lounge/Mercury-Lounge5.jpg",
-            "../assets/images/venues/Mercury Lounge/Mercury-Lounge6.jpg",
-            "../assets/images/venues/Mercury Lounge/Mercury-Lounge7.jpg",
-            "../assets/images/venues/Mercury Lounge/Mercury-Lounge8.jpg",
-            "../assets/images/venues/Mercury Lounge/Mercury-Lounge9.jpg",
+            "https://i.imgur.com/ahTaJ6Z.jpg",
+            "https://i.imgur.com/tSRiaPs.jpg",
+            "https://i.imgur.com/wThSQgI.jpg",
+            "https://i.imgur.com/DMcPn1Q.jpg",
+            "https://i.imgur.com/4pihtaL.jpg",
+            "https://i.imgur.com/0BtYuoL.jpg",
+            "https://i.imgur.com/9RP8xVy.jpg",
+            "https://i.imgur.com/KW8tMgL.jpg",
+            "https://i.imgur.com/KkwQHXI.jpg",
         ],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/tSRiaPs.jpg"
     },  
     {
         name: "Union Hall",
@@ -485,23 +488,23 @@ export const VENUES = [
         restroomsComment: "accessible bathrooms, small area to open the door next to the bar.",
         overallComment: "this venue is not accessible. There's a step up to get in and an accessible bathroom on the main floor. But shows are downstairs with no elevator access. You will have to be carried.",
         image: [
-            "../assets/images/venues/Union Hall/Union-Hall1.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall2.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall3.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall4.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall5.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall6.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall7.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall8.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall9.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall10.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall11.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall12.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall13.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall14.jpg",
-            "../assets/images/venues/Union Hall/Union-Hall15.jpg"
+            "https://i.imgur.com/2WytNrD.jpg",
+            "https://i.imgur.com/JWFckSQ.jpg",
+            "https://i.imgur.com/ljze6DV.jpg",
+            "https://i.imgur.com/nexaxfS.jpg",
+            "https://i.imgur.com/i4DQUIR.jpg",
+            "https://i.imgur.com/p5GEQiD.jpg",
+            "https://i.imgur.com/QoPFJAB.jpg",
+            "https://i.imgur.com/We3Rwqe.jpg",
+            "https://i.imgur.com/DdPr5DT.jpg",
+            "https://i.imgur.com/bG4yMmp.jpg",
+            "https://i.imgur.com/xN9Fsfz.jpg",
+            "https://i.imgur.com/pDY4ItN.jpg",
+            "https://i.imgur.com/U1t82GO.jpg",
+            "https://i.imgur.com/hjgH4ml.jpg",
+            "https://i.imgur.com/aIE21mt.jpg"
         ],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/aIE21mt.jpg"
     }, 
     {
         name: "Union Pool",
@@ -520,17 +523,17 @@ export const VENUES = [
         restroomsComment: "not labeled, though large. Doors open in",
         overallComment: "backyard music free outside all summer, one level venue inside",
         image: [
-            "../assets/images/venues/Union Pool/Union-Pool1.jpg",
-            "../assets/images/venues/Union Pool/Union-Pool2.jpg",
-            "../assets/images/venues/Union Pool/Union-Pool3.jpg",
-            "../assets/images/venues/Union Pool/Union-Pool4.jpg",
-            "../assets/images/venues/Union Pool/Union-Pool5.jpg",
-            "../assets/images/venues/Union Pool/Union-Pool6.jpg",
-            "../assets/images/venues/Union Pool/Union-Pool7.jpg",
-            "../assets/images/venues/Union Pool/Union-Pool8.jpg",
+            "https://i.imgur.com/c1zKzBf.jpg",
+            "https://i.imgur.com/Qhj5Zy6.jpg",
+            "https://i.imgur.com/5P95nwu.jpg",
+            "https://i.imgur.com/iDQRw5E.jpg",
+            "https://i.imgur.com/vrvuA5p.jpg",
+            "https://i.imgur.com/eBKydrP.jpg",
+            "https://i.imgur.com/e6We7nY.jpg",
+            "https://i.imgur.com/1ddQ29h.jpg",
             
         ],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/c1zKzBf.jpg"
     },
     {
         name: "Webster Hall",
@@ -540,7 +543,7 @@ export const VENUES = [
         state: "NY",
         zip: "10003",
         image: [],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        baseImage: "https://i.imgur.com/piN9lPP.png"
     }
 ]
 
