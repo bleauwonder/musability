@@ -7,7 +7,8 @@ export const VENUES = [
         city: "New York",
         state: "New York",
         zip: "10012",
-        image : []
+        image : [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Arlene's Grocery",
@@ -25,7 +26,8 @@ export const VENUES = [
         restroomKey: false,
         restroomsComment: "one on first floor",
         overallComment: "no elevators, bands play in basement. Will have to be carried.",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Baby's All Right",
@@ -35,7 +37,8 @@ export const VENUES = [
         state: "New York",
         zip: "11211",
         rampComment: "single floor venue",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Brooklyn Bazaar",
@@ -53,7 +56,8 @@ export const VENUES = [
         restroomKey: false,
         restroomsComment: "one on first floor",
         overallComment: "no elevators, sometimes bands play fourth floor. Will have to be carried.",
-        image: ["../assets/images/venues/Brooklyn Bazaar/BK-Bazaar-Outside.jpg"]
+        image: ["../assets/images/venues/Brooklyn Bazaar/BK-Bazaar-Outside.jpg"],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Brooklyn Bowl",
@@ -94,7 +98,8 @@ export const VENUES = [
             "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl20.jpg",
             "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl21.jpg",
             "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl22.jpg",            
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Brooklyn Steel",
@@ -108,7 +113,8 @@ export const VENUES = [
         elevator: true,
         ramps: true,
         rampComment: "accessible entrances",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Forest Hills Stadium",
@@ -117,7 +123,8 @@ export const VENUES = [
         city: "Queens",
         state: "NY",
         zip: "11375",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Great Hill (Central Park)",
@@ -157,7 +164,8 @@ export const VENUES = [
         city: "New York",
         state: "New York",
         zip: "10001",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Industry City",
@@ -186,7 +194,8 @@ export const VENUES = [
             "../assets/images/venues/Industry City/Industry-City8.jpg",
             "../assets/images/venues/Industry City/Industry-City9.jpg",
             "../assets/images/venues/Industry City/Industry-City10.jpg",
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Joe's Pub",
@@ -206,7 +215,8 @@ export const VENUES = [
             "../assets/images/venues/Joe's Pub/Joes-Pub2.jpg",
             "../assets/images/venues/Joe's Pub/Joes-Pub3.jpg",
             "../assets/images/venues/Joe's Pub/Joes-Pub4.jpg"
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "King's Theater",
@@ -216,7 +226,8 @@ export const VENUES = [
         state: "NY",
         zip: "11226",
         elevator: false,
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "The Knitting Factory - Brooklyn",
@@ -250,7 +261,8 @@ export const VENUES = [
             "../assets/images/venues/Knitting Factory/Knitting-Factory13.jpg",
             "../assets/images/venues/Knitting Factory/Knitting-Factory14.jpg",
             "../assets/images/venues/Knitting Factory/Knitting-Factory15.jpg",
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Market Hotel",
@@ -260,7 +272,8 @@ export const VENUES = [
         state: "NY",
         zip: "11221",
         ramps: false,
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Music Hall of Williamsburg",
@@ -278,7 +291,8 @@ export const VENUES = [
         restroomKey: false,
         restroomsComment: "accessible stalls",
         overallComment: "multi-level venue, with access to view show above main floor",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Rockwood Music Hall",
@@ -304,7 +318,8 @@ export const VENUES = [
             "../assets/images/venues/Rockwood/Rockwood5.jpg",
             "../assets/images/venues/Rockwood/Rockwood6.jpg",
             "../assets/images/venues/Rockwood/Rockwood7.jpg",
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Rough Trade NYC",
@@ -337,7 +352,8 @@ export const VENUES = [
             "../assets/images/venues/Rough Trade/Rough-TradeBK12.jpg",
             "../assets/images/venues/Rough Trade/Rough-TradeBK13.jpg",
             "../assets/images/venues/Rough Trade/Rough-TradeBK14.jpg",
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Saint Vitus Bar",
@@ -346,7 +362,8 @@ export const VENUES = [
         city: "Brooklyn",
         state: "NY",
         zip: "11222",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Shea Stadium",
@@ -356,7 +373,8 @@ export const VENUES = [
         state: "NY",
         zip: "11206",
         elevator: false,
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Sunnyvale BK",
@@ -368,7 +386,8 @@ export const VENUES = [
         elevator: false,
         ramps: true,
         rampComment: "single floor venue",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "The Bell House",
@@ -380,7 +399,8 @@ export const VENUES = [
         elevator: false,
         ramps: true,
         rampComment: "single floor venue",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "The Gutter - Brooklyn",
@@ -404,7 +424,8 @@ export const VENUES = [
             "../assets/images/venues/The Gutter-BK/Gutter-BK3.jpg",
             "../assets/images/venues/The Gutter-BK/Gutter-BK4.jpg",
             "../assets/images/venues/The Gutter-BK/Gutter-BK5.jpg",
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "The Kingsland Bar",
@@ -416,7 +437,8 @@ export const VENUES = [
         elevator: false,
         ramps: false,
         rampComment: "single floor venue, but one step to get in",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "The Mercury Lounge",
@@ -444,7 +466,8 @@ export const VENUES = [
             "../assets/images/venues/Mercury Lounge/Mercury-Lounge7.jpg",
             "../assets/images/venues/Mercury Lounge/Mercury-Lounge8.jpg",
             "../assets/images/venues/Mercury Lounge/Mercury-Lounge9.jpg",
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },  
     {
         name: "Union Hall",
@@ -477,7 +500,8 @@ export const VENUES = [
             "../assets/images/venues/Union Hall/Union-Hall13.jpg",
             "../assets/images/venues/Union Hall/Union-Hall14.jpg",
             "../assets/images/venues/Union Hall/Union-Hall15.jpg"
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     }, 
     {
         name: "Union Pool",
@@ -505,7 +529,8 @@ export const VENUES = [
             "../assets/images/venues/Union Pool/Union-Pool7.jpg",
             "../assets/images/venues/Union Pool/Union-Pool8.jpg",
             
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Webster Hall",
@@ -514,7 +539,8 @@ export const VENUES = [
         city: "New York",
         state: "NY",
         zip: "10003",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     }
 ]
 
