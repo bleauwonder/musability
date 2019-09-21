@@ -1,39 +1,39 @@
 import React, { Component } from 'react';
 import Carousel, { ParallaxImage, isTinder } from 'react-native-snap-carousel';
 import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
-import VENUES from '../components/venueJSON'
 import PropTypes from 'prop-types';
-import styles, { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
-import { Card, Button, Rating } from 'react-native-elements';
-import { ENTRIES1, ENTRIES3 } from '../static/entries';
+import styles from '../src/style/SliderEntry.style';
+import { VENUES, image } from '../components/venueJSON';
+
 
 
 
 export class ImageCarousel extends Component {
 
     static propTypes = {
-        data: PropTypes.object,
+        data: PropTypes.array,
         even: PropTypes.bool,
         parallax: PropTypes.bool,
-        parallaxProps: PropTypes.object
+        parallaxProps: PropTypes.object,
+        image: PropTypes.array
     };
     
     get image () {
-        const { data: { illustration }, parallax, parallaxProps, even } = this.props;
+        const { data: { image }, parallax, parallaxProps, even } = this.props;
 
         return parallax ? (
             <ParallaxImage
-              source={{ uri: illustration }}
-              // containerStyle={[styles.imageContainer, even ? styles.imageContainerEven : {}]}
+              source={{ uri: image }}
+              containerStyle={[styles.imageContainer, even ? styles.imageContainerEven : {}]}
               style={styles.image}
               parallaxFactor={0.35}
               showSpinner={true}
-              // spinnerColor={even ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.25)'}
+              spinnerColor={even ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.25)'}
               {...parallaxProps}
             />
         ) : (
             <Image
-              source={{ uri: illustration }}
+              source={{ uri: image }}
               style={styles.image}
             />
         );

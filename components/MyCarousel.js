@@ -28,7 +28,7 @@ export class MyCarousel extends Component {
         renderModalContent = (type) => (
             <View style={styles.modalContent}>  
                 <ImageCarousel
-                  data={ENTRIES1}
+                  data={VENUES}
                   renderItem={isTinder ? this._renderLightItem : this._renderItem}
                   sliderWidth={sliderWidth}
                   itemWidth={itemWidth}
@@ -43,8 +43,8 @@ export class MyCarousel extends Component {
                   type='custom'
                   ratingImage={MUSIC_IMAGE}
                   onFinishRating={this.ratingCompleted}
-                  ratingColor='#000'
-                  ratingBackgroundColor='#800022'
+                  ratingColor='#800022'
+                  ratingBackgroundColor='#fff'
                   ratingCount={5}
                   imageSize={20}
                   style={{ paddingVertical: 10 }}

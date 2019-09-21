@@ -7,7 +7,7 @@ export const VENUES = [
         venue: "(le) poisson rouge",
         href: "https://lpr.com/",
         address: "158 Bleecker St, New York, NY 10012",
-        image : []
+        image : ["https://i.imgur.com/l49aYS3l.jpg"]
     },
     {
         venue: "Arlene's Grocery",
@@ -22,7 +22,7 @@ export const VENUES = [
         restroomKey: false,
         restroomsComment: "one on first floor",
         overallComment: "no elevators, bands play in basement. Will have to be carried.",
-        image: []
+        image: ["https://i.imgur.com/pewusMzl.jpg"]
     },
     {
         venue: "Baby's All Right",
