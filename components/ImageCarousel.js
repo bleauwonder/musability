@@ -33,7 +33,7 @@ export class ImageCarousel extends Component {
             />
         ) : (
             <Image
-              source={{ uri: 'https://i.imgur.com/l49aYS3l.jpg' }}
+              source={{ uri: 'https://www.billboard.com/files/styles/article_main_image/public/media/le-poisson-rouge-2018-billboard-1548.jpg' }}
               style={styles.image}
             />
         );
