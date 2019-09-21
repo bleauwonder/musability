@@ -3,7 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://vw-jmb.anonymous.musability.exp.direct",
+  "packagerNgrokUrl": "https://packager.vw-jmb.anonymous.musability.exp.direct",
+  "ngrokPid": 40123
 }
