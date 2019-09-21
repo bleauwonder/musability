@@ -97,7 +97,7 @@ export default StyleSheet.create({
         color: 'rgba(255, 255, 255, 0.7)'
     },
     // MODAL STYLE
-    content: {
+    modalContent: {
       backgroundColor: 'white',
       padding: 22,
       justifyContent: 'center',

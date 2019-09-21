@@ -4,9 +4,17 @@ import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'rea
 import VENUES from '../components/venueJSON'
 import PropTypes from 'prop-types';
 import styles from '../src/style/SliderEntry.style';
+import Modal from "react-native-modal";
+import ModalContent, {renderModalContent} from '../components/ModalContent';
+import { Card, Button, Rating } from 'react-native-elements';
+import { Col, Row, Grid } from 'react-native-easy-grid';
 
 
 export class MyCarousel extends Component {
+
+    state = {
+        visibleModalId: null,
+      };
 
     static propTypes = {
         data: PropTypes.object,
@@ -14,6 +22,24 @@ export class MyCarousel extends Component {
         parallax: PropTypes.bool,
         parallaxProps: PropTypes.object
     };
+
+
+        renderModalContent = () => (
+            <View style={styles.modalContent}>  
+                <Text>IMAGES</Text>
+                <Text>Rating</Text>
+                <Text># of Reviews</Text>
+                <Text>Description</Text>
+                <Text>Reviews</Text>
+
+                <Button
+                onPress={() => this.setState({ visibleModal: null })}
+                type="outline"
+                title="Close"
+                />
+            </View> 
+        );
+        
 
     get image () {
         const { data: { illustration }, parallax, parallaxProps, even } = this.props;
@@ -32,6 +58,7 @@ export class MyCarousel extends Component {
             <Image
               source={{ uri: illustration }}
               style={styles.image}
+            //   onPress={() => this.setState({ visibleModal: 'fancy' })}
             />
         );
     }
@@ -53,12 +80,26 @@ export class MyCarousel extends Component {
               activeOpacity={1}
               style={styles.slideInnerContainer}
             //   add modal here
-            //   onPress={() => { alert(`You've clicked '${title}'`); }}
+              onPress={() => this.setState({ visibleModal: 'fancy' })}
               >
+                <Modal
+                    isVisible={this.state.visibleModal === 'fancy'}
+                    backdropColor="#8e2138"
+                    backdropOpacity={0.8}
+                    animationIn="zoomInDown"
+                    animationOut="zoomOutUp"
+                    animationInTiming={600}
+                    animationOutTiming={600}
+                    backdropTransitionInTiming={600}
+                    backdropTransitionOutTiming={600}
+                    >
+
+                    {this.renderModalContent()}
+                </Modal> 
                 <View style={styles.shadow} />
                 <View style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>
                     { this.image }
-                    <View style={[styles.radiusMask, even ? styles.radiusMaskEven : {}]} />
+                <View style={[styles.radiusMask, even ? styles.radiusMaskEven : {}]} />
                 </View>
                 <View style={[styles.textContainer, even ? styles.textContainerEven : {}]}>
                     { uppercaseTitle }

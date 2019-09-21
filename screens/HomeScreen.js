@@ -12,17 +12,18 @@ import {
   Dimensions,
   TextInput
 } from 'react-native';
-import Carousel, { props } from 'react-native-snap-carousel';
+import Carousel, { props, visibleModal, renderModalContent } from 'react-native-snap-carousel';
 import MyCarousel from '../components/MyCarousel'
 import { LinearGradient } from 'expo-linear-gradient';
 import { Card, Button, Rating } from 'react-native-elements';
 import styles, { colors } from '../src/style/index.style'
 import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import { ENTRIES1, ENTRIES3 } from '../static/entries';
-import { VENUES } from '../components/venueJSON'
+import { VENUES } from '../components/venueJSON';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import Modal from "react-native-modal";
-import ModalContent from '../components/ModalContent'
+import ModalContent from '../components/ModalContent';
+// import ModalContent from '../components/ModalContent'
 // import * as firebase from 'firebase';
 
 const IS_ANDROID = Platform.OS === 'android';
@@ -40,19 +41,10 @@ export default class HomeScreen extends Component {
     };
 }
 
-renderModalContent = () => (
-  <View>  
-      <Text>Review</Text>
-      <Button
-        onPress={() => this.setState({ visibleModal: null })}
-        title="Close"
-      />
-  </View> 
-);
 
 
 _renderItem ({item, index}) {
-    return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
+    return <MyCarousel data={item} even={(index + 1) % 2 === 0} onPress={visibleModal}/>;
 }
 
 _renderItemWithParallax ({item, index}, parallaxProps) {
@@ -79,7 +71,7 @@ _renderDarkItem ({item, index}) {
     const isTinder = type === 'tinder';
       return (
         <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
-          <Text style={[styles.title, isTinder ? {} : styles.titleDark]}                   onPress={() => this.setState({ visibleModal: 'fancy' })} > 
+          <Text style={[styles.title, isTinder ? {} : styles.titleDark]}  > 
             {`Brooklyn`}
           </Text>
           <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
@@ -93,21 +85,8 @@ _renderDarkItem ({item, index}) {
                   contentContainerCustomStyle={styles.sliderContentContainer}
                   layout={type}
                   loop={true}
+                  onPress={visibleModal}
             />
-
-          <Modal
-            isVisible={this.state.visibleModal === 'fancy'}
-            backdropColor="#8e2138"
-            backdropOpacity={0.8}
-            animationIn="zoomInDown"
-            animationOut="zoomOutUp"
-            animationInTiming={600}
-            animationOutTiming={600}
-            backdropTransitionInTiming={600}
-            backdropTransitionOutTiming={600}
-          >
-            {this.renderModalContent()}
-          </Modal>
         </View>
         );
     };
@@ -131,6 +110,7 @@ _renderDarkItem ({item, index}) {
                     contentContainerCustomStyle={styles.sliderContentContainer}
                     layout={type}
                     loop={true}
+                    onPress={visibleModal}
               />
           </View>
           );
