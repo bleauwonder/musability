@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
-import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
+import Carousel, { ParallaxImage, isTinder, tinder } from 'react-native-snap-carousel';
 import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
 import VENUES from '../components/venueJSON'
 import PropTypes from 'prop-types';
-import styles from '../src/style/SliderEntry.style';
-import connectToFirebase from '../utils/firebase';
+import styles, { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
+import Modal from "react-native-modal";
+import { ENTRIES1, ENTRIES3 } from '../static/entries';
+import { Card, Button, Rating } from 'react-native-elements';
+import { Col, Row, Grid } from 'react-native-easy-grid';
+import MUSIC_IMAGE from '../assets/images/musicnote.png';
+import ImageCarousel from '../components/ImageCarousel';
 
 
-
-export class MyCarousel extends Component {
-    constructor(props) {
-        super(props);
-    }
+export class MyCarousel extends Component {    
+    state = {
+        visibleModalId: null,
+      };
 
     static propTypes = {
         data: PropTypes.object,
@@ -20,13 +24,51 @@ export class MyCarousel extends Component {
         parallaxProps: PropTypes.object
     };
 
+
+        renderModalContent = (type) => (
+            <View style={styles.modalContent}>  
+                <ImageCarousel
+                  data={VENUES}
+                  renderItem={isTinder ? this._renderLightItem : this._renderItem}
+                  sliderWidth={sliderWidth}
+                  itemWidth={itemWidth}
+                  containerCustomStyle={styles.slider}
+                  contentContainerCustomStyle={styles.sliderContentContainer}
+                  layout={type === 'tinder'}
+                  loop={true}
+                   />
+
+                <Text>RATING</Text>
+                <Rating
+                  type='custom'
+                  ratingImage={MUSIC_IMAGE}
+                  onFinishRating={this.ratingCompleted}
+                  ratingColor='#800022'
+                  ratingBackgroundColor='#fff'
+                  ratingCount={5}
+                  imageSize={20}
+                  style={{ paddingVertical: 10 }}
+                  />
+
+                <Text>Description</Text>
+                
+                <Text>Reviews</Text>
+
+                <Button
+                onPress={() => this.setState({ visibleModal: null })}
+                type="outline"
+                title="Close"
+                />
+            </View> 
+        );
+        
+
     get image () {
-        // const { data: { illustration }, parallax, parallaxProps, even } = this.props;
-        const { data: { image }, parallax, parallaxProps, even } = this.props;
-           
+        const { data: { baseImage }, parallax, parallaxProps, even } = this.props;
+
         return parallax ? (
             <ParallaxImage
-              source={{ uri: this.props.image[0] }}
+              source={{ uri: baseImage }}
               containerStyle={[styles.imageContainer, even ? styles.imageContainerEven : {}]}
               style={styles.image}
               parallaxFactor={0.35}
@@ -36,7 +78,7 @@ export class MyCarousel extends Component {
             />
         ) : (
             <Image
-              source={{ uri: image }}
+              source={{ uri: baseImage }}
               style={styles.image}
             />
         );
@@ -59,12 +101,26 @@ export class MyCarousel extends Component {
               activeOpacity={1}
               style={styles.slideInnerContainer}
             //   add modal here
-            //   onPress={() => { alert(`You've clicked '${title}'`); }}
+              onPress={() => this.setState({ visibleModal: 'fancy' })}
               >
+                <Modal
+                    isVisible={this.state.visibleModal === 'fancy'}
+                    backdropColor="#8e2138"
+                    backdropOpacity={0.8}
+                    animationIn="zoomInDown"
+                    animationOut="zoomOutUp"
+                    animationInTiming={600}
+                    animationOutTiming={600}
+                    backdropTransitionInTiming={600}
+                    backdropTransitionOutTiming={600}
+                    >
+
+                    {this.renderModalContent()}
+                </Modal> 
                 <View style={styles.shadow} />
                 <View style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>
                     { this.image }
-                    <View style={[styles.radiusMask, even ? styles.radiusMaskEven : {}]} />
+                <View style={[styles.radiusMask, even ? styles.radiusMaskEven : {}]} />
                 </View>
                 <View style={[styles.textContainer, even ? styles.textContainerEven : {}]}>
                     { uppercaseTitle }
@@ -79,17 +135,6 @@ export class MyCarousel extends Component {
         );
     }
 };
-
-
-
-// original code from before 
-    // _renderItem ({item, index}) {
-    //     return (
-    //         <View style={styles.slide}>
-    //             <Text style={styles.title}>{ item.title }</Text>
-    //         </View>
-    //     );
-    // }
 
 export default MyCarousel;
 

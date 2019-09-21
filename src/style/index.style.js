@@ -150,23 +150,24 @@ export default StyleSheet.create({
       backgroundColor: 'transparent'
       },
     title: {
-        paddingHorizontal: 30,
+        // paddingHorizontal: 30,
         padding: 5,
-        backgroundColor: 'transparent',
-        color: 'rgba(255, 255, 255, 0.9)',
+        color: 'rgb(255, 255, 255)',
+        backgroundColor: colors.background2,
         fontSize: 20,
         fontWeight: 'bold',
         // fontStyle: 'italic',
         textAlign: 'center',
         textTransform: 'uppercase',
         letterSpacing: 1,
-        borderStyle: 'solid',
-        borderWidth: 1.5,
-        borderRadius: 10,
-        borderColor: 'white'
+        // borderStyle: 'solid',
+        // borderWidth: 1.5,
+        // borderRadius: 20,
+        // borderColor: colors.background2
     },
     titleDark: {
-      color: colors.white
+      // color: 'rgb(255, 255, 255)',
+      // backgroundColor: colors.background2,
     },
     subtitle: {
         marginTop: 5,
@@ -183,16 +184,17 @@ export default StyleSheet.create({
     },
     //not this
     sliderContentContainer: {
-        paddingVertical: 10 // for custom animation
+        paddingVertical: 5 // for custom animation
     },
     //not this
     paginationContainer: {
-        paddingVertical: 8
+        paddingVertical: 5
     },
     paginationDot: {
         width: 8,
         height: 8,
         borderRadius: 4,
-        marginHorizontal: 8
-    }
+        marginHorizontal: 5
+    },
+
 });
