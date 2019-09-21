@@ -77,7 +77,7 @@ _renderDarkItem ({item, index}) {
           <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
           </Text>
             <Carousel
-                  data={ENTRIES1}
+                  data={VENUES}
                   renderItem={isTinder ? this._renderLightItem : this._renderItem}
                   sliderWidth={sliderWidth}
                   itemWidth={itemWidth}
@@ -102,7 +102,7 @@ _renderDarkItem ({item, index}) {
             <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
             </Text>
               <Carousel
-                    data={ENTRIES3}
+                    data={VENUES}
                     renderItem={isTinder ? this._renderLightItem : this._renderItem}
                     sliderWidth={sliderWidth}
                     itemWidth={itemWidth}

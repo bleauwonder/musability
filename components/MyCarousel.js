@@ -55,11 +55,11 @@ export class MyCarousel extends Component {
         
 
     get image () {
-        const { data: { illustration }, parallax, parallaxProps, even } = this.props;
+        const { data: { baseImage }, parallax, parallaxProps, even } = this.props;
 
         return parallax ? (
             <ParallaxImage
-              source={{ uri: illustration }}
+              source={{ uri: baseImage }}
               containerStyle={[styles.imageContainer, even ? styles.imageContainerEven : {}]}
               style={styles.image}
               parallaxFactor={0.35}
@@ -69,7 +69,7 @@ export class MyCarousel extends Component {
             />
         ) : (
             <Image
-              source={{ uri: illustration }}
+              source={{ uri: baseImage }}
               style={styles.image}
             //   onPress={() => this.setState({ visibleModal: 'fancy' })}
             />
@@ -77,14 +77,14 @@ export class MyCarousel extends Component {
     }
 
     render () {
-        const { data: { title, subtitle }, even } = this.props;
+        const { data: { name, overallRating }, even } = this.props;
 
-        const uppercaseTitle = title ? (
+        const uppercaseTitle = name ? (
             <Text
               style={[styles.title, even ? styles.titleEven : {}]}
               numberOfLines={2}
             >
-                { title.toUpperCase() }
+                { name.toUpperCase() }
             </Text>
         ) : false;
 
@@ -120,7 +120,7 @@ export class MyCarousel extends Component {
                       style={[styles.subtitle, even ? styles.subtitleEven : {}]}
                       numberOfLines={2}
                     >
-                        { subtitle }
+                        { overallRating }
                     </Text>
                 </View>
             </TouchableOpacity>

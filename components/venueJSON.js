@@ -1,18 +1,22 @@
-// import { url } from "inspector";
-// import { URL } from "url";
-
 
 export const VENUES = [
     {
-        venue: "(le) poisson rouge",
+        name: "(le) poisson rouge",
         href: "https://lpr.com/",
-        address: "158 Bleecker St, New York, NY 10012",
-        image : []
+        address: "158 Bleecker St",
+        city: "New York",
+        state: "New York",
+        zip: "10012",
+        image : [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Arlene's Grocery",
+        name: "Arlene's Grocery",
         href: "https://www.arlenesgrocery.net/",
-        address: "95 Stanton St, New York, NY 10002",
+        address: "95 Stanton St",
+        city: "New York",
+        state: "New York",
+        zip: "10002",
         overallRating: '3/5',
         anonymityRating: '2/5',
         elevator: false,
@@ -22,19 +26,27 @@ export const VENUES = [
         restroomKey: false,
         restroomsComment: "one on first floor",
         overallComment: "no elevators, bands play in basement. Will have to be carried.",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Baby's All Right",
+        name: "Baby's All Right",
         href: "http://babysallright.com/",
-        address: "146 Broadway, Brooklyn, NY 11211",
+        address: "146 Broadway",
+        city: "Brooklyn",
+        state: "New York",
+        zip: "11211",
         rampComment: "single floor venue",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Brooklyn Bazaar",
+        name: "Brooklyn Bazaar",
         href: "https://bkbazaar.com/",
-        address: "150 Greenpoint Ave, Brooklyn, NY 11222",
+        address: "150 Greenpoint Ave",
+        city: "Brooklyn",
+        state: "New York",
+        zip: "11222",
         overallRating: "4/5",
         anonymityRating: "1/5",
         elevator: false,
@@ -44,12 +56,16 @@ export const VENUES = [
         restroomKey: false,
         restroomsComment: "one on first floor",
         overallComment: "no elevators, sometimes bands play fourth floor. Will have to be carried.",
-        image: ["../assets/images/venues/Brooklyn Bazaar/BK-Bazaar-Outside.jpg"]
+        image: ["../assets/images/venues/Brooklyn Bazaar/BK-Bazaar-Outside.jpg"],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Brooklyn Bowl",
+        name: "Brooklyn Bowl",
         href: "https://www.brooklynbowl.com/brooklyn/",
-        address: "61 Wythe Ave, Brooklyn, NY 11249",
+        address: "61 Wythe Ave",
+        city: "Brooklyn",
+        state: "New York",
+        zip: "11249",
         overallRating: "5/5",
         anonymityRating: "5/5",
         elevator: false,    
@@ -82,29 +98,41 @@ export const VENUES = [
             "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl20.jpg",
             "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl21.jpg",
             "../assets/images/venues/Brooklyn Bowl/Brooklyn-Bowl22.jpg",            
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Brooklyn Steel",
+        name: "Brooklyn Steel",
         href: "https://www.bowerypresents.com/venues/brooklyn-steel",
-        address: "319 Frost Street, Brooklyn, NY 11222",
+        address: "319 Frost Street",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11222",
         overallRating: "5/5",
         anonymityRating: "4/5",
         elevator: true,
         ramps: true,
         rampComment: "accessible entrances",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Forest Hills Stadium",
+        name: "Forest Hills Stadium",
         href: "http://foresthillsstadium.com/",
-        address: "1 Tennis Place, Queens, NY 11375",
-        image: []
+        address: "1 Tennis Place",
+        city: "Queens",
+        state: "NY",
+        zip: "11375",
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Great Hill (Central Park)",
+        name: "Great Hill (Central Park)",
         href: "http://www.centralparknyc.org/things-to-see-and-do/attractions/great-hill.html",
-        address: "Great Hill, New York, NY 10025",
+        address: "Great Hill",
+        city: "New York",
+        state: "NY",
+        zip: "10025",
         overallRating: "3/5",
         anonymityRating: "4/5",
         elevator: false,
@@ -130,15 +158,22 @@ export const VENUES = [
         ] 
     },
     {
-        venue: "Hammerstein Ballroom",
+        name: "Hammerstein Ballroom",
         href: "https://mc34.com/",
-        address: "311 W 34th St, New York, NY 10001",
-        image: []
+        address: "311 W 34th St",
+        city: "New York",
+        state: "New York",
+        zip: "10001",
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Industry City",
+        name: "Industry City",
         href: "https://industrycity.com/",
-        address: "220 36th St, Brooklyn, NY 11232",
+        address: "220 36th St",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11232",
         overallRating: "4/5",
         anonymityRating: "4/5",
         elevator: false,
@@ -159,12 +194,16 @@ export const VENUES = [
             "../assets/images/venues/Industry City/Industry-City8.jpg",
             "../assets/images/venues/Industry City/Industry-City9.jpg",
             "../assets/images/venues/Industry City/Industry-City10.jpg",
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Joe's Pub",
+        name: "Joe's Pub",
         href: "https://publictheater.org/programs/joes-pub/",
-        address: "425 Lafayette Street New York, NY 10003",
+        address: "425 Lafayette Street",
+        city: "New York",
+        state: "NY",
+        zip: "10003",
         overallRating: "4/5",
         anonymityRating: "3/5",
         elevator: false,
@@ -176,19 +215,27 @@ export const VENUES = [
             "../assets/images/venues/Joe's Pub/Joes-Pub2.jpg",
             "../assets/images/venues/Joe's Pub/Joes-Pub3.jpg",
             "../assets/images/venues/Joe's Pub/Joes-Pub4.jpg"
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "King's Theater",
+        name: "King's Theater",
         href: "http://www.kingstheatre.com/",
-        address: "1027 Flatbush Ave, Brooklyn, NY 11226",
+        address: "1027 Flatbush Ave",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11226",
         elevator: false,
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "The Knitting Factory - Brooklyn",
+        name: "The Knitting Factory - Brooklyn",
         href: "https://bk.knittingfactory.com/",
-        address: "361 Metropolitan Ave, Brooklyn, NY 11211",
+        address: "361 Metropolitan Ave",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11211",
         overallRating: "4/5",
         anonymityRating: "4/5",
         elevator: false,
@@ -214,19 +261,27 @@ export const VENUES = [
             "../assets/images/venues/Knitting Factory/Knitting-Factory13.jpg",
             "../assets/images/venues/Knitting Factory/Knitting-Factory14.jpg",
             "../assets/images/venues/Knitting Factory/Knitting-Factory15.jpg",
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Market Hotel",
+        name: "Market Hotel",
         href: "https://www.markethotel.org/",
-        address: "1140 Myrtle Ave, Brooklyn, NY 11221",
+        address: "1140 Myrtle Ave",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11221",
         ramps: false,
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Music Hall of Williamsburg",
+        name: "Music Hall of Williamsburg",
         href: "https://www.musichallofwilliamsburg.com/",
-        address: "66 North 6th Street, Brooklyn, NY 11211",
+        address: "66 North 6th Street",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11211",
         overallRating: "3/5",
         anonymityRating: "3/5",
         elevator: true,
@@ -236,12 +291,16 @@ export const VENUES = [
         restroomKey: false,
         restroomsComment: "accessible stalls",
         overallComment: "multi-level venue, with access to view show above main floor",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Rockwood Music Hall",
+        name: "Rockwood Music Hall",
         href: "http://www.rockwoodmusichall.com/",
-        address: "196 Allen St, New York, NY 10002",
+        address: "196 Allen St",
+        city: "New York",
+        state: "NY",
+        zip: "10002",
         overallRating: "4/5",
         anonymityRating: "2/5",
         elevator: true,
@@ -259,12 +318,16 @@ export const VENUES = [
             "../assets/images/venues/Rockwood/Rockwood5.jpg",
             "../assets/images/venues/Rockwood/Rockwood6.jpg",
             "../assets/images/venues/Rockwood/Rockwood7.jpg",
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Rough Trade NYC",
+        name: "Rough Trade NYC",
         href: "https://www.roughtradenyc.com/",
-        address: "64 N 9th St, Brooklyn, NY 11249",
+        address: "64 N 9th St",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11249",
         overallRating: "3/5",
         anonymityRating: "2/5",
         elevator: false,
@@ -289,43 +352,63 @@ export const VENUES = [
             "../assets/images/venues/Rough Trade/Rough-TradeBK12.jpg",
             "../assets/images/venues/Rough Trade/Rough-TradeBK13.jpg",
             "../assets/images/venues/Rough Trade/Rough-TradeBK14.jpg",
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Saint Vitus Bar",
+        name: "Saint Vitus Bar",
         href: "https://www.saintvitusbar.com/",
-        address: "1120 Manhattan Ave, Brooklyn, NY 11222",
-        image: []
+        address: "1120 Manhattan Ave",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11222",
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Shea Stadium",
+        name: "Shea Stadium",
         href: "http://liveatsheastadium.com/",
-        address: "20 Meadow St, Brooklyn, NY 11206",
+        address: "20 Meadow St",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11206",
         elevator: false,
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Sunnyvale BK",
+        name: "Sunnyvale BK",
         href: "https://www.sunnyvalebk.com/",
-        address: "1031 Grand St, Brooklyn, NY 11211",
+        address: "1031 Grand St",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11211",
         elevator: false,
         ramps: true,
         rampComment: "single floor venue",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "The Bell House",
+        name: "The Bell House",
         href: "https://www.thebellhouseny.com/",
-        address: "149 7th St, Brooklyn, NY 11215",
+        address: "149 7th St",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11215",
         elevator: false,
         ramps: true,
         rampComment: "single floor venue",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "The Gutter - Brooklyn",
+        name: "The Gutter - Brooklyn",
         href: "https://www.thegutterbrooklyn.com/",
-        address: "200 N 14th St, Brooklyn, NY 11211",
+        address: "200 N 14th St",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11211",
         overallRating: "3/5",
         anonymityRating: "4/5",
         elevator: false,
@@ -341,21 +424,29 @@ export const VENUES = [
             "../assets/images/venues/The Gutter-BK/Gutter-BK3.jpg",
             "../assets/images/venues/The Gutter-BK/Gutter-BK4.jpg",
             "../assets/images/venues/The Gutter-BK/Gutter-BK5.jpg",
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "The Kingsland Bar",
+        name: "The Kingsland Bar",
         href: "http://kingslandbk.com/",
-        address: "269 Norman Ave, Brooklyn, NY 11222",
+        address: "269 Norman Ave",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11222",
         elevator: false,
         ramps: false,
         rampComment: "single floor venue, but one step to get in",
-        image: []
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "The Mercury Lounge",
+        name: "The Mercury Lounge",
         href: "http://www.mercuryeastpresents.com/mercurylounge",
-        address: "217 E Houston St, New York, NY 10002",
+        address: "217 E Houston St",
+        city: "New York",
+        state: "NY",
+        zip: "10002",
         overallRating: "4/5",
         anonymityRating: "4/5",
         elevator: false,
@@ -375,12 +466,16 @@ export const VENUES = [
             "../assets/images/venues/Mercury Lounge/Mercury-Lounge7.jpg",
             "../assets/images/venues/Mercury Lounge/Mercury-Lounge8.jpg",
             "../assets/images/venues/Mercury Lounge/Mercury-Lounge9.jpg",
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },  
     {
-        venue: "Union Hall",
+        name: "Union Hall",
         href: "https://www.unionhallny.com/",
-        address: "702 Union St, Brooklyn, NY 11215",
+        address: "702 Union St",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11215",
         overallRating: "2/5",
         anonymityRating: "1/5",
         elevator: false,
@@ -405,12 +500,16 @@ export const VENUES = [
             "../assets/images/venues/Union Hall/Union-Hall13.jpg",
             "../assets/images/venues/Union Hall/Union-Hall14.jpg",
             "../assets/images/venues/Union Hall/Union-Hall15.jpg"
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     }, 
     {
-        venue: "Union Pool",
+        name: "Union Pool",
         href: "https://www.union-pool.com/",
-        address: "484 Union Ave, Brooklyn, NY 11211",
+        address: "484 Union Ave",
+        city: "Brooklyn",
+        state: "NY",
+        zip: "11211",
         overallRating: "3/5",
         anonymityRating: "3/5",
         elevator: false,
@@ -430,13 +529,18 @@ export const VENUES = [
             "../assets/images/venues/Union Pool/Union-Pool7.jpg",
             "../assets/images/venues/Union Pool/Union-Pool8.jpg",
             
-        ]
+        ],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
-        venue: "Webster Hall",
+        name: "Webster Hall",
         href: "https://websterhall.com/",
-        address: "125 E. 11th Street, New York, NY 10003",
-        image: []
+        address: "125 E. 11th Street",
+        city: "New York",
+        state: "NY",
+        zip: "10003",
+        image: [],
+        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
     }
 ]
 
