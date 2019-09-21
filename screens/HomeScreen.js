@@ -12,15 +12,18 @@ import {
   Dimensions,
   TextInput
 } from 'react-native';
-import Carousel, { props } from 'react-native-snap-carousel';
+import Carousel, { props, visibleModal, renderModalContent } from 'react-native-snap-carousel';
 import MyCarousel from '../components/MyCarousel'
 import { LinearGradient } from 'expo-linear-gradient';
 import { Card, Button, Rating } from 'react-native-elements';
 import styles, { colors } from '../src/style/index.style'
 import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
-import { ENTRIES1, ENTRIES2, ENTRIES3, ENTRIES4 } from '../static/entries';
-import { VENUES } from '../components/venueJSON'
+import { ENTRIES1, ENTRIES3 } from '../static/entries';
+import { VENUES } from '../components/venueJSON';
 import { Col, Row, Grid } from 'react-native-easy-grid';
+import Modal from "react-native-modal";
+import ModalContent from '../components/ModalContent';
+// import ModalContent from '../components/ModalContent'
 // import * as firebase from 'firebase';
 
 const IS_ANDROID = Platform.OS === 'android';
@@ -33,12 +36,15 @@ export default class HomeScreen extends Component {
   constructor (props) {
     super(props);
     this.state = {
-        slider1ActiveSlide: SLIDER_1_FIRST_ITEM
+        slider1ActiveSlide: SLIDER_1_FIRST_ITEM,
+        visibleModalId: null,
     };
 }
 
+
+
 _renderItem ({item, index}) {
-    return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
+    return <MyCarousel data={item} even={(index + 1) % 2 === 0} onPress={visibleModal}/>;
 }
 
 _renderItemWithParallax ({item, index}, parallaxProps) {
@@ -60,28 +66,12 @@ _renderDarkItem ({item, index}) {
     return <MyCarousel data={item} even={true} />;
 }
 
-// THIS IS STILL TO BE COMMENTED OUT 
-  // _renderItem ({item, index}) {
-  //   return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
-  // }
-  //       database.ref('/venues').on("value", snapshot => {
-  //     console.log("here");
-  //     snapshot.forEach(venue => {
-  //       console.log(venue.val().name);
-  //     })
-
-
-    // }), (errorObject) => {
-    //   console.log("The read failed:" + errorObject.code);
-    // }
-    //ABOVE STILL TO BE COMMENTED OUT 
-      
-      // changing the venue card to what is on the react native card thing 
+// VENUE CARD INFORMATION 
   venueCard (number, title, type) {
     const isTinder = type === 'tinder';
       return (
         <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
-          <Text style={[styles.title, isTinder ? {} : styles.titleDark]}> 
+          <Text style={[styles.title, isTinder ? {} : styles.titleDark]}  > 
             {`Brooklyn`}
           </Text>
           <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
@@ -95,20 +85,12 @@ _renderDarkItem ({item, index}) {
                   contentContainerCustomStyle={styles.sliderContentContainer}
                   layout={type}
                   loop={true}
+                  onPress={visibleModal}
             />
-            {/* <Rating
-                  type='custom'
-                  ratingImage={MUSIC_IMAGE}
-                  onFinishRating={this.ratingCompleted}
-                  ratingColor='#000'
-                  ratingBackgroundColor='#800022'
-                  ratingCount={5}
-                  imageSize={20}
-                  style={{ paddingVertical: 10 }}
-            /> */}
         </View>
         );
     };
+
 
     venueCard2 (number, title, type) {
       const isTinder = type === 'tinder';
@@ -128,17 +110,8 @@ _renderDarkItem ({item, index}) {
                     contentContainerCustomStyle={styles.sliderContentContainer}
                     layout={type}
                     loop={true}
+                    onPress={visibleModal}
               />
-              {/* <Rating
-                    type='custom'
-                    ratingImage={MUSIC_IMAGE}
-                    onFinishRating={this.ratingCompleted}
-                    ratingColor='#000'
-                    ratingBackgroundColor='#800022'
-                    ratingCount={5}
-                    imageSize={20}
-                    style={{ paddingVertical: 10 }}
-              /> */}
           </View>
           );
       };
@@ -186,9 +159,6 @@ _renderDarkItem ({item, index}) {
               buttonStyle={{ borderRadius: 10, marginLeft: 5, marginRight: 0, marginBottom: 0, backgroundColor: '#000000' }}
               title='Search'/>
         </Row>
-{/*
-        <Row>
-        </Row> */}
 
         <Row>
           <SafeAreaView style={styles.safeArea}>
@@ -216,46 +186,5 @@ _renderDarkItem ({item, index}) {
   </ScrollView>
 </View>
   );  
-}
+  }
 };
-
-
-
-            {/* <Carousel
-                ref={(c) => { this._carousel = c; }}
-                data={[{title:"1"}, {title: "2"}, {title: "3"}]}
-                renderItem={(args)=>{
-                  return this._renderItem(args);
-                }}
-                sliderWidth={Dimensions.get('window').width}
-                itemWidth={Dimensions.get('window').width-70}
-                // itemHeight={Dimensions.get('window').height-300}
-                layout={'satack'}
-            /> */}
-
-                      {/* <Text style={styles.titleText}>
-            Brooklyn Sites
-          </Text> */}
-
-                    {/* <Text style={styles.titleText}>
-            Manhattan Venues
-          </Text> */}
-
-
-              /* <Card style={[styles.venueStyle, borderRadius: 20]}}
-                image={require('../assets/images/venues/Rockwood/Rockwood1.jpg')}
-                title='Rockwood Music Hall'>
-                <Rating
-                  type='custom'
-                  ratingImage={MUSIC_IMAGE}
-                  onFinishRating={this.ratingCompleted}
-                  ratingColor='#800022'
-                  ratingBackgroundColor='#c8c7c8'
-                  ratingCount={5}
-                  imageSize={20}
-                  style={{ paddingVertical: 10 }}
-                />
-                {/* <Button
-                  buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor: '#800022' }}
-                  title='VIEW MORE' /> */
-              /* </Card> */
