@@ -7,15 +7,12 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import VENUES from './components/venueJSON';
 import AppNavigator from './navigation/AppNavigator';
-
-
+import connectToFirebase from './utils/firebase';
 
 
 export default function App(props) {
   // react hooks
   const [isLoadingComplete, setLoadingComplete] = useState(false);
-  
-
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (

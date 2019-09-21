@@ -10,31 +10,38 @@ import {
     TouchableOpacity,
     View,
     Dimensions,
-    TextInput
+    TextInput,
+    FlatList
 } from 'react-native';
-import * as firebase from 'firebase';
+import connectToFirebase from '../utils/firebase';
+
+export default class Venues extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            loading: false,
+            venues: [],
+        };
+    }
+    
+    componentDidMount() {
+        connectToFirebase().ref('/venues').on('child_added', snapshot => {
+            const { venues } = this.state;
+            venues.push(snapshot);
+
+            this.setState({ venues });
+            console.log(venues)
+        })
+    }
 
 
-var firebaseConfig = {
-    apiKey: "AIzaSyAHhnWeyBtUHJTtigUNMwQv5naDfNwqoOQ",
-    authDomain: "musability-91b3d.firebaseapp.com",
-    databaseURL: "https://musability-91b3d.firebaseio.com",
-    projectId: "musability-91b3d",
-    storageBucket: "",
-    messagingSenderId: "168169604472",
-    appId: "1:168169604472:web:32bccbafe468799ff2b48d"
-};
-
-// // Initialize Firebase
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
+    render() {
+        const {venues, loading} = this.state;
+        console.log(venues)
+        return venues;
+    }
 
 
-    const database = firebase.database();
-    var fetchedVenues = [];
-    database.ref("/venues").on("child_added", snapshot => {
-        return fetchedVenues.push(snapshot.val());
 
-    }).then(() => this.setState({ venues: fetchedVenues }))
 }
-

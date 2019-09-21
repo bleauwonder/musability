@@ -21,7 +21,9 @@ import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import { ENTRIES1, ENTRIES2, ENTRIES3, ENTRIES4 } from '../static/entries';
 import { VENUES } from '../components/venueJSON'
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import * as firebase from 'firebase';
+import connectToFirebase from '../utils/firebase';
+import Venue from '../components/Venue';
+
 
 
 const IS_ANDROID = Platform.OS === 'android';
@@ -35,11 +37,15 @@ export default class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      slider1ActiveSlide: SLIDER_1_FIRST_ITEM
+      slider1ActiveSlide: SLIDER_1_FIRST_ITEM,
+      venues: []
     };
   }
 
-
+  componentDidMount() {
+    const data = VENUES;
+    this.setState({ venues: data });
+  }
 
   _renderItem({ item, index }) {
     return <MyCarousel data={item} even={(index + 1) % 2 === 0} />;
@@ -54,9 +60,12 @@ export default class HomeScreen extends Component {
         parallaxProps={parallaxProps}
       />
     );
+
   }
 
   _renderLightItem({ item, index }) {
+    // console.log("TCL: _renderLightItem -> item", item)
+  
     return <MyCarousel data={item} even={false} />;
   }
 
@@ -70,7 +79,7 @@ export default class HomeScreen extends Component {
   //ABOVE STILL TO BE COMMENTED OUT 
 
   // changing the venue card to what is on the react native card thing 
-  venueCard(number, title, type) {
+  venueCard(number, title, type ) {
     const isTinder = type === 'tinder';
     return (
       <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
@@ -80,7 +89,7 @@ export default class HomeScreen extends Component {
         <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
         </Text>
         <Carousel
-          data={isTinder ? ENTRIES2 : ENTRIES1}
+          data={this.state.venues}
           renderItem={isTinder ? this._renderLightItem : this._renderItem}
           sliderWidth={sliderWidth}
           itemWidth={itemWidth}
@@ -113,7 +122,7 @@ export default class HomeScreen extends Component {
         <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
         </Text>
         <Carousel
-          data={isTinder ? ENTRIES4 : ENTRIES3}
+          data={this.state.venues}
           renderItem={isTinder ? this._renderLightItem : this._renderItem}
           sliderWidth={sliderWidth}
           itemWidth={itemWidth}
@@ -139,9 +148,10 @@ export default class HomeScreen extends Component {
 
 
   render() {
+    console.log(this.state)
+
     const renderCard = this.venueCard(3, '"Stack of cards" layout | Loop', 'stack');
     const renderCard2 = this.venueCard2(3, '"Stack of cards" layout | Loop', 'stack');
-    console.log("all of it", this.state.venues);
     return (
       <View style={styles.container}>
         <ScrollView
