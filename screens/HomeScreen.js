@@ -30,10 +30,7 @@ const SLIDER_1_FIRST_ITEM = 1;
 const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 
 export default class HomeScreen extends Component {
-  _renderItem ({item, index}) {
      
-  
-
   constructor (props) {
     super(props);
     this.state = {
