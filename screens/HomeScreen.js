@@ -22,8 +22,7 @@ import { ENTRIES1, ENTRIES3 } from '../static/entries';
 import { VENUES } from '../components/venueJSON';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import Modal from "react-native-modal";
-import ModalContent from '../components/ModalContent';
-// import ModalContent from '../components/ModalContent'
+import ImageCarousel from '../components/ImageCarousel';
 // import * as firebase from 'firebase';
 
 const IS_ANDROID = Platform.OS === 'android';

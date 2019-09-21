@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
+import Carousel, { ParallaxImage, isTinder, tinder } from 'react-native-snap-carousel';
 import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
 import VENUES from '../components/venueJSON'
 import PropTypes from 'prop-types';
-import styles from '../src/style/SliderEntry.style';
+import styles, { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import Modal from "react-native-modal";
-import ModalContent, {renderModalContent} from '../components/ModalContent';
+import { ENTRIES1, ENTRIES3 } from '../static/entries';
 import { Card, Button, Rating } from 'react-native-elements';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import MUSIC_IMAGE from '../assets/images/musicnote.png'
+import MUSIC_IMAGE from '../assets/images/musicnote.png';
+import ImageCarousel from '../components/ImageCarousel';
 
 
-export class MyCarousel extends Component {
-
+export class MyCarousel extends Component {    
     state = {
         visibleModalId: null,
       };
@@ -25,9 +25,18 @@ export class MyCarousel extends Component {
     };
 
 
-        renderModalContent = () => (
+        renderModalContent = (type) => (
             <View style={styles.modalContent}>  
-                <Text>IMAGES</Text>
+                <ImageCarousel
+                  data={ENTRIES1}
+                  renderItem={isTinder ? this._renderLightItem : this._renderItem}
+                  sliderWidth={sliderWidth}
+                  itemWidth={itemWidth}
+                  containerCustomStyle={styles.slider}
+                  contentContainerCustomStyle={styles.sliderContentContainer}
+                  layout={type === 'tinder'}
+                  loop={true}
+                   />
 
                 <Text>RATING</Text>
                 <Rating
@@ -71,7 +80,6 @@ export class MyCarousel extends Component {
             <Image
               source={{ uri: illustration }}
               style={styles.image}
-            //   onPress={() => this.setState({ visibleModal: 'fancy' })}
             />
         );
     }
@@ -127,17 +135,6 @@ export class MyCarousel extends Component {
         );
     }
 };
-
-
-
-// original code from before 
-    // _renderItem ({item, index}) {
-    //     return (
-    //         <View style={styles.slide}>
-    //             <Text style={styles.title}>{ item.title }</Text>
-    //         </View>
-    //     );
-    // }
 
 export default MyCarousel;
 
