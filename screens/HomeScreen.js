@@ -30,9 +30,6 @@ const SLIDER_1_FIRST_ITEM = 1;
 const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 
 export default class HomeScreen extends Component {
-  _renderItem ({item, index}) {
-     
-  
 
   constructor (props) {
     super(props);
@@ -40,9 +37,7 @@ export default class HomeScreen extends Component {
         slider1ActiveSlide: SLIDER_1_FIRST_ITEM,
         visibleModalId: null,
     };
-}
-
-
+  }
 
 _renderItem ({item, index}) {
     return <MyCarousel data={item} even={(index + 1) % 2 === 0} onPress={visibleModal}/>;
