@@ -1,8 +1,27 @@
 // import { url } from "inspector";
 // import { URL } from "url";
+var firebase = require('firebase');
+
+var firebaseConfig = {
+    apiKey: "AIzaSyAHhnWeyBtUHJTtigUNMwQv5naDfNwqoOQ",
+    authDomain: "musability-91b3d.firebaseapp.com",
+    databaseURL: "https://musability-91b3d.firebaseio.com",
+    projectId: "musability-91b3d",
+    storageBucket: "",
+    messagingSenderId: "168169604472",
+    appId: "1:168169604472:web:32bccbafe468799ff2b48d"
+};
+
+// // Initialize Firebase
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
+// console.log(VENUES.length);
+
+const database = firebase.database();
 
 
-export const VENUES = [
+ export const VENUES = [
     {
         venue: "(le) poisson rouge",
         href: "https://lpr.com/",
@@ -440,5 +459,38 @@ export const VENUES = [
     }
 ]
 
-export default VENUES;
+//Code to initially load all the data from venue.JSON into Firbase, needed only to run once.
+
+// const test = [ ];
+
+// VENUES.forEach(element => {
+// console.log(element)
+//     var venue = {
+//       name: element.venue ? element.venue: "",
+//       website: element.href ? element.href: "",
+//       address: element.address ? element.address: "",
+//       overallRating: element.overallRating ? element.overallRating: "",
+//       anonymityRating: element.anonymityRating ? element.anonymityRating: "",
+//       elevator: element.elevator ? element.elevator: null,
+//       ramps: element.ramps ? element.ramps: null,
+//       rampComment: element.rampComment ? element.rampComment: "",
+//       restrooms: element.restrooms ? element.restrooms: null,
+//       restroomKey: element.restroomKey ? element.restroomKey: null,
+//       restroomsComment: element.restroomsComment ? element.restroomsComment: "",
+//       overallComment: element.overallComment ? element.overallRating: "",
+//       image: element.image.length !== 0 ? element.image: ""
+//     }
+
+// // test.push(venue)
+// // console.log(test.length)
+//   database.ref("/venues").push(venue)
+
+
+// })
+
+
+
+
+
+// export default VENUES;
 
