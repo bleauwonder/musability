@@ -12,6 +12,21 @@ export default StyleSheet.create({
   logIn: {
     marginTop: 300,
   },
+  
+  video: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
+  loginContent: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  loginContainer: {
+    flex: 1
+  },
   logButton: {
     marginHorizontal: 20,
     marginTop: 20
@@ -130,7 +145,6 @@ export default StyleSheet.create({
         backgroundColor: 'transparent'
     },
     //changes the main background color 
-
     container: {
         flex: 1,
         backgroundColor: colors.background1
