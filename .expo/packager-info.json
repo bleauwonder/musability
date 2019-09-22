@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 90452,
+  "expoServerNgrokUrl": "https://5s-48d.anonymous.musability.exp.direct",
+  "packagerNgrokUrl": "https://packager.5s-48d.anonymous.musability.exp.direct",
+  "ngrokPid": 90481
 }

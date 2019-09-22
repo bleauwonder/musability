@@ -3,10 +3,6 @@
   "lanType": "ip",
   "dev": true,
   "minify": false,
-<<<<<<< HEAD
-  "urlRandomness": "wn-m95",
-=======
-  "urlRandomness": "vw-jmb",
->>>>>>> 803d73bb201c432234ced9548454b3a3a7116106
+  "urlRandomness": "5s-48d",
   "https": false
 }
