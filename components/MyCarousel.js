@@ -56,6 +56,7 @@ export class MyCarousel extends Component {
                 <Button
                 onPress={() => this.setState({ visibleModal: null })}
                 type="outline"
+                style={styles.closeButton}
                 title="Close"
                 />
             </View> 

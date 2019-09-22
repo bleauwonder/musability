@@ -66,7 +66,7 @@ _renderDarkItem ({item, index}) {
 }
 
 // VENUE CARD INFORMATION 
-  venueCard (number, title, type) {
+  venueCard (numbdataer, title, type) {
     const isTinder = type === 'tinder';
       return (
         <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
