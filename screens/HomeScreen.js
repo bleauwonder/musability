@@ -22,7 +22,7 @@ import { VENUES } from '../components/venueJSON';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import Modal from "react-native-modal";
 import ImageCarousel from '../components/ImageCarousel';
-import logo from '../assets/images/muslogo.png';
+import LOGO from '../assets/images/muslogo.png';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
 import * as firebase from 'firebase';
 const IS_ANDROID = Platform.OS === 'android';
@@ -145,8 +145,8 @@ _renderDarkItem ({item, index}) {
             <Image
               source={
                 __DEV__
-                ? require('../assets/images/musability-app.png')
-                : require('../assets/images/musability-app.png')
+                ? require('../assets/images/muslogo.png')
+                : require('../assets/images/muslogo.png')
               }
               style={styles.welcomeImage}
               />

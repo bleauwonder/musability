@@ -10,17 +10,11 @@ export const colors = {
 
 export default StyleSheet.create({
   logIn: {
-    margin: 30,
     marginTop: 300,
   },
-  backgroundVideo: {
-    height: height,
-    position: "absolute",
-    top: 0,
-    left: 0,
-    alignItems: "stretch",
-    bottom: 0,
-    right: 0
+  logButton: {
+    marginHorizontal: 20,
+    marginTop: 20
   },
   titleText: {
     fontFamily: 'Helvetica',
@@ -57,7 +51,7 @@ export default StyleSheet.create({
     height: 200,
     resizeMode: 'contain',
     marginTop: -70,
-    marginLeft: 160,
+    marginLeft: 180,
   },
   getStartedContainer: {
     alignItems: 'center',
@@ -211,5 +205,5 @@ export default StyleSheet.create({
     closeButton: {
       borderColor: '#621424',
       color: '#621424',
-    },
+    }
 });

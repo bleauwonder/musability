@@ -13,16 +13,20 @@ import {
   Dimensions,
   TextInput
 } from 'react-native';
+import LogIn from '../components/LogIn';
 import { LinearGradient } from 'expo-linear-gradient';
 import styles, { colors } from '../src/style/index.style'
 import logo from '../assets/images/muslogo.png';
 import * as firebase from 'firebase';
-import LogIn from '../components/LogIn';
 const IS_ANDROID = Platform.OS === 'android';
 import { Container, Item, Form, Input, Button, Label } from "native-base";
 
 export default class LogInScreen extends React.Component {
-render () {    
+render () {
+    //FIRST SHOWS - LOG IN PAGE / SIGN UP PAGE
+    //CHANGE TO COPOMENT LATER 
+      return (         
       <LogIn />
+      );
     }
-};
+}
