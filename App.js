@@ -3,11 +3,30 @@ import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import * as firebase from 'firebase';
 import React, { useState, useEffect } from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, Platform, Image, Text, StatusBar, StyleSheet, View } from 'react-native';
+import { SwitchNavigator } from 'react-navigation'
 import { Ionicons } from '@expo/vector-icons';
 import { Card, Rating } from 'react-native-elements';
 import VENUES from './components/venueJSON';
 import AppNavigator from './navigation/AppNavigator';
+// import the different screens
+import Loading from './screens/Loading'
+import SignUp from './screens/SignUpSignUp'
+import Login from './screens/LogIn'
+import Main from './screens/HomeScreen'
+// create our app's navigation stack
+const App = SwitchNavigator(
+  {
+    Loading,
+    SignUp,
+    Login,
+    Main
+  },
+  {
+    initialRouteName: 'Loading'
+  }
+)
+export default App
 
 
 

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Carousel, { ParallaxImage, isTinder, tinder } from 'react-native-snap-carousel';
 import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
-import VENUES from '../components/venueJSON'
+import VENUES from './venueJSON'
 import PropTypes from 'prop-types';
 import styles, { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import Modal from "react-native-modal";
 import { Card, Button, Rating } from 'react-native-elements';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
-import ImageCarousel from '../components/ImageCarousel';
+import ImageCarousel from './ImageCarousel';
 
 
 export class MyCarousel extends Component {    
