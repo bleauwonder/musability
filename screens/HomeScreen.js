@@ -13,12 +13,11 @@ import {
   TextInput
 } from 'react-native';
 import Carousel, { props, visibleModal, renderModalContent } from 'react-native-snap-carousel';
-import MyCarousel from '../components/MyCarousel'
+import CarouselItem from '../components/CarouselItem';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Card, Button, Rating } from 'react-native-elements';
 import styles, { colors } from '../src/style/index.style'
 import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
-import { ENTRIES1, ENTRIES3 } from '../static/entries';
 import { VENUES } from '../components/venueJSON';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import Modal from "react-native-modal";
@@ -32,30 +31,26 @@ const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 
 
 export default class HomeScreen extends Component {
-  
-    constructor(props) {
-      super(props);
-      this.state = {
+
+  constructor (props) {
+    super(props);
+    this.state = {
         slider1ActiveSlide: SLIDER_1_FIRST_ITEM,
         visibleModalId: null,
-      };
-    }
+    };
+  }
 
-    componentDidMount() {
-      const data = VENUES;
-      this.setState({ venues: data });
-    }
-
-
+_renderItem ({item, index}) {
+    return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal}/>;
+}
 
     _renderItem({ item, index }) {
       return <MyCarousel data={item} even={(index + 1) % 2 === 0} onPress={visibleModal} />;
     }
 
-
-    _renderItemWithParallax({ item, index }, parallaxProps) {
-      return (
-        <MyCarousel
+_renderItemWithParallax ({item, index}, parallaxProps) {
+    return (
+        <CarouselItem
           data={item}
           even={(index + 1) % 2 === 0}
           parallax={true}
@@ -63,10 +58,13 @@ export default class HomeScreen extends Component {
         />
       );
 
-    }
+_renderLightItem ({item, index}) {
+    return <CarouselItem data={item} even={false} />;
+}
 
-    _renderLightItem({ item, index }) {
-      // console.log("TCL: _renderLightItem -> item", item)
+_renderDarkItem ({item, index}) {
+    return <CarouselItem data={item} even={true} />;
+}
 
       return <MyCarousel data={item} even={false} />;
     }

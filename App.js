@@ -33,44 +33,47 @@ export default function App(props) {
 
     const database = firebase.database();
 
-     database.ref("/venues").on("value", snapshot => {
+    //  database.ref("/venues").on("value", snapshot => {
     
-      snapshot.forEach((venue) => {
+    //   snapshot.forEach((venue) => {
        
-        <div>
-        <View>
-          <Card style={styles.venueCard} containerStyle={{ borderRadius: 20 }}
-            image={venue.val().image.length ? venue.val().image[0] : "./assets/images/musability-app.png"}
-            title={venue.val().name}>
-            <Rating
-              type='custom'
-              ratingImage={"./assets/images/musicnote.png"}
-              onFinishRating={this.ratingCompleted}
-              ratingColor='#800022'
-              ratingBackgroundColor='#c8c7c8'
-              ratingCount={5}
-              imageSize={20}
-              defaultRating={parseInt(venue.val().overallRating[0])}
-              style={{ paddingVertical: 10 }}
-            />
-          </Card>
-        </View>
-        </div>
+        // <div>
+        // <View>
+        //   <Card style={styles.venueCard} containerStyle={{ borderRadius: 20 }}
+        //     image={venue.val().image.length ? venue.val().image[0] : "./assets/images/musability-app.png"}
+        //     title={venue.val().name}>
+        //     <Rating
+        //       type='custom'
+        //       ratingImage={"./assets/images/musicnote.png"}
+        //       onFinishRating={this.ratingCompleted}
+        //       ratingColor='#800022'
+        //       ratingBackgroundColor='#c8c7c8'
+        //       ratingCount={5}
+        //       imageSize={20}
+        //       defaultRating={parseInt(venue.val().overallRating[0])}
+        //       style={{ paddingVertical: 10 }}
+        //     />
+        //   </Card>
+        // </View>
+        // </div>
         
-      })
+      // })
 
-    }), (errorObject) => {
-      console.log("The read failed:" + errorObject.code);
-    }
+    // }), (errorObject) => {
+    //   console.log("The read failed:" + errorObject.code);
+    // }
 
-    //Code to initially load all the data from venue.JSON into Firbase, needed only to run once.
+    //Code to initially load all the data from venue.JSON into Firebase, needed only to run once.
 
     VENUES.forEach(element => {
 
       var venue = {
-        name: element.venue ? element.venue: "",
-        website: element.href ? element.href: "",
+        name: element.name ? element.name: "",
+        href: element.href ? element.href: "",
         address: element.address ? element.address: "",
+        city: element.city ? element.city: "",
+        state: element.state ? element.state: "",
+        zip: element.zip ? element.zip: null,
         overallRating: element.overallRating ? element.overallRating: "",
         anonymityRating: element.anonymityRating ? element.anonymityRating: "",
         elevator: element.elevator ? element.elevator: null,
@@ -79,21 +82,18 @@ export default function App(props) {
         restrooms: element.restrooms ? element.restrooms: null,
         restroomKey: element.restroomKey ? element.restroomKey: null,
         restroomsComment: element.restroomsComment ? element.restroomsComment: "",
-        overallComment: element.overallComment ? element.overallRating: "",
-        image: element.image.length !== 0 ? element.image: ""
+        overallComment: element.overallComment ? element.overallComment: "",
+        image: element.image.length !== 0 ? element.image: "",
+        displayImage: element.displayImage ? element.displayImage: "",
       }
 
 
-    // // database.ref("/venues").push(venue);
+    database.ref("/venues").push(venue);
 
 
-    // })
+    })
 
   })
-
-
-
-  
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
