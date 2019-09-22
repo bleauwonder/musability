@@ -13,12 +13,11 @@ import {
   TextInput
 } from 'react-native';
 import Carousel, { props, visibleModal, renderModalContent } from 'react-native-snap-carousel';
-import MyCarousel from '../components/MyCarousel'
+import CarouselItem from '../components/CarouselItem';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Card, Button, Rating } from 'react-native-elements';
 import styles, { colors } from '../src/style/index.style'
 import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
-import { ENTRIES1, ENTRIES3 } from '../static/entries';
 import { VENUES } from '../components/venueJSON';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import Modal from "react-native-modal";
@@ -30,25 +29,22 @@ const SLIDER_1_FIRST_ITEM = 1;
 const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 
 export default class HomeScreen extends Component {
-     
   constructor (props) {
     super(props);
     this.state = {
         slider1ActiveSlide: SLIDER_1_FIRST_ITEM,
         visibleModalId: null,
     };
-}
-
-
+  }
 
 _renderItem ({item, index}) {
-    return <MyCarousel data={item} even={(index + 1) % 2 === 0} onPress={visibleModal}/>;
+    return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal}/>;
 }
 
 
 _renderItemWithParallax ({item, index}, parallaxProps) {
     return (
-        <MyCarousel
+        <CarouselItem
           data={item}
           even={(index + 1) % 2 === 0}
           parallax={true}
@@ -58,11 +54,11 @@ _renderItemWithParallax ({item, index}, parallaxProps) {
 }
 
 _renderLightItem ({item, index}) {
-    return <MyCarousel data={item} even={false} />;
+    return <CarouselItem data={item} even={false} />;
 }
 
 _renderDarkItem ({item, index}) {
-    return <MyCarousel data={item} even={true} />;
+    return <CarouselItem data={item} even={true} />;
 }
 
 // VENUE CARD INFORMATION 

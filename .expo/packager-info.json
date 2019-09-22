@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 9199,
-  "expoServerNgrokUrl": "https://vw-jmb.anonymous.musability.exp.direct",
-  "packagerNgrokUrl": "https://packager.vw-jmb.anonymous.musability.exp.direct",
-  "ngrokPid": 9208
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": "https://jm-6ae.anonymous.musability.exp.direct",
+  "packagerNgrokUrl": "https://packager.jm-6ae.anonymous.musability.exp.direct",
+  "ngrokPid": 80398
 }
