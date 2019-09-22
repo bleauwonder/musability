@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Carousel, { ParallaxImage, isTinder, tinder } from 'react-native-snap-carousel';
 import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
-import VENUES from '../components/venueJSON'
+import VENUES from './venueJSON'
 import PropTypes from 'prop-types';
 import styles, { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import Modal from "react-native-modal";
@@ -9,10 +9,10 @@ import { ENTRIES1, ENTRIES3 } from '../static/entries';
 import { Card, Button, Rating } from 'react-native-elements';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
-import ImageCarousel from '../components/ImageCarousel';
+import ImageCarousel from './ImageCarousel';
 
 
-export class MyCarousel extends Component {    
+export class CarouselItem extends Component {    
     state = {
         visibleModalId: null,
       };
@@ -64,11 +64,11 @@ export class MyCarousel extends Component {
         
 
     get image () {
-        const { data: { baseImage }, parallax, parallaxProps, even } = this.props;
+        const { data: { displayImage }, parallax, parallaxProps, even } = this.props;
 
         return parallax ? (
             <ParallaxImage
-              source={{ uri: baseImage }}
+              source={{ uri: displayImage }}
               containerStyle={[styles.imageContainer, even ? styles.imageContainerEven : {}]}
               style={styles.image}
               parallaxFactor={0.35}
@@ -78,7 +78,7 @@ export class MyCarousel extends Component {
             />
         ) : (
             <Image
-              source={{ uri: baseImage }}
+              source={{ uri: displayImage }}
               style={styles.image}
             />
         );
@@ -136,5 +136,5 @@ export class MyCarousel extends Component {
     }
 };
 
-export default MyCarousel;
+export default CarouselItem;
 

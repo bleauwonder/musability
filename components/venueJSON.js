@@ -8,7 +8,7 @@ export const VENUES = [
         state: "New York",
         zip: "10012",
         image : [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Arlene's Grocery",
@@ -27,7 +27,7 @@ export const VENUES = [
         restroomsComment: "one on first floor",
         overallComment: "no elevators, bands play in basement. Will have to be carried.",
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Baby's All Right",
@@ -38,7 +38,7 @@ export const VENUES = [
         zip: "11211",
         rampComment: "single floor venue",
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Brooklyn Bazaar",
@@ -57,7 +57,7 @@ export const VENUES = [
         restroomsComment: "one on first floor",
         overallComment: "no elevators, sometimes bands play fourth floor. Will have to be carried.",
         image: ["../assets/images/venues/Brooklyn Bazaar/BK-Bazaar-Outside.jpg"],
-        baseImage: "https://i.imgur.com/Sc3UDZ1.jpg"
+        displayImage: "https://i.imgur.com/Sc3UDZ1.jpg"
     },
     {
         name: "Brooklyn Bowl",
@@ -101,7 +101,7 @@ export const VENUES = [
             "https://i.imgur.com/kEtwwdE.jpg",
             "https://i.imgur.com/u9UYwWL.jpg",
         ],
-        baseImage: "https://i.imgur.com/u9UYwWL.jpg"
+        displayImage: "https://i.imgur.com/u9UYwWL.jpg"
     },
     {
         name: "Brooklyn Steel",
@@ -116,7 +116,7 @@ export const VENUES = [
         ramps: true,
         rampComment: "accessible entrances",
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Forest Hills Stadium",
@@ -126,7 +126,7 @@ export const VENUES = [
         state: "NY",
         zip: "11375",
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Great Hill (Central Park)",
@@ -158,7 +158,7 @@ export const VENUES = [
             "https://i.imgur.com/kIgsMJq.jpg",
             "https://i.imgur.com/KtAZx0g.jpg",
         ],
-        baseImage: "https://i.imgur.com/KUX9y7E.jpg"
+        displayImage: "https://i.imgur.com/KUX9y7E.jpg"
     },
     {
         name: "Hammerstein Ballroom",
@@ -168,7 +168,7 @@ export const VENUES = [
         state: "New York",
         zip: "10001",
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Industry City",
@@ -198,7 +198,7 @@ export const VENUES = [
             "https://i.imgur.com/A1Gh2yM.jpg",
             "https://i.imgur.com/M8KW93O.jpg",
         ],
-        baseImage: "https://i.imgur.com/ctFOJd6.jpg"
+        displayImage: "https://i.imgur.com/ctFOJd6.jpg"
     },
     {
         name: "Joe's Pub",
@@ -219,7 +219,7 @@ export const VENUES = [
             "https://i.imgur.com/WSUunPW.jpg",
             "https://i.imgur.com/oPdIhNH.jpg"
         ],
-        baseImage: "https://i.imgur.com/wDzvuak.jpg"
+        displayImage: "https://i.imgur.com/wDzvuak.jpg"
     },
     {
         name: "King's Theater",
@@ -230,7 +230,7 @@ export const VENUES = [
         zip: "11226",
         elevator: false,
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "The Knitting Factory - Brooklyn",
@@ -265,7 +265,7 @@ export const VENUES = [
             "https://i.imgur.com/W7hTCWI.jpg",
             "https://i.imgur.com/HWcY0hU.jpg",
         ],
-        baseImage: "https://i.imgur.com/vqWRdqS.jpg"
+        displayImage: "https://i.imgur.com/vqWRdqS.jpg"
     },
     {
         name: "Market Hotel",
@@ -276,7 +276,7 @@ export const VENUES = [
         zip: "11221",
         ramps: false,
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Music Hall of Williamsburg",
@@ -295,7 +295,7 @@ export const VENUES = [
         restroomsComment: "accessible stalls",
         overallComment: "multi-level venue, with access to view show above main floor",
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Rockwood Music Hall",
@@ -322,7 +322,7 @@ export const VENUES = [
             "https://i.imgur.com/hTEQIaf.jpg",
             "https://i.imgur.com/B71h6Jc.jpg",
         ],
-        baseImage: "https://i.imgur.com/hTEQIaf.jpg"
+        displayImage: "https://i.imgur.com/hTEQIaf.jpg"
     },
     {
         name: "Rough Trade NYC",
@@ -356,7 +356,7 @@ export const VENUES = [
             "https://i.imgur.com/GD08rLC.jpg",
             "https://i.imgur.com/A8YtYoY.jpg",
         ],
-        baseImage: "https://i.imgur.com/lBEQrOJ.jpg"
+        displayImage: "https://i.imgur.com/lBEQrOJ.jpg"
     },
     {
         name: "Saint Vitus Bar",
@@ -366,7 +366,7 @@ export const VENUES = [
         state: "NY",
         zip: "11222",
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Shea Stadium",
@@ -377,7 +377,7 @@ export const VENUES = [
         zip: "11206",
         elevator: false,
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "Sunnyvale BK",
@@ -390,7 +390,7 @@ export const VENUES = [
         ramps: true,
         rampComment: "single floor venue",
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "The Bell House",
@@ -403,7 +403,7 @@ export const VENUES = [
         ramps: true,
         rampComment: "single floor venue",
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "The Gutter - Brooklyn",
@@ -428,7 +428,7 @@ export const VENUES = [
             "https://i.imgur.com/zLrnX4N.jpg",
             "https://i.imgur.com/VAgdM2J.jpg",
         ],
-        baseImage: "https://i.imgur.com/zLrnX4N.jpg"
+        displayImage: "https://i.imgur.com/zLrnX4N.jpg"
     },
     {
         name: "The Kingsland Bar",
@@ -441,7 +441,7 @@ export const VENUES = [
         ramps: false,
         rampComment: "single floor venue, but one step to get in",
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     },
     {
         name: "The Mercury Lounge",
@@ -470,7 +470,7 @@ export const VENUES = [
             "https://i.imgur.com/KW8tMgL.jpg",
             "https://i.imgur.com/KkwQHXI.jpg",
         ],
-        baseImage: "https://i.imgur.com/tSRiaPs.jpg"
+        displayImage: "https://i.imgur.com/tSRiaPs.jpg"
     },  
     {
         name: "Union Hall",
@@ -504,7 +504,7 @@ export const VENUES = [
             "https://i.imgur.com/hjgH4ml.jpg",
             "https://i.imgur.com/aIE21mt.jpg"
         ],
-        baseImage: "https://i.imgur.com/aIE21mt.jpg"
+        displayImage: "https://i.imgur.com/aIE21mt.jpg"
     }, 
     {
         name: "Union Pool",
@@ -533,7 +533,7 @@ export const VENUES = [
             "https://i.imgur.com/1ddQ29h.jpg",
             
         ],
-        baseImage: "https://i.imgur.com/c1zKzBf.jpg"
+        displayImage: "https://i.imgur.com/c1zKzBf.jpg"
     },
     {
         name: "Webster Hall",
@@ -543,7 +543,7 @@ export const VENUES = [
         state: "NY",
         zip: "10003",
         image: [],
-        baseImage: "https://i.imgur.com/piN9lPP.png"
+        displayImage: "https://i.imgur.com/piN9lPP.png"
     }
 ]
 
