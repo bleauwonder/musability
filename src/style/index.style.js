@@ -196,5 +196,8 @@ export default StyleSheet.create({
         borderRadius: 4,
         marginHorizontal: 5
     },
-
+    closeButton: {
+      borderColor: '#621424',
+      color: '#621424',
+    }
 });

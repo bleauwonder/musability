@@ -145,4 +145,7 @@ export default StyleSheet.create({
       marginTop: 10,
       fontSize: 17,
     },
+    closeButton: {
+      color: '#621424'
+        }
 })

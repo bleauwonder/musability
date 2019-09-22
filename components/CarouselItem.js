@@ -5,7 +5,6 @@ import VENUES from './venueJSON'
 import PropTypes from 'prop-types';
 import styles, { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import Modal from "react-native-modal";
-import { ENTRIES1, ENTRIES3 } from '../static/entries';
 import { Card, Button, Rating } from 'react-native-elements';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
@@ -57,6 +56,7 @@ export class CarouselItem extends Component {
                 <Button
                 onPress={() => this.setState({ visibleModal: null })}
                 type="outline"
+                style={styles.closeButton}
                 title="Close"
                 />
             </View> 

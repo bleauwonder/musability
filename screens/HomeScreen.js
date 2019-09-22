@@ -29,7 +29,6 @@ const SLIDER_1_FIRST_ITEM = 1;
 const MUSIC_IMAGE = require('../assets/images/musicnote.png');
 
 export default class HomeScreen extends Component {
-
   constructor (props) {
     super(props);
     this.state = {
@@ -63,7 +62,7 @@ _renderDarkItem ({item, index}) {
 }
 
 // VENUE CARD INFORMATION 
-  venueCard (number, title, type) {
+  venueCard (numbdataer, title, type) {
     const isTinder = type === 'tinder';
       return (
         <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
