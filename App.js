@@ -99,7 +99,8 @@ export default function App(props) {
         startAsync={loadResourcesAsync}
         onError={handleLoadingError}
         onFinish={() => handleFinishLoading(setLoadingComplete)}
-      />,
+      />
+      ,
       <LogIn />
     );
   } else {
