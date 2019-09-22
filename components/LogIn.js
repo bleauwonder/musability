@@ -19,7 +19,6 @@ import logo from '../assets/images/muslogo.png';
 import * as firebase from 'firebase';
 const IS_ANDROID = Platform.OS === 'android';
 import { Container, Item, Form, Input, Button, Label } from "native-base";
-// import Video from 'react-native-video';
 const firebaseConfig = {
     apiKey: "AIzaSyBF2aWOLg8IYO9ntBNk6agDXdrasaQMwkM",
     authDomain: "musability-app.firebaseapp.com",
@@ -57,7 +56,7 @@ constructor(props) {
   };
 
 //firebase login function
-  Login = (email, password) => {
+  LogIn = (email, password) => {
     try {
       firebase
          .auth()
@@ -70,22 +69,13 @@ constructor(props) {
     }
   };
 
-  
+//rendering page
 render () {
     //FIRST SHOWS - LOG IN PAGE / SIGN UP PAGE
     //CHANGE TO COPOMENT LATER 
     return (         
       <View style={styles.loginContainer}>
-           {/* <Video
-          source={{ uri: 'https://previews.customer.envatousercontent.com/h264-video-previews/2021746.mp4'}}
-          rate={1.0}
-          volume={1.0}
-          muted={false}
-          resizeMode={"cover"}
-          repeat
-          style={styles.video}
-        /> */}
-        
+        {/* add background stuff         */}
         <View style={styles.loginContent}>
           <Container style={styles.logIn}>
               <Form>

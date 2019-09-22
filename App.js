@@ -10,12 +10,14 @@ import VENUES from './components/venueJSON';
 import { Container, Item, Form, Input, Button, Label } from "native-base";
 import AppNavigator from './navigation/AppNavigator';
 import LogIn from './components/LogIn';
+import { createRootNavigator } from "./navigation/router";
+import { isSignedIn } from "./auth";
 
 export default function App(props) {
-  // react hooks
   const [isLoadingComplete, setLoadingComplete] = useState(false);
   const [venues, setVenues] = useState(false);
 
+// react hooks
 //useEffect Firebase
   useEffect(() => {
     var firebaseConfig = {
@@ -93,14 +95,14 @@ export default function App(props) {
 
   }) //useEffect Firebase Ends
 
+  
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
       <AppLoading
         startAsync={loadResourcesAsync}
         onError={handleLoadingError}
         onFinish={() => handleFinishLoading(setLoadingComplete)}
-      />
-      ,
+      />,
       <LogIn />
     );
   } else {
@@ -138,10 +140,3 @@ function handleLoadingError(error) {
 function handleFinishLoading(setLoadingComplete) {
   setLoadingComplete(true);
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
