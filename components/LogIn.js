@@ -1,6 +1,7 @@
 
 import * as WebBrowser from 'expo-web-browser';
 import React, { Component } from 'react';
+import Video from "react-native-video";
 import {
   Image,
   Platform,
@@ -46,40 +47,51 @@ export default class LogIn extends React.Component {
 render () {
     //FIRST SHOWS - LOG IN PAGE / SIGN UP PAGE
     //CHANGE TO COPOMENT LATER 
-      return (         
-      <Container style={styles.logIn}> 
-        <Form>
-        <Item floatingLabel>
-            <Label>Email</Label>
-            <Input
-              autoCapitalize="none"
-              autoCorrect={false}
-              onChangeText={email => this.setState({ email })}
+      return (       
+        <View>
+            <Video
+            source={require("https://previews.customer.envatousercontent.com/h264-video-previews/2021746.mp4")}
+            style={styles.backgroundVideo}
+            muted={true}
+            repeat={true}
+            resizeMode={"cover"}
+            rate={1.0}
+            ignoreSilentSwitch={"obey"}
             />
-          </Item>
-          <Item floatingLabel>
-            <Label>Password</Label>
-            <Input
-              secureTextEntry={true}
-              autoCapitalize="none"
-              autoCorrect={false}
-              onChangeText={password => this.setState({ password })}
-            />
-          </Item>
-          <Button 
-          full rounded bordered danger
-          style={{margin: 20}}
-          >
-            <Text>Login</Text>
-          </Button>
-          <Button 
-          full rounded bordered dark 
-          style={{ margin: 20 }} 
-          onPress={() => this.SignUp(this.state.email, this.state.password)}> 
-            <Text>Signup</Text>
-          </Button>
-        </Form>
-      </ Container>
+        <Container style={styles.logIn}> 
+            <Form>
+            <Item floatingLabel>
+                <Label>Email</Label>
+                <Input
+                autoCapitalize="none"
+                autoCorrect={false}
+                onChangeText={email => this.setState({ email })}
+                />
+            </Item>
+            <Item floatingLabel>
+                <Label>Password</Label>
+                <Input
+                secureTextEntry={true}
+                autoCapitalize="none"
+                autoCorrect={false}
+                onChangeText={password => this.setState({ password })}
+                />
+            </Item>
+            <Button 
+            full rounded bordered danger
+            style={{margin: 20}}
+            >
+                <Text>Login</Text>
+            </Button>
+            <Button 
+            full rounded bordered dark 
+            style={{ margin: 20 }} 
+            onPress={() => this.SignUp(this.state.email, this.state.password)}> 
+                <Text>Signup</Text>
+            </Button>
+            </Form>
+        </ Container>
+      </View>
       );
     }
 }

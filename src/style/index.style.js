@@ -13,6 +13,15 @@ export default StyleSheet.create({
     margin: 30,
     marginTop: 300,
   },
+  backgroundVideo: {
+    height: height,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    alignItems: "stretch",
+    bottom: 0,
+    right: 0
+  },
   titleText: {
     fontFamily: 'Helvetica',
     fontSize: 30,
