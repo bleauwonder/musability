@@ -21,15 +21,41 @@ const IS_ANDROID = Platform.OS === 'android';
 import { Container, Item, Form, Input, Button, Label } from "native-base";
 
 export default class LogIn extends React.Component {
+//config for signup function 
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: ""
+    };
+  }
+  SignUp = (email, password) => {
+    try {
+      firebase
+          .auth()
+          .createUserWithEmailAndPassword(email, password)
+          .then(user => { 
+                 console.log(user);
+           });
+} catch (error) {
+      console.log(error.toString(error));
+    }
+  };
+
+//rendering the login screen 
 render () {
     //FIRST SHOWS - LOG IN PAGE / SIGN UP PAGE
     //CHANGE TO COPOMENT LATER 
       return (         
-      <Container>
+      <Container style={styles.logIn}> 
         <Form>
-          <Item floatingLabel>
+        <Item floatingLabel>
             <Label>Email</Label>
-            <Input autoCapitalize="none" autoCorrect={false} />
+            <Input
+              autoCapitalize="none"
+              autoCorrect={false}
+              onChangeText={email => this.setState({ email })}
+            />
           </Item>
           <Item floatingLabel>
             <Label>Password</Label>
@@ -37,12 +63,19 @@ render () {
               secureTextEntry={true}
               autoCapitalize="none"
               autoCorrect={false}
+              onChangeText={password => this.setState({ password })}
             />
           </Item>
-          <Button full rounded success>
+          <Button 
+          full rounded bordered danger
+          style={{margin: 20}}
+          >
             <Text>Login</Text>
           </Button>
-          <Button full rounded success style={{ marginTop: 20 }}> 
+          <Button 
+          full rounded bordered dark 
+          style={{ margin: 20 }} 
+          onPress={() => this.SignUp(this.state.email, this.state.password)}> 
             <Text>Signup</Text>
           </Button>
         </Form>

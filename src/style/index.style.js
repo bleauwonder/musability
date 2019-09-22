@@ -9,7 +9,10 @@ export const colors = {
 };
 
 export default StyleSheet.create({
-
+  logIn: {
+    margin: 30,
+    marginTop: 300,
+  },
   titleText: {
     fontFamily: 'Helvetica',
     fontSize: 30,
@@ -199,5 +202,5 @@ export default StyleSheet.create({
     closeButton: {
       borderColor: '#621424',
       color: '#621424',
-    }
+    },
 });
