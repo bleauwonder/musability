@@ -3,38 +3,20 @@ import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import * as firebase from 'firebase';
 import React, { useState, useEffect } from 'react';
-import { Platform, StyleSheet, Platform, Image, Text, StatusBar, StyleSheet, View } from 'react-native';
-import { SwitchNavigator } from 'react-navigation'
+import { Platform, Image, Text, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Card, Rating } from 'react-native-elements';
 import VENUES from './components/venueJSON';
+import { Container, Item, Form, Input, Button, Label } from "native-base";
 import AppNavigator from './navigation/AppNavigator';
-// import the different screens
-import Loading from './screens/Loading'
-import SignUp from './screens/SignUpSignUp'
-import Login from './screens/LogIn'
-import Main from './screens/HomeScreen'
-// create our app's navigation stack
-const App = SwitchNavigator(
-  {
-    Loading,
-    SignUp,
-    Login,
-    Main
-  },
-  {
-    initialRouteName: 'Loading'
-  }
-)
-export default App
-
-
+import LogIn from './components/LogIn';
 
 export default function App(props) {
   // react hooks
   const [isLoadingComplete, setLoadingComplete] = useState(false);
   const [venues, setVenues] = useState(false);
 
+//useEffect Firebase
   useEffect(() => {
     var firebaseConfig = {
       apiKey: "AIzaSyAHhnWeyBtUHJTtigUNMwQv5naDfNwqoOQ",
@@ -109,11 +91,7 @@ export default function App(props) {
 
     // })
 
-  })
-
-
-
-  
+  }) //useEffect Firebase Ends
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
@@ -121,7 +99,8 @@ export default function App(props) {
         startAsync={loadResourcesAsync}
         onError={handleLoadingError}
         onFinish={() => handleFinishLoading(setLoadingComplete)}
-      />
+      />,
+      <LogIn />
     );
   } else {
     return (
@@ -129,9 +108,9 @@ export default function App(props) {
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         <AppNavigator />
       </View>
-    );
-  }
-}
+    )
+  };
+} //end of export for App 
 
 async function loadResourcesAsync() {
   await Promise.all([

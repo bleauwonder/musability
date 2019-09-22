@@ -24,11 +24,20 @@ import Modal from "react-native-modal";
 import ImageCarousel from '../components/ImageCarousel';
 import logo from '../assets/images/muslogo.png';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
-// import * as firebase from 'firebase';
+import * as firebase from 'firebase';
 const IS_ANDROID = Platform.OS === 'android';
 const SLIDER_1_FIRST_ITEM = 1;
+// import { Container, Item, Form, Input, Button, Label } from "native-base";
 
 export default class HomeScreen extends Component {
+
+  state = { currentUser: null }
+  
+  componentDidMount() {
+    const { currentUser } = firebase.auth()
+    this.setState({ currentUser })
+}
+
   constructor (props) {
     super(props);
     this.state = {
