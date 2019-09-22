@@ -19,13 +19,13 @@ export default function App(props) {
 //useEffect Firebase
   useEffect(() => {
     var firebaseConfig = {
-      apiKey: "AIzaSyAHhnWeyBtUHJTtigUNMwQv5naDfNwqoOQ",
-      authDomain: "musability-91b3d.firebaseapp.com",
-      databaseURL: "https://musability-91b3d.firebaseio.com",
-      projectId: "musability-91b3d",
-      storageBucket: "",
-      messagingSenderId: "168169604472",
-      appId: "1:168169604472:web:32bccbafe468799ff2b48d"
+      apiKey: "AIzaSyBF2aWOLg8IYO9ntBNk6agDXdrasaQMwkM",
+      authDomain: "musability-app.firebaseapp.com",
+      databaseURL: "https://musability-app.firebaseio.com",
+      projectId: "musability-app",
+      storageBucket: "musability-app.appspot.com",
+      messagingSenderId: "93508034987",
+      appId: "1:93508034987:web:454f410ea139fe4c2932ee"
     };
 
     // // Initialize Firebase

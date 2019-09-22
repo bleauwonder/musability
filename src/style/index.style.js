@@ -219,5 +219,8 @@ export default StyleSheet.create({
     closeButton: {
       borderColor: '#621424',
       color: '#621424',
-    }
+    },
+    navBar: {
+      backgroundColor: 'black'
+    },
 });
