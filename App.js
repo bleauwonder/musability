@@ -9,7 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Card, Rating } from 'react-native-elements';
 import VENUES from './components/venueJSON';
 import AppNavigator from './navigation/AppNavigator';
-// import { Container, Item, Form, Input, Button, Label } from "native-base";
+import { Container, Form, Input, Button, Label } from "native-base";
 import LogIn from './components/LogIn';
 import { createRootNavigator } from "./navigation/router";
 import { isSignedIn } from "./auth";
