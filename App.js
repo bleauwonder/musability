@@ -4,13 +4,12 @@ import * as Font from 'expo-font';
 import * as firebase from 'firebase';
 import React, { useState, useEffect } from 'react';
 import { Platform, Image, Text, StatusBar, StyleSheet, View } from 'react-native';
+import styles from './src/style/index.style.js';
 import { Ionicons } from '@expo/vector-icons';
 import { Card, Rating } from 'react-native-elements';
 import VENUES from './components/venueJSON';
-import styles from './src/style/index.style.js'
-// import { Container, Item, Form, Input, Button, Label } from "native-base";
 import AppNavigator from './navigation/AppNavigator';
-
+// import { Container, Item, Form, Input, Button, Label } from "native-base";
 import LogIn from './components/LogIn';
 import { createRootNavigator } from "./navigation/router";
 import { isSignedIn } from "./auth";
