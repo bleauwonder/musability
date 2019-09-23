@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { Platform, Image, Text, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Card, Rating } from 'react-native-elements';
-// import VENUES from './components/venueJSON';
+import VENUES from './components/venueJSON';
 // import { Container, Item, Form, Input, Button, Label } from "native-base";
 import AppNavigator from './navigation/AppNavigator';
 
@@ -132,11 +132,6 @@ export default function App(props) {
 
 
   }) //useEffect Firebase Ends
-
-  
-
-  })
-
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
