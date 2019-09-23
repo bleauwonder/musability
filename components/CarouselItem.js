@@ -11,6 +11,7 @@ import MUSIC_IMAGE from '../assets/images/musicnote.png';
 import ImageCarousel from './ImageCarousel';
 
 
+
 export class CarouselItem extends Component {    
     state = {
         visibleModalId: null,
@@ -64,6 +65,7 @@ export class CarouselItem extends Component {
         
 
     get image () {
+
         const { data: { displayImage }, parallax, parallaxProps, even } = this.props;
 
         return parallax ? (
@@ -79,6 +81,7 @@ export class CarouselItem extends Component {
         ) : (
             <Image
               source={{ uri: displayImage }}
+
               style={styles.image}
             />
         );
@@ -135,6 +138,7 @@ export class CarouselItem extends Component {
         );
     }
 };
+
 
 export default CarouselItem;
 

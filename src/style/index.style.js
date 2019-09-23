@@ -9,7 +9,28 @@ export const colors = {
 };
 
 export default StyleSheet.create({
-
+  logIn: {
+    marginTop: 300,
+  },
+  
+  video: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
+  loginContent: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  loginContainer: {
+    flex: 1
+  },
+  logButton: {
+    marginHorizontal: 20,
+    marginTop: 20
+  },
   titleText: {
     fontFamily: 'Helvetica',
     fontSize: 30,
@@ -45,7 +66,7 @@ export default StyleSheet.create({
     height: 200,
     resizeMode: 'contain',
     marginTop: -70,
-    marginLeft: 160,
+    marginLeft: 180,
   },
   getStartedContainer: {
     alignItems: 'center',
@@ -124,7 +145,6 @@ export default StyleSheet.create({
         backgroundColor: 'transparent'
     },
     //changes the main background color 
-
     container: {
         flex: 1,
         backgroundColor: colors.background1
@@ -199,5 +219,8 @@ export default StyleSheet.create({
     closeButton: {
       borderColor: '#621424',
       color: '#621424',
-    }
+    },
+    navBar: {
+      backgroundColor: 'black'
+    },
 });
