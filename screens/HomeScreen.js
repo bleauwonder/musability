@@ -38,6 +38,7 @@ export default class HomeScreen extends Component {
     this.setState({ currentUser })
 }
 
+
   constructor (props) {
     super(props);
     this.state = {
