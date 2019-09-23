@@ -7,6 +7,7 @@ import { Platform, Image, Text, StatusBar, StyleSheet, View } from 'react-native
 import { Ionicons } from '@expo/vector-icons';
 import { Card, Rating } from 'react-native-elements';
 import VENUES from './components/venueJSON';
+import styles from './src/style/index.style.js'
 // import { Container, Item, Form, Input, Button, Label } from "native-base";
 import AppNavigator from './navigation/AppNavigator';
 
@@ -102,33 +103,33 @@ export default function App(props) {
 
     //Code to initially load all the data from venue.JSON into Firebase, needed only to run once.
 
-    VENUES.forEach(element => {
+    // VENUES.forEach(element => {
 
-      var venue = {
-        name: element.name ? element.name: "",
-        href: element.href ? element.href: "",
-        address: element.address ? element.address: "",
-        city: element.city ? element.city: "",
-        state: element.state ? element.state: "",
-        zip: element.zip ? element.zip: null,
-        overallRating: element.overallRating ? element.overallRating: "",
-        anonymityRating: element.anonymityRating ? element.anonymityRating: "",
-        elevator: element.elevator ? element.elevator: null,
-        ramps: element.ramps ? element.ramps: null,
-        rampComment: element.rampComment ? element.rampComment: "",
-        restrooms: element.restrooms ? element.restrooms: null,
-        restroomKey: element.restroomKey ? element.restroomKey: null,
-        restroomsComment: element.restroomsComment ? element.restroomsComment: "",
-        overallComment: element.overallComment ? element.overallComment: "",
-        image: element.image.length !== 0 ? element.image: "",
-        displayImage: element.displayImage ? element.displayImage: "",
-      }
-
-
-    database.ref("/venues").push(venue);
+    //   var venue = {
+    //     name: element.name ? element.name: "",
+    //     href: element.href ? element.href: "",
+    //     address: element.address ? element.address: "",
+    //     city: element.city ? element.city: "",
+    //     state: element.state ? element.state: "",
+    //     zip: element.zip ? element.zip: null,
+    //     overallRating: element.overallRating ? element.overallRating: "",
+    //     anonymityRating: element.anonymityRating ? element.anonymityRating: "",
+    //     elevator: element.elevator ? element.elevator: null,
+    //     ramps: element.ramps ? element.ramps: null,
+    //     rampComment: element.rampComment ? element.rampComment: "",
+    //     restrooms: element.restrooms ? element.restrooms: null,
+    //     restroomKey: element.restroomKey ? element.restroomKey: null,
+    //     restroomsComment: element.restroomsComment ? element.restroomsComment: "",
+    //     overallComment: element.overallComment ? element.overallComment: "",
+    //     image: element.image.length !== 0 ? element.image: "",
+    //     displayImage: element.displayImage ? element.displayImage: "",
+    //   }
 
 
-    })
+    // database.ref("/venues").push(venue);
+
+
+    // })
 
 
   }) //useEffect Firebase Ends
@@ -139,8 +140,9 @@ export default function App(props) {
         startAsync={loadResourcesAsync}
         onError={handleLoadingError}
         onFinish={() => handleFinishLoading(setLoadingComplete)}
-      />,
-      <LogIn />
+      />
+      // ,
+      // <LogIn />
     );
   } else {
     return (
