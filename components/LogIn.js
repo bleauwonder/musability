@@ -10,6 +10,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  StyleSheet,
   Dimensions,
   TextInput
 } from 'react-native';
@@ -17,6 +18,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import styles, { colors } from '../src/style/index.style'
 import logo from '../assets/images/muslogo.png';
 import * as firebase from 'firebase';
+// import Video from 'react-native-video';
+// import LoginVid from '../assets/images/loop.mov' 
 const IS_ANDROID = Platform.OS === 'android';
 import { Container, Item, Form, Input, Button, Label } from "native-base";
 const firebaseConfig = {
@@ -75,6 +78,12 @@ render () {
     //CHANGE TO COPOMENT LATER 
     return (         
       <View style={styles.loginContainer}>
+        {/* <Video
+          repeat
+          source={LoginVid}
+          resizeMode="cover"
+          style={StyleSheet.absoluteFill}
+          /> */}
         {/* add background stuff         */}
         <View style={styles.loginContent}>
           <Container style={styles.logIn}>
