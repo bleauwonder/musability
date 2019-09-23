@@ -1,11 +1,11 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-// import LinksScreen from '../screens/LinksScreen';
 import LoginScreen from '../screens/LogInScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import SignUpScreen from '../screens/SignUpScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -35,42 +35,43 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
-// const LinksStack = createStackNavigator(
-//   {
-//     Links: LinksScreen,
-//   },
-//   config
-// );
+const ProfileStack = createStackNavigator(
+  {
+    Profile: ProfileScreen,
+  },
+  config
+);
 
-// LinksStack.navigationOptions = {
-//   tabBarLabel: 'Venues',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-microphone' : 'md-microphone'} />
-//   ),
-// };
+ProfileStack.navigationOptions = {
+  tabBarLabel: 'Profile',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-microphone' : 'md-microphone'} />
+  ),
+};
 
-// LinksStack.path = '';
+ProfileStack.path = '';
 
-const SettingsStack = createStackNavigator(
+const LogInStack = createStackNavigator(
   {
     Settings: LoginScreen,
   },
   config
 );
 
-SettingsStack.navigationOptions = {
+LogInStack.navigationOptions = {
   tabBarLabel: 'Login',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-log-in' : 'md-log-in'} />
   ),
 };
 
-SettingsStack.path = '';
+LogInStack.path = '';
+
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  // LinksStack,
-  SettingsStack,
+  LogInStack,
+  ProfileStack
 });
 
 tabNavigator.path = '';
