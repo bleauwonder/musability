@@ -13,7 +13,6 @@ import LogIn from './components/LogIn';
 import { createRootNavigator } from "./navigation/router";
 import { isSignedIn } from "./auth";
 
-export default function App(props) {
 // export default class App extends React.Component {
 //   constructor(props) {
 //     super(props);
@@ -41,7 +40,7 @@ export default function App(props) {
   //   const Layout = createRootNavigator(signedIn);
   //   return <Layout />;
   // }
-
+export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
   const [venues, setVenues] = useState(false);
 
