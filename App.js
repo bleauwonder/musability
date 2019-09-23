@@ -6,14 +6,42 @@ import React, { useState, useEffect } from 'react';
 import { Platform, Image, Text, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Card, Rating } from 'react-native-elements';
-import VENUES from './components/venueJSON';
-import { Container, Item, Form, Input, Button, Label } from "native-base";
+// import VENUES from './components/venueJSON';
+// import { Container, Item, Form, Input, Button, Label } from "native-base";
 import AppNavigator from './navigation/AppNavigator';
 import LogIn from './components/LogIn';
 import { createRootNavigator } from "./navigation/router";
 import { isSignedIn } from "./auth";
 
 export default function App(props) {
+// export default class App extends React.Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       signedIn: false,
+//       checkedSignIn: false
+//     };
+//   }
+
+//   componentDidMount() {
+//     isSignedIn()
+//       .then(res => this.setState({ signedIn: res, checkedSignIn: true }))
+//       .catch(err => alert("An error occurred"));
+//   }
+
+  // render() {
+  //   const { checkedSignIn, signedIn } = this.state;
+
+  //   // If we haven't checked AsyncStorage yet, don't render anything (better ways to do this)
+  //   if (!checkedSignIn) {
+  //     return null;
+  //   }
+
+  //   const Layout = createRootNavigator(signedIn);
+  //   return <Layout />;
+  // }
+
   const [isLoadingComplete, setLoadingComplete] = useState(false);
   const [venues, setVenues] = useState(false);
 
@@ -113,7 +141,7 @@ export default function App(props) {
       </View>
     )
   };
-} //end of export for App 
+}
 
 async function loadResourcesAsync() {
   await Promise.all([

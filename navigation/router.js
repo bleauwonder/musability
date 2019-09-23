@@ -3,7 +3,9 @@ import { Platform, StatusBar } from "react-native";
 import {
   StackNavigator,
   TabNavigator,
-  SwitchNavigator
+  SwitchNavigator,
+  createBottomTabNavigator,
+  createStackNavigator
 } from "react-navigation";
 import { FontAwesome } from "react-native-vector-icons";
 
