@@ -22,15 +22,24 @@ import { VENUES } from '../components/venueJSON';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import Modal from "react-native-modal";
 import ImageCarousel from '../components/ImageCarousel';
-// import * as firebase from 'firebase';
-
+import LOGO from '../assets/images/muslogo.png';
+import MUSIC_IMAGE from '../assets/images/musicnote.png';
+import * as firebase from 'firebase';
 const IS_ANDROID = Platform.OS === 'android';
 const SLIDER_1_FIRST_ITEM = 1;
-const MUSIC_IMAGE = require('../assets/images/musicnote.png');
+// import { Container, Item, Form, Input, Button, Label } from "native-base";
 
 
 
 export default class HomeScreen extends Component {
+
+  state = { currentUser: null }
+  
+  componentDidMount() {
+    const { currentUser } = firebase.auth()
+    this.setState({ currentUser })
+}
+
 
   constructor (props) {
     super(props);
@@ -66,16 +75,9 @@ _renderDarkItem ({item, index}) {
     return <CarouselItem data={item} even={true} />;
 }
 
-      return <MyCarousel data={item} even={false} />;
-    }
-
-    _renderDarkItem({ item, index }) {
-      return <MyCarousel data={item} even={true} />;
-    }
-
-    // VENUE CARD INFORMATION 
-    venueCard(number, title, type) {
-      const isTinder = type === 'tinder';
+// VENUE CARD INFORMATION 
+  venueCard (numbdataer, title, type) {
+    const isTinder = type === 'tinder';
       return (
         <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
           <Text style={[styles.title, isTinder ? {} : styles.titleDark]}  >
@@ -145,8 +147,8 @@ _renderDarkItem ({item, index}) {
             <Image
               source={
                 __DEV__
-                  ? require('../assets/images/musability-app.png')
-                  : require('../assets/images/musability-app.png')
+                ? require('../assets/images/muslogo.png')
+                : require('../assets/images/muslogo.png')
               }
               style={styles.welcomeImage}
             />

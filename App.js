@@ -3,25 +3,62 @@ import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import * as firebase from 'firebase';
 import React, { useState, useEffect } from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Platform, Image, Text, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Card, Rating } from 'react-native-elements';
 import VENUES from './components/venueJSON';
+// import { Container, Item, Form, Input, Button, Label } from "native-base";
 import AppNavigator from './navigation/AppNavigator';
 
+import LogIn from './components/LogIn';
+import { createRootNavigator } from "./navigation/router";
+import { isSignedIn } from "./auth";
+
+// export default class App extends React.Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       signedIn: false,
+//       checkedSignIn: false
+//     };
+//   }
+
+//   componentDidMount() {
+//     isSignedIn()
+//       .then(res => this.setState({ signedIn: res, checkedSignIn: true }))
+//       .catch(err => alert("An error occurred"));
+//   }
+
+  // render() {
+  //   const { checkedSignIn, signedIn } = this.state;
+
+  //   // If we haven't checked AsyncStorage yet, don't render anything (better ways to do this)
+  //   if (!checkedSignIn) {
+  //     return null;
+  //   }
+
+  //   const Layout = createRootNavigator(signedIn);
+  //   return <Layout />;
+  // }
 
 export default function App(props) {
-  // react hooks
   const [isLoadingComplete, setLoadingComplete] = useState(false);
   const [venues, setVenues] = useState(false);
 
+// react hooks
+//useEffect Firebase
   useEffect(() => {
     var firebaseConfig = {
       apiKey: "AIzaSyBF2aWOLg8IYO9ntBNk6agDXdrasaQMwkM",
       authDomain: "musability-app.firebaseapp.com",
       databaseURL: "https://musability-app.firebaseio.com",
       projectId: "musability-app",
+
+      storageBucket: "musability-app.appspot.com",
+
       storageBucket: "",
+
       messagingSenderId: "93508034987",
       appId: "1:93508034987:web:454f410ea139fe4c2932ee"
     };
@@ -93,7 +130,8 @@ export default function App(props) {
 
     })
 
-  })
+
+  }) //useEffect Firebase Ends
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
@@ -101,7 +139,8 @@ export default function App(props) {
         startAsync={loadResourcesAsync}
         onError={handleLoadingError}
         onFinish={() => handleFinishLoading(setLoadingComplete)}
-      />
+      />,
+      <LogIn />
     );
   } else {
     return (
@@ -109,8 +148,8 @@ export default function App(props) {
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         <AppNavigator />
       </View>
-    );
-  }
+    )
+  };
 }
 
 async function loadResourcesAsync() {
@@ -138,10 +177,3 @@ function handleLoadingError(error) {
 function handleFinishLoading(setLoadingComplete) {
   setLoadingComplete(true);
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
