@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/12.10.0/bin/node /usr/local/bin/yarnpkg add expo-web-browsers
+  /usr/local/bin/node /usr/local/bin/yarnpkg add vector-icons
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -8,23 +8,23 @@ Yarn version:
   1.17.3
 
 Node version: 
-  12.10.0
+  10.16.3
 
 Platform: 
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/expo-web-browsers: Not found
+  Error: https://registry.yarnpkg.com/vector-icons: Not found
       at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66830:18)
       at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140464:22)
-      at Request.emit (events.js:209:13)
+      at Request.emit (events.js:198:13)
       at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141436:10)
-      at Request.emit (events.js:209:13)
+      at Request.emit (events.js:198:13)
       at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141358:12)
-      at Object.onceWrapper (events.js:298:28)
-      at IncomingMessage.emit (events.js:214:15)
-      at endReadableNT (_stream_readable.js:1178:12)
-      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1145:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
 
 npm manifest: 
   {
@@ -58,11 +58,11 @@ npm manifest:
       "@expo/vector-icons": "^10.0.3",
       "@react-navigation/web": "^1.0.0-alpha.9",
       "expo": "^35.0.0",
-      "expo-asset": "^6.0.0",
+      "expo-asset": "~7.0.0",
       "expo-constants": "~7.0.0",
       "expo-font": "~7.0.0",
       "expo-linear-gradient": "~7.0.0",
-      "expo-web-browser": "6.0.0",
+      "expo-web-browser": "~7.0.0",
       "fb-watchman": "^2.0.0",
       "firebase": "^6.6.2",
       "moment": "^2.24.0",
@@ -86,6 +86,7 @@ npm manifest:
       "react-native-snap-carousel": "^3.8.0",
       "react-native-swipeout": "^2.3.6",
       "react-native-typography": "^1.4.1",
+      "react-native-vector-icons": "^6.6.0",
       "react-native-video": "^5.0.2",
       "react-native-view-overflow": "^0.0.4",
       "react-native-web": "^0.11.4",
@@ -3448,15 +3449,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/expo-app-loader-provider/-/expo-app-loader-provider-7.0.0.tgz#9bfff831a204d0a8896e0120bce2209c4304ef03"
     integrity sha512-C+5zpZN2T7PCj7weLs/ZgAC+y9dvu0VdTXD00Jf9Wo7Pxu/lsLh6ljg9JL91c+2tYDzMEODPNmT+JOUIxAr5zQ==
   
-  expo-asset@^6.0.0:
-    version "6.0.0"
-    resolved "https://registry.yarnpkg.com/expo-asset/-/expo-asset-6.0.0.tgz#caa3f45e7a27d978f8055fc58df6e33a4e661937"
-    integrity sha512-M0sJphdCQ0mq+7kg6rQmq4rU5hbsL72AZCNrga565JchCLeevJhv6j72erh2viqDAPdvjZpGwc7pwI/dxu1+zg==
-    dependencies:
-      blueimp-md5 "^2.10.0"
-      path-browserify "^1.0.0"
-      url-parse "^1.4.4"
-  
   expo-asset@~7.0.0:
     version "7.0.0"
     resolved "https://registry.yarnpkg.com/expo-asset/-/expo-asset-7.0.0.tgz#6d2ba460dd43807f40580199c0b76c508eb1ca63"
@@ -3517,11 +3509,6 @@ Lockfile:
       "@expo/websql" "^1.0.1"
       "@types/websql" "^0.0.27"
       lodash "^4.17.15"
-  
-  expo-web-browser@6.0.0:
-    version "6.0.0"
-    resolved "https://registry.yarnpkg.com/expo-web-browser/-/expo-web-browser-6.0.0.tgz#63a59d4c02cd7ba47faa6a2eb04decb1a1ab2a32"
-    integrity sha512-7XkFPd4PRlVP6FscTnn78c0tY6+yLzb2Eai/ed+l+LB+hZWuhyY3ONzYM7/IKAiPmfhZr4Qs80vIa7iiavti8A==
   
   expo-web-browser@~7.0.0:
     version "7.0.0"

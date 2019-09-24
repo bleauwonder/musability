@@ -1,12 +1,15 @@
-const firebaseConfig = {
-        apiKey: "AIzaSyBF2aWOLg8IYO9ntBNk6agDXdrasaQMwkM",
-        authDomain: "musability-app.firebaseapp.com",
-        databaseURL: "https://musability-app.firebaseio.com",
-        projectId: "musability-app",
-        storageBucket: "",
-        messagingSenderId: "93508034987",
-        appId: "1:93508034987:web:454f410ea139fe4c2932ee"
-      };
+// import firebase from 'firebase';
+
+var firebaseConfig = {
+  apiKey: "AIzaSyBF2aWOLg8IYO9ntBNk6agDXdrasaQMwkM",
+  authDomain: "musability-app.firebaseapp.com",
+  databaseURL: "https://musability-app.firebaseio.com",
+  projectId: "musability-app",
+  storageBucket: "musability-app.appspot.com",
+  storageBucket: "",
+  messagingSenderId: "93508034987",
+  appId: "1:93508034987:web:454f410ea139fe4c2932ee"
+};
 
 
 // // Initialize Firebase
@@ -15,9 +18,6 @@ var firebase = firebase.initializeApp(firebaseConfig);
 console.log(firebase);
 
 const database = firebase.database();
-VENUES.forEach(element => {
-   console.log(element);
-});
 
 
     // // Initialize Firebase
@@ -25,7 +25,7 @@ VENUES.forEach(element => {
       firebase.initializeApp(firebaseConfig);
     }
 
-    const database = firebase.database();
+   
 
 
 
@@ -59,4 +59,4 @@ VENUES.forEach(element => {
 
     })
 
-  })
+  
