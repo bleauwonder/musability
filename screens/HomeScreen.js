@@ -32,21 +32,43 @@ const SLIDER_1_FIRST_ITEM = 1;
 
 
 export default class HomeScreen extends Component {
-
-  state = { currentUser: null }
   
-  componentDidMount() {
-    const { currentUser } = firebase.auth()
-    this.setState({ currentUser })
-}
-
-
+//   componentDidMount() {
+//     const { currentUser } = firebase.auth()
+//     this.setState({ currentUser })
+// }
   constructor (props) {
     super(props);
     this.state = {
         slider1ActiveSlide: SLIDER_1_FIRST_ITEM,
         visibleModalId: null,
+        currentUser: null, 
+        data: []
     };
+  }
+
+  componentDidMount() {
+    var firebaseConfig = {
+      apiKey: "AIzaSyBF2aWOLg8IYO9ntBNk6agDXdrasaQMwkM",
+      authDomain: "musability-app.firebaseapp.com",
+      databaseURL: "https://musability-app.firebaseio.com",
+      projectId: "musability-app",
+      storageBucket: "musability-app.appspot.com",
+      storageBucket: "",
+      messagingSenderId: "93508034987",
+      appId: "1:93508034987:web:454f410ea139fe4c2932ee"
+    };
+  //   // // Initialize Firebase
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+
+    const database = firebase.database();
+
+    database.ref("/venues").on("value", snapshot => {
+      this.setState({ data: snapshot.val()})
+    })
+
   }
 
 _renderItem ({item, index}) {
@@ -78,6 +100,8 @@ _renderDarkItem ({item, index}) {
 // VENUE CARD INFORMATION 
   venueCard (numbdataer, title, type) {
     const isTinder = type === 'tinder';
+    const { data } = this.state;
+
       return (
         <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
           <Text style={[styles.title, isTinder ? {} : styles.titleDark]}  >
@@ -85,17 +109,17 @@ _renderDarkItem ({item, index}) {
           </Text>
           <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
           </Text>
-          <Carousel
-            data={VENUES}
-            renderItem={isTinder ? this._renderLightItem : this._renderItem}
-            sliderWidth={sliderWidth}
-            itemWidth={itemWidth}
-            containerCustomStyle={styles.slider}
-            contentContainerCustomStyle={styles.sliderContentContainer}
-            layout={type}
-            loop={true}
-            onPress={visibleModal}
-          />
+            <Carousel
+                  data={data}
+                  renderItem={isTinder ? this._renderLightItem : this._renderItem}
+                  sliderWidth={sliderWidth}
+                  itemWidth={itemWidth}
+                  containerCustomStyle={styles.slider}
+                  contentContainerCustomStyle={styles.sliderContentContainer}
+                  layout={type}
+                  loop={true}
+                  onPress={visibleModal}
+            />
         </View>
       );
     };
@@ -103,28 +127,30 @@ _renderDarkItem ({item, index}) {
 
     venueCard2(number, title, type) {
       const isTinder = type === 'tinder';
-      return (
-        <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
-          <Text style={[styles.title, isTinder ? {} : styles.titleDark]}>
-            {`Manhattan`}
-          </Text>
-          <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
-          </Text>
-          <Carousel
-            data={VENUES}
-            renderItem={isTinder ? this._renderLightItem : this._renderItem}
-            sliderWidth={sliderWidth}
-            itemWidth={itemWidth}
-            containerCustomStyle={styles.slider}
-            contentContainerCustomStyle={styles.sliderContentContainer}
-            layout={type}
-            loop={true}
-            onPress={visibleModal}
-          />
-        </View>
-      );
-    };
+      const { data } = this.state;
 
+        return (
+          <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
+            <Text style={[styles.title, isTinder ? {} : styles.titleDark]}> 
+              {`Manhattan`}
+            </Text>
+            <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
+            </Text>
+              <Carousel
+                    data={data}
+                    renderItem={isTinder ? this._renderLightItem : this._renderItem}
+                    sliderWidth={sliderWidth}
+                    itemWidth={itemWidth}
+                    containerCustomStyle={styles.slider}
+                    contentContainerCustomStyle={styles.sliderContentContainer}
+                    layout={type}
+                    loop={true}
+                    onPress={visibleModal}
+              />
+          </View>
+          );
+      };
+  
 
     const renderCard = this.venueCard(3, '"Stack of cards" layout | Loop', 'stack');
     const renderCard2 = this.venueCard2(3, '"Stack of cards" layout | Loop', 'stack');
