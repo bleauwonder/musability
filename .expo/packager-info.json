@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 43073,
-  "expoServerNgrokUrl": "https://yc-uei.anonymous.musability.exp.direct",
-  "packagerNgrokUrl": "https://packager.yc-uei.anonymous.musability.exp.direct",
-  "ngrokPid": 43089
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": "https://s8-b8w.anonymous.musability.exp.direct",
+  "packagerNgrokUrl": "https://packager.s8-b8w.anonymous.musability.exp.direct",
+  "ngrokPid": 45808
 }
