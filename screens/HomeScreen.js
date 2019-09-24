@@ -66,16 +66,7 @@ export default class HomeScreen extends Component {
     database.ref("/venues").on("value", snapshot => {
       this.setState({ data: snapshot.val()})
     })
-        // for(let item in snapshot) {
-      //   venueArr.push(item)
-      // }
 
-      // console.log("venues", venueArr)
-
-      // this.setState({ data: venueArr });
-      // snapshot.forEach(element => {
-      //   venueArr.push(element);
-      // })
   }
 
 _renderItem ({item, index}) {
