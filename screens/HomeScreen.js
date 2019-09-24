@@ -29,21 +29,19 @@ const IS_ANDROID = Platform.OS === 'android';
 const SLIDER_1_FIRST_ITEM = 1;
 // import { Container, Item, Form, Input, Button, Label } from "native-base";
 
-
-
 export default class HomeScreen extends Component {
-  
-//   componentDidMount() {
-//     const { currentUser } = firebase.auth()
-//     this.setState({ currentUser })
-// }
-  constructor (props) {
+
+  //   componentDidMount() {
+  //     const { currentUser } = firebase.auth()
+  //     this.setState({ currentUser })
+  // }
+  constructor(props) {
     super(props);
     this.state = {
-        slider1ActiveSlide: SLIDER_1_FIRST_ITEM,
-        visibleModalId: null,
-        currentUser: null, 
-        data: []
+      slider1ActiveSlide: SLIDER_1_FIRST_ITEM,
+      visibleModalId: null,
+      currentUser: null,
+      data: []
     };
   }
 
@@ -58,7 +56,7 @@ export default class HomeScreen extends Component {
       messagingSenderId: "93508034987",
       appId: "1:93508034987:web:454f410ea139fe4c2932ee"
     };
-  //   // // Initialize Firebase
+    //   // // Initialize Firebase
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
     }
@@ -66,94 +64,95 @@ export default class HomeScreen extends Component {
     const database = firebase.database();
 
     database.ref("/venues").on("value", snapshot => {
-      this.setState({ data: snapshot.val()})
+      this.setState({ data: snapshot.val() })
     })
 
   }
 
-_renderItem ({item, index}) {
-    return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal}/>;
-}
+  _renderItem({ item, index }) {
+    return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal} />;
+  }
 
-    _renderItem({ item, index }) {
-      return <MyCarousel data={item} even={(index + 1) % 2 === 0} onPress={visibleModal} />;
-    }
 
-_renderItemWithParallax ({item, index}, parallaxProps) {
+  _renderItemWithParallax({ item, index }, parallaxProps) {
     return (
-        <CarouselItem
-          data={item}
-          even={(index + 1) % 2 === 0}
-          parallax={true}
-          parallaxProps={parallaxProps}
-        />
-      );
+      <CarouselItem
+        data={item}
+        even={(index + 1) % 2 === 0}
+        parallax={true}
+        parallaxProps={parallaxProps}
+      />
+    );
+  }
 
-_renderLightItem ({item, index}) {
+  _renderLightItem({ item, index }) {
     return <CarouselItem data={item} even={false} />;
-}
+  }
 
-_renderDarkItem ({item, index}) {
+  _renderDarkItem({ item, index }) {
     return <CarouselItem data={item} even={true} />;
-}
+  }
 
-// VENUE CARD INFORMATION 
-  venueCard (numbdataer, title, type) {
+  // VENUE CARD INFORMATION 
+  venueCard(numbdataer, title, type) {
     const isTinder = type === 'tinder';
     const { data } = this.state;
 
-      return (
-        <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
-          <Text style={[styles.title, isTinder ? {} : styles.titleDark]}  >
-            {`Brooklyn`}
-          </Text>
-          <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
-          </Text>
-            <Carousel
-                  data={data}
-                  renderItem={isTinder ? this._renderLightItem : this._renderItem}
-                  sliderWidth={sliderWidth}
-                  itemWidth={itemWidth}
-                  containerCustomStyle={styles.slider}
-                  contentContainerCustomStyle={styles.sliderContentContainer}
-                  layout={type}
-                  loop={true}
-                  onPress={visibleModal}
-            />
-        </View>
-      );
-    };
+    return (
+      <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
+        <Text style={[styles.title, isTinder ? {} : styles.titleDark]}  >
+          {`Brooklyn`}
+        </Text>
+        <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
+        </Text>
+        <Carousel
+          data={data}
+          renderItem={isTinder ? this._renderLightItem : this._renderItem}
+          sliderWidth={sliderWidth}
+          itemWidth={itemWidth}
+          containerCustomStyle={styles.slider}
+          contentContainerCustomStyle={styles.sliderContentContainer}
+          layout={type}
+          loop={true}
+          onPress={visibleModal}
+        />
+      </View>
+    );
+  };
 
 
-    venueCard2(number, title, type) {
-      const isTinder = type === 'tinder';
-      const { data } = this.state;
+  venueCard2(number, title, type) {
+    const isTinder = type === 'tinder';
+    const { data } = this.state;
 
-        return (
-          <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
-            <Text style={[styles.title, isTinder ? {} : styles.titleDark]}> 
-              {`Manhattan`}
-            </Text>
-            <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
-            </Text>
-              <Carousel
-                    data={data}
-                    renderItem={isTinder ? this._renderLightItem : this._renderItem}
-                    sliderWidth={sliderWidth}
-                    itemWidth={itemWidth}
-                    containerCustomStyle={styles.slider}
-                    contentContainerCustomStyle={styles.sliderContentContainer}
-                    layout={type}
-                    loop={true}
-                    onPress={visibleModal}
-              />
-          </View>
-          );
-      };
-  
+    return (
+      <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
+        <Text style={[styles.title, isTinder ? {} : styles.titleDark]}>
+          {`Manhattan`}
+        </Text>
+        <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
+        </Text>
+        <Carousel
+          data={data}
+          renderItem={isTinder ? this._renderLightItem : this._renderItem}
+          sliderWidth={sliderWidth}
+          itemWidth={itemWidth}
+          containerCustomStyle={styles.slider}
+          contentContainerCustomStyle={styles.sliderContentContainer}
+          layout={type}
+          loop={true}
+          onPress={visibleModal}
+        />
+      </View>
+    );
+  };
 
+
+  render() {
     const renderCard = this.venueCard(3, '"Stack of cards" layout | Loop', 'stack');
     const renderCard2 = this.venueCard2(3, '"Stack of cards" layout | Loop', 'stack');
+
+
     return (
       <View style={styles.container}>
         <ScrollView
@@ -173,8 +172,8 @@ _renderDarkItem ({item, index}) {
             <Image
               source={
                 __DEV__
-                ? require('../assets/images/muslogo.png')
-                : require('../assets/images/muslogo.png')
+                  ? require('../assets/images/muslogo.png')
+                  : require('../assets/images/muslogo.png')
               }
               style={styles.welcomeImage}
             />

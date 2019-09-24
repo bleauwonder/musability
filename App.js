@@ -11,7 +11,7 @@ import VENUES from './components/venueJSON';
 import AppNavigator from './navigation/AppNavigator';
 import { Container, Form, Input, Button, Label } from "native-base";
 import LogIn from './components/LogIn';
-import { createRootNavigator } from "./navigation/router";
+// import { createRootNavigator } from "./navigation/router";
 import { isSignedIn } from "./auth";
 // export default class App extends React.Component {
 //   constructor(props) {
