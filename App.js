@@ -85,6 +85,7 @@ export default function App(props) {
     //   console.log("The read failed:" + errorObject.code);
     // }
     //Code to initially load all the data from venue.JSON into Firebase, needed only to run once.
+
   //   VENUES.forEach(element => {
   //     var venue = {
   //       name: element.name ? element.name: "",
@@ -108,6 +109,7 @@ export default function App(props) {
   //   database.ref("/venues").push(venue);
   //   })
   // }) //useEffect Firebase Ends
+
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
       <AppLoading
