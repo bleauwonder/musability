@@ -5,7 +5,7 @@ import { onSignOut } from "../auth";
 
 export default ({ navigation }) => (
   <View style={{ paddingVertical: 20 }}>
-    <Card title="John Doe">
+    <Card title="Kim Graff">
       <View
         style={{
           backgroundColor: "#bcbec1",

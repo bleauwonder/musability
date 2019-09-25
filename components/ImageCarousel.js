@@ -3,10 +3,6 @@ import Carousel, { ParallaxImage, isTinder } from 'react-native-snap-carousel';
 import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from '../src/style/SliderEntry.style';
-import VENUES, { data, image } from '../components/venueJSON';
-
-
-
 
 export class ImageCarousel extends Component {
 
@@ -19,11 +15,11 @@ export class ImageCarousel extends Component {
     };
     
     get image () {
-        const { data: { image }, parallax, parallaxProps, even } = this.props;
+        const { data: { displayImage }, parallax, parallaxProps, even } = this.props;
 
         return parallax ? (
             <ParallaxImage
-              source={{ uri: image }}
+              source={{ uri: displayImage }}
               containerStyle={[styles.imageContainer, even ? styles.imageContainerEven : {}]}
               style={styles.image}
               parallaxFactor={0.35}
@@ -33,14 +29,14 @@ export class ImageCarousel extends Component {
             />
         ) : (
             <Image
-              source={{ uri: 'https://www.billboard.com/files/styles/article_main_image/public/media/le-poisson-rouge-2018-billboard-1548.jpg' }}
+              source={{ uri: displayImage }}
               style={styles.image}
             />
         );
     }
 
     render () {
-        const { data: even } = this.props;
+        const { data: { overallComment, name, image }, even } = this.props;
         return (
             <TouchableOpacity
               activeOpacity={1}
@@ -49,6 +45,7 @@ export class ImageCarousel extends Component {
                 <View style={styles.shadow} />
                 <View style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>
                     { this.image }
+                    { this.overallComment }
                 <View style={[styles.radiusMask, even ? styles.radiusMaskEven : {}]} />
                 </View>
             </TouchableOpacity>

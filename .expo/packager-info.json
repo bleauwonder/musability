@@ -3,7 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": "https://8d-sav.anonymous.musability.exp.direct",
-  "packagerNgrokUrl": "https://packager.8d-sav.anonymous.musability.exp.direct",
-  "ngrokPid": 86551
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
