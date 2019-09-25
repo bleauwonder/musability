@@ -12,7 +12,7 @@ import {
   Dimensions,
   TextInput
 } from 'react-native';
-import Carousel, { props, visibleModal } from 'react-native-snap-carousel';
+import Carousel, { props, visibleModal, renderModalContent } from 'react-native-snap-carousel';
 import CarouselItem from '../components/CarouselItem';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Card, Button, Rating } from 'react-native-elements';
@@ -31,6 +31,10 @@ const SLIDER_1_FIRST_ITEM = 1;
 
 export default class HomeScreen extends Component {
   
+//   componentDidMount() {
+//     const { currentUser } = firebase.auth()
+//     this.setState({ currentUser })
+// }
   constructor (props) {
     super(props);
     this.state = {
@@ -42,8 +46,6 @@ export default class HomeScreen extends Component {
   }
 
   componentDidMount() {
-    const { currentUser } = firebase.auth()
-    this.setState({ currentUser })
     var firebaseConfig = {
       apiKey: "AIzaSyBF2aWOLg8IYO9ntBNk6agDXdrasaQMwkM",
       authDomain: "musability-app.firebaseapp.com",

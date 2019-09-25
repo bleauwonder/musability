@@ -59,7 +59,7 @@ const LogInStack = createStackNavigator(
 );
 
 LogInStack.navigationOptions = {
-  tabBarLabel: 'Login',
+  tabBarLabel: 'Log In',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-log-in' : 'md-log-in'} />
   ),
@@ -67,11 +67,21 @@ LogInStack.navigationOptions = {
 
 LogInStack.path = '';
 
+SignUpStack.navigationOptions = {
+  // tabBarLabel: 'Sign Up',
+  // tabBarIcon: ({ focused }) => (
+  //   <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-log-in' : 'md-log-in'} />
+  // ),
+};
+
+SignUpStack.path = '';
+
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LogInStack,
-  ProfileStack
+  ProfileStack,
+  SignUpStack
 });
 
 tabNavigator.path = '';
