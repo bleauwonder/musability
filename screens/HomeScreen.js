@@ -12,7 +12,7 @@ import {
   Dimensions,
   TextInput
 } from 'react-native';
-import Carousel, { props, visibleModal, renderModalContent } from 'react-native-snap-carousel';
+import Carousel, { props, visibleModal } from 'react-native-snap-carousel';
 import CarouselItem from '../components/CarouselItem';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Card, Button, Rating } from 'react-native-elements';

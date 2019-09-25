@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Carousel, { ParallaxImage, isTinder, tinder } from 'react-native-snap-carousel';
+import Carousel, { ParallaxImage, isTinder, renderModalContent, tinder } from 'react-native-snap-carousel';
 import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import styles, { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
@@ -18,7 +18,6 @@ export class CarouselItem extends Component {
         visibleModalId: null,
         currentUser: null, 
         data: [],
-        visibleModalId: null,
     };
   }
 
