@@ -547,5 +547,38 @@ export const VENUES = [
     }
 ]
 
-export default VENUES;
+//Code to initially load all the data from venue.JSON into Firbase, needed only to run once.
+
+// const test = [ ];
+
+// VENUES.forEach(element => {
+// console.log(element)
+//     var venue = {
+//       name: element.venue ? element.venue: "",
+//       website: element.href ? element.href: "",
+//       address: element.address ? element.address: "",
+//       overallRating: element.overallRating ? element.overallRating: "",
+//       anonymityRating: element.anonymityRating ? element.anonymityRating: "",
+//       elevator: element.elevator ? element.elevator: null,
+//       ramps: element.ramps ? element.ramps: null,
+//       rampComment: element.rampComment ? element.rampComment: "",
+//       restrooms: element.restrooms ? element.restrooms: null,
+//       restroomKey: element.restroomKey ? element.restroomKey: null,
+//       restroomsComment: element.restroomsComment ? element.restroomsComment: "",
+//       overallComment: element.overallComment ? element.overallRating: "",
+//       image: element.image.length !== 0 ? element.image: ""
+//     }
+
+// // test.push(venue)
+// // console.log(test.length)
+//   database.ref("/venues").push(venue)
+
+
+// })
+
+
+
+
+
+// export default VENUES;
 
