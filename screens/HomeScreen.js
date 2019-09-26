@@ -41,7 +41,8 @@ export default class HomeScreen extends Component {
       visibleModalId: null,
       currentUser: null,
       brooklynData: [],
-      manhattanData: []
+      manhattanData: [],
+      queensData: []
     }
   }
 
@@ -87,13 +88,31 @@ export default class HomeScreen extends Component {
         mnarray.push(childData)
       })
       const mnArray = mnarray.filter((place) => {
-          if(place.city === "New York") {
+          if (place.city === "New York") {
             return true;
           }
       });
       console.log(mnArray.length)
       this.setState({ manhattanData: mnArray });
     })
+
+    let qsarray = []
+    database.ref("/venues").once("value", snapshot => {
+      snapshot.forEach(childSnapshot => {
+        let childKey = childSnapshot.key;
+        let childData = childSnapshot.val();
+        qsarray.push(childData)
+      })
+      const qsArray = qsarray.filter((place) => {
+        if (place.city === "Queens") {
+          return true;
+        }
+      });
+      console.log(qsArray.length)
+      this.setState({ queensData: qsArray });
+    })
+
+
 
 
 
@@ -182,9 +201,41 @@ export default class HomeScreen extends Component {
   };
 
 
+
+
+  venueCard3(number, title, type) {
+    const isTinder = type === 'tinder';
+    const { queensData } = this.state;
+    // console.log(manhattanData)
+
+    return (
+      <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
+        <Text style={[styles.title, isTinder ? {} : styles.titleDark]}>
+          {`Queens`}
+        </Text>
+        <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
+        </Text>
+        <Carousel
+          data={queensData}
+          renderItem={isTinder ? this._renderLightItem : this._renderItem}
+          sliderWidth={sliderWidth}
+          itemWidth={itemWidth}
+          containerCustomStyle={styles.slider}
+          contentContainerCustomStyle={styles.sliderContentContainer}
+          layout={type}
+          loop={true}
+          onPress={visibleModal}
+        />
+      </View>
+    );
+  };
+
+
+
   render() {
     const renderCard = this.venueCard(3, '"Stack of cards" layout | Loop', 'stack');
     const renderCard2 = this.venueCard2(3, '"Stack of cards" layout | Loop', 'stack');
+    const renderCard3 = this.venueCard3(3, '"Stack of cards" layout | Loop', 'stack');
 
 
     return (
@@ -242,6 +293,7 @@ export default class HomeScreen extends Component {
                     >
                       {renderCard}
                       {renderCard2}
+                      {renderCard3}
                     </ScrollView>
                   </View>
                 </SafeAreaView>
