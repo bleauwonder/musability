@@ -10,6 +10,7 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
 import ImageCarousel from './ImageCarousel';
 import * as firebase from 'firebase';
+import Map from './Maps.js';
 
 // const db = db.collection("venues");
 
@@ -63,6 +64,8 @@ export class CarouselItem extends Component {
                 <Text>Description</Text>
                 
                 <Text>Reviews</Text>
+
+                {/* <Map></Map> */}
 
                 <Button
                 onPress={() => this.setState({ visibleModal: null })}
