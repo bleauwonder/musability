@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   View,
   Dimensions,
-  TextInput
+  TextInput,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import styles, { colors } from '../src/style/index.style'
@@ -27,7 +27,6 @@ const firebaseConfig = {
     messagingSenderId: "93508034987",
     appId: "1:93508034987:web:454f410ea139fe4c2932ee"
   };
-
   firebase.initializeApp(firebaseConfig);
 
 export default class LogIn extends React.Component {
@@ -39,6 +38,7 @@ constructor(props) {
     password: ""
   };
 }
+
 
 //firebase signup function
   SignUp = (email, password) => {
@@ -56,12 +56,14 @@ constructor(props) {
 
 //firebase login function
   LogIn = (email, password) => {
+    const { navigate } = this.props.navigation;
     try {
       firebase
          .auth()
          .signInWithEmailAndPassword(email, password)
          .then(res => {
              console.log(res.user.email);
+             () => navigate("Home");
       });
       } catch (error) {
       console.log(error.toString(error));
@@ -118,3 +120,4 @@ render () {
       );
     }
 }
+
