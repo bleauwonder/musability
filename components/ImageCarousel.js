@@ -23,7 +23,7 @@ export class ImageCarousel extends Component {
 
         return parallax ? (
             <ParallaxImage
-              source={{ uri: image }}
+              source={{ uri: image[0] }}
               containerStyle={[styles.imageContainer, even ? styles.imageContainerEven : {}]}
               style={styles.image}
               parallaxFactor={0.35}
