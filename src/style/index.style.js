@@ -18,7 +18,7 @@ export default StyleSheet.create({
   },
   loginContainer: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: colors.background2
   },
   logButton: {
     marginHorizontal: 20,

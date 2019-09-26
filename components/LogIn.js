@@ -85,7 +85,7 @@ export default class LogIn extends React.Component {
                 left: 0,
                 right: 0,
                 top: 0,
-                height: 720,
+                height: 850,
               }}
             />
             <Image
