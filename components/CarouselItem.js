@@ -96,18 +96,19 @@ export class CarouselItem extends Component {
                   ELEVATOR: {this.props.data.elevator ? yesIcon : noIcon } 
                 </Text>
                 <Text>
-                  RAMP: {noIcon} 
+                  RAMP:  {this.props.data.ramps ? yesIcon : noIcon } 
                 </Text>
                 <Text>
                   RAMP COMMNETS: {this.props.data.rampComment}
                 </Text>
                 <Text>
-                  RESTROOM: {unknownIcon}
+                  RESTROOM: {this.props.data.restrooms ? yesIcon : noIcon } 
                 </Text>
                 <Text>
-                  RESTROOM KEY?:
+                  RESTROOM KEY?:  {this.props.data.false ? yesIcon : noIcon } 
                 </Text>
                 <Text>
+                  <H3>Restroom Comments</H3>
                   {this.props.data.restroomComment}
                 </Text>
                 <Text>
