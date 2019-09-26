@@ -10,7 +10,7 @@ export const colors = {
 
 export default StyleSheet.create({
   logIn: {
-    marginTop: 200,
+    marginTop: 300,
   },
   
   video: {
