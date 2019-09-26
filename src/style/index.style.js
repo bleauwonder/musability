@@ -12,6 +12,7 @@ export default StyleSheet.create({
   logIn: {
     marginTop: 200,
     alignContent: "center",
+    backgroundColor: 'transparent'
   },
   
   video: {
@@ -23,7 +24,7 @@ export default StyleSheet.create({
   },
   loginContent: {
     flex: 1,
-    justifyContent: 'center',
+    // backgroundImage: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
   },
   loginContainer: {
     flex: 1,

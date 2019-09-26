@@ -18,7 +18,7 @@ export default ({ navigation }) => (
           marginBottom: 20
         }}
       >
-        <Text style={{ color: "white", fontSize: 28 }}>JD</Text>
+        <Text style={{ color: "white", fontSize: 28 }}>KG</Text>
       </View>
       <Button
         backgroundColor="#03A9F4"

@@ -8,6 +8,7 @@ import styles from './src/style/index.style.js';
 import { Ionicons } from '@expo/vector-icons';
 import { Card, Rating } from 'react-native-elements';
 import VENUES from './components/venueJSON';
+import AppNavigation from './navigation/AppNavigation'
 import AppNavigator from './navigation/AppNavigator';
 import { Container, Form, Input, Button, Label } from "native-base";
 import LogIn from './components/LogIn';
