@@ -77,15 +77,31 @@ export default class LogIn extends React.Component {
     //FIRST SHOWS - LOG IN PAGE / SIGN UP PAGE
     //CHANGE TO COPOMENT LATER 
     return (
-      <ImageBackground
-        source={{ loginImage }}
-        style={{ width: '100%', height: '100%' }} >
-        <View style={styles.loginContent}>
+        <View style={styles.loginContainer}>
+         <LinearGradient
+              colors={['rgba(142, 33, 56, 100)', 'rgba(121, 9, 9, 100)', 'transparent']}
+              style={{
+                position: 'absolute',
+                left: 0,
+                right: 0,
+                top: 0,
+                height: 720,
+              }}
+            />
+            <Image
+              source={
+                __DEV__
+                  ? require('../assets/images/muslogo.png')
+                  : require('../assets/images/muslogo.png')
+              }
+              style={styles.logImage}
+            />
           <Container style={styles.logIn}>
             <Form>
               <Item floatingLabel>
-                <Label>Email</Label>
+              <Label style={{color: 'white'}}>Email</Label>
                 <Input
+                  style={styles.styleInput}
                   placeholder='you@domain.com'
                   autoCapitalize="none"
                   autoCorrect={false}
@@ -93,8 +109,10 @@ export default class LogIn extends React.Component {
                 />
               </Item>
               <Item floatingLabel>
-                <Label>Password</Label>
+                <Label style={{color: 'white'}}>Password</Label>
                 <Input
+                  style={styles.styleInput}
+                  color='white'
                   secureTextEntry={true}
                   autoCapitalize="none"
                   autoCorrect={false}
@@ -104,23 +122,22 @@ export default class LogIn extends React.Component {
 
               <Button
                 full rounded
-                bordered danger
+                light
                 style={styles.logButton}
                 onPress={() => this.LogIn(this.state.email, this.state.password).then(() => this.props.navigation.navigate("Home"))
                 }>
-                <Text>Login</Text>
+                <Text style={[styles.buttonText, {color: 'black'}]}>LOGIN</Text>
               </Button>
 
               <Button
-                full rounded danger
+                full rounded dark
                 style={styles.logButton}
                 onPress={() => this.SignUp(this.state.email, this.state.password)}>
-                <Text>Signup</Text>
+                <Text style={styles.buttonText}>SIGNUP</Text>
               </Button>
             </Form>
           </ Container>
         </View>
-      </ImageBackground>
     );
   }
 }

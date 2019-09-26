@@ -5,34 +5,32 @@ export const colors = {
     gray: '#888888',
     white: '#ffffff',
     background1: '#8e2138',
-    background2: '#3a121a'
+    background2: '#3a121a',
+    background3: '#790909',
+    background4: '#ff9300',
 };
 
 export default StyleSheet.create({
   logIn: {
-    marginTop: 200,
+    marginTop: 50,
     alignContent: "center",
-    backgroundColor: 'transparent'
-  },
-  
-  video: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-  },
-  loginContent: {
-    flex: 1,
-    // backgroundImage: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+    backgroundColor: 'transparent',
   },
   loginContainer: {
     flex: 1,
-    backgroundColor: "transparent"
+    backgroundColor: 'white'
   },
   logButton: {
     marginHorizontal: 20,
-    marginTop: 20
+    marginTop: 20,
+  },
+  styleInput: {
+    color: 'white',
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold'
   },
   titleText: {
     fontFamily: 'Helvetica',
@@ -69,6 +67,14 @@ export default StyleSheet.create({
     height: 200,
     resizeMode: 'contain',
     marginTop: -70,
+    marginLeft: 180,
+  },
+
+  logImage: {
+    width: 200,
+    height: 200,
+    resizeMode: 'contain',
+    marginTop: -10,
     marginLeft: 180,
   },
   getStartedContainer: {
