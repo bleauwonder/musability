@@ -14,7 +14,8 @@ import {
   TextInput,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import styles, { colors } from '../src/style/index.style'
+import loginImage from '../assets/images/login.jpg';
+import styles, { colors } from '../src/style/index.style';
 import logo from '../assets/images/muslogo.png';
 import * as firebase from 'firebase';
 const IS_ANDROID = Platform.OS === 'android';
@@ -77,7 +78,7 @@ export default class LogIn extends React.Component {
     //CHANGE TO COPOMENT LATER 
     return (
       <ImageBackground
-        source={{ uri: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' }}
+        source={{ loginImage }}
         style={{ width: '100%', height: '100%' }} >
         <View style={styles.loginContent}>
           <Container style={styles.logIn}>

@@ -100,10 +100,36 @@ export default StyleSheet.create({
     modalContent: {
       backgroundColor: 'white',
       padding: 22,
-      justifyContent: 'center',
-      alignItems: 'center',
       borderRadius: 4,
       borderColor: 'rgba(0, 0, 0, 0.1)',
+    },
+    modalText: {
+      margin: 2,
+      textAlign: 'center',
+      fontSize: 14,
+    },
+    // ratingTitle: {
+    //   padding: 10,
+    //   fontSize: 16,
+    //   color: '#3a121a',
+    //   fontWeight: 'bold'
+    // },
+    ratingText: {
+      marginLeft: 10,
+      fontSize: 18,
+      fontWeight: 'bold'
+    },
+    elementText: {
+      padding: 10,
+      fontSize: 16,
+      color: '#8e2138',
+      fontWeight: 'bold'
+    },
+    comment: {
+      padding: 10,
+      margin: 10,
+      fontSize: 14,
+      backgroundColor: '#D3D3D3'
     },
     contentTitle: {
       fontSize: 20,
