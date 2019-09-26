@@ -19,9 +19,6 @@ export class VenueModal extends Component {
         hasModal: PropTypes.boolean
     };
 
-_renderItem ({item, index}) {
-    return <CarouselItem hasModal={false} data={item} even={(index + 1) % 2 === 0}/>;
-  }
 
 _renderItemWithParallax ({item, index}, parallaxProps) {
     return (
@@ -35,11 +32,7 @@ _renderItemWithParallax ({item, index}, parallaxProps) {
     );
 }
     render(){
-
-    
-    function renderModalContent (type) {
         const isTinder = type === 'tinder';
-        const { data } = this.props;
         return (
         <Modal
             isVisible={this.state.visibleModal === 'fancy'}
@@ -59,16 +52,6 @@ _renderItemWithParallax ({item, index}, parallaxProps) {
                 </Text>
                 <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
                 </Text>
-                    <Carousel
-                        data={data}
-                        renderItem={isTinder ? this._renderLightItem : this._renderItem}
-                        sliderWidth={sliderWidth}
-                        itemWidth={itemWidth}
-                        containerCustomStyle={styles.slider}
-                        contentContainerCustomStyle={styles.sliderContentContainer}
-                        layout={type}
-                        loop={true}
-                    />
                 </View>
                 <Text>RATING</Text>
                 <Rating
@@ -96,8 +79,6 @@ _renderItemWithParallax ({item, index}, parallaxProps) {
         </Modal> 
       );
   };
-  return renderModalContent("fancy")
-    }   
 };
 
 export default VenueModal;
