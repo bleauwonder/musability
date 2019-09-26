@@ -7,7 +7,6 @@ import Modal from "react-native-modal";
 import { Card, Button, Rating } from 'react-native-elements';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
-import CHECK from '';
 
 import { Container, Header, Content, H1, H2, H3 } from 'native-base';
 
@@ -73,7 +72,7 @@ export class CarouselItem extends Component {
                 <Text>{this.props.data.restroomComment}</Text>
                 <Text><H2>Venue Comments</H2></Text>
                 <Text>{this.props.data.overallComment}</Text>
-            </View> 
+              </View> 
             </View>
         );
         
@@ -142,6 +141,6 @@ export class CarouselItem extends Component {
                 </View>
             </TouchableOpacity>
         );
-    }
+    };
 };
 export default CarouselItem;
