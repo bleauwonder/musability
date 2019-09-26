@@ -3,75 +3,30 @@ import Carousel, { ParallaxImage, isTinder, tinder } from 'react-native-snap-car
 import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
 import VENUES from './venueJSON'
 import PropTypes from 'prop-types';
+import VenueModal from './VenueModal';
 import styles, { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import Modal from "react-native-modal";
 import { Card, Button, Rating } from 'react-native-elements';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
-import ImageCarousel from './ImageCarousel';
 import * as firebase from 'firebase';
-
-// const db = db.collection("venues");
-
-// db("venues").get().then(function(querySnapshot) {
-//   querySnapshot.forEach(function(doc) {
-//       // doc.data() is never undefined for query doc snapshots
-//       console.log(doc.id, " => ", doc.data());
-//   });
-// });
-
-
+const SLIDER_1_FIRST_ITEM = 1;
 
 export class CarouselItem extends Component {    
     state = {
         visibleModalId: null,
+        slider1ActiveSlide: SLIDER_1_FIRST_ITEM,
+        hasModal: this.props.hasModal || true
       };
 
     static propTypes = {
         data: PropTypes.object,
         even: PropTypes.bool,
         parallax: PropTypes.bool,
-        parallaxProps: PropTypes.object
+        parallaxProps: PropTypes.object,
     };
 
 
-        renderModalContent = (type) => (
-            <View style={styles.modalContent}>  
-                <ImageCarousel
-                  data={VENUES}
-                  renderItem={isTinder ? this._renderLightItem : this._renderItem}
-                  sliderWidth={sliderWidth}
-                  itemWidth={itemWidth}
-                  containerCustomStyle={styles.slider}
-                  contentContainerCustomStyle={styles.sliderContentContainer}
-                  layout={type === 'tinder'}
-                  loop={true}
-                   />
-
-                <Text>RATING</Text>
-                <Rating
-                  type='custom'
-                  ratingImage={MUSIC_IMAGE}
-                  onFinishRating={this.ratingCompleted}
-                  ratingColor='#800022'
-                  ratingBackgroundColor='#fff'
-                  ratingCount={5}
-                  imageSize={20}
-                  style={{ paddingVertical: 10 }}
-                  />
-
-                <Text>Description</Text>
-                
-                <Text>Reviews</Text>
-
-                <Button
-                onPress={() => this.setState({ visibleModal: null })}
-                type="outline"
-                style={styles.closeButton}
-                title="Close"
-                />
-            </View> 
-        );
         
 
     get image () {
@@ -98,6 +53,7 @@ export class CarouselItem extends Component {
     }
 
     render () {
+      console.log("LOOK AT ME DATA TIME", this.props.data)
         const { data: { name, overallRating }, even } = this.props;
 
         const uppercaseTitle = name ? (
@@ -108,7 +64,6 @@ export class CarouselItem extends Component {
                 { name.toUpperCase() }
             </Text>
         ) : false;
-
         return (
             <TouchableOpacity
               activeOpacity={1}
@@ -116,20 +71,8 @@ export class CarouselItem extends Component {
             //   add modal here
               onPress={() => this.setState({ visibleModal: 'fancy' })}
               >
-                <Modal
-                    isVisible={this.state.visibleModal === 'fancy'}
-                    backdropColor="#8e2138"
-                    backdropOpacity={0.8}
-                    animationIn="zoomInDown"
-                    animationOut="zoomOutUp"
-                    animationInTiming={600}
-                    animationOutTiming={600}
-                    backdropTransitionInTiming={600}
-                    backdropTransitionOutTiming={600}
-                    >
+                 <View/>
 
-                    {this.renderModalContent()}
-                </Modal> 
                 <View style={styles.shadow} />
                 <View style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>
                     { this.image }

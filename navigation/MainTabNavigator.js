@@ -67,21 +67,21 @@ LogInStack.navigationOptions = {
 
 LogInStack.path = '';
 
-SignUpStack.navigationOptions = {
-  // tabBarLabel: 'Sign Up',
-  // tabBarIcon: ({ focused }) => (
-  //   <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-log-in' : 'md-log-in'} />
-  // ),
-};
+// SignUpStack.navigationOptions = {
+//   // tabBarLabel: 'Sign Up',
+//   // tabBarIcon: ({ focused }) => (
+//   //   <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-log-in' : 'md-log-in'} />
+//   // ),
+// };
 
-SignUpStack.path = '';
+// SignUpStack.path = '';
 
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LogInStack,
   ProfileStack,
-  SignUpStack
+  // SignUpStack
 });
 
 tabNavigator.path = '';

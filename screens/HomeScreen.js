@@ -21,7 +21,7 @@ import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import { VENUES } from '../components/venueJSON';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import Modal from "react-native-modal";
-import ImageCarousel from '../components/ImageCarousel';
+import ImageCarousel from '../components/VenueModal';
 import LOGO from '../assets/images/muslogo.png';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
 import * as firebase from 'firebase';
@@ -70,13 +70,14 @@ export default class HomeScreen extends Component {
   }
 
 _renderItem ({item, index}) {
-    return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal}/>;
+    return <CarouselItem hasModal={true} data={item} even={(index + 1) % 2 === 0} onPress={visibleModal}/>;
 }
 
 
 _renderItemWithParallax ({item, index}, parallaxProps) {
     return (
         <CarouselItem
+        hasModal={true}
           data={item}
           even={(index + 1) % 2 === 0}
           parallax={true}
@@ -86,11 +87,11 @@ _renderItemWithParallax ({item, index}, parallaxProps) {
 }
 
 _renderLightItem ({item, index}) {
-    return <CarouselItem data={item} even={false} />;
+    return <CarouselItem hasModal={true} data={item} even={false} />;
 }
 
 _renderDarkItem ({item, index}) {
-    return <CarouselItem data={item} even={true} />;
+    return <CarouselItem hasModal={true} data={item} even={true} />;
 }
 
 // VENUE CARD INFORMATION 
