@@ -1,4 +1,10 @@
 import { StyleSheet, Dimensions, Platform } from 'react-native';
+const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
+
+function wp (percentage) {
+    const value = (percentage * viewportWidth) / 100;
+    return Math.round(value);
+}
 
 export const colors = {
     black: '#1a1917',
@@ -26,10 +32,11 @@ export default StyleSheet.create({
   },
   styleInput: {
     color: 'white',
+    fontSize: 14
   },
   buttonText: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 14,
     fontWeight: 'bold'
   },
   titleText: {
@@ -38,6 +45,12 @@ export default StyleSheet.create({
     color: 'white',
     padding: 5,
     margin: 10,
+  },
+  profilePage: {
+    padding: 20,
+    flex: 1,
+    backgroundColor: colors.background3
+
   },
   venueStyle: {
     color: 'blue',
@@ -183,16 +196,13 @@ export default StyleSheet.create({
         padding: 5,
         color: 'rgb(255, 255, 255)',
         backgroundColor: colors.background2,
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: 'bold',
-        // fontStyle: 'italic',
+        fontStyle: 'italic',
         textAlign: 'center',
         textTransform: 'uppercase',
         letterSpacing: 1,
-        // borderStyle: 'solid',
-        // borderWidth: 1.5,
-        // borderRadius: 20,
-        // borderColor: colors.background2
+        width: wp(95),
     },
     titleDark: {
       // color: 'rgb(255, 255, 255)',
@@ -224,10 +234,6 @@ export default StyleSheet.create({
         height: 8,
         borderRadius: 4,
         marginHorizontal: 5
-    },
-    closeButton: {
-      borderColor: '#621424',
-      color: '#621424',
     },
     navBar: {
       backgroundColor: 'black'

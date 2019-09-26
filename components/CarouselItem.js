@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
-import { View, Text, Image, TouchableOpacity, Linking, Dimensions, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Linking, Dimensions, ScrollView, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import styles, { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import Modal from "react-native-modal";
@@ -47,79 +47,82 @@ export class CarouselItem extends Component {
 
   renderModalContent = (type) => (
     <View>
-      <Button
-        bordered dark
-        onPress={() => this.setState({ visibleModal: null })}
-        aria-label="close"
-        >
-          <Text style={[{paddingLeft: 170}, {fontWeight: "bold"}]}> X </Text>
-      </Button>
-      <View style={styles.modalContent}>
-        <Text style={styles.modalText}>
-          <H1 style={{color: '#8e2138'}}>{this.props.data.name}</H1>
-        </Text>
-        <Text
-          style={[{ color: 'blue' }, styles.modalText]}
-          onPress={() => Linking.openURL(this.props.data.href)}>
-          {this.props.data.href}
-        </Text>
-        <Text style={styles.modalText}>
-          {this.props.data.address},{" "} 
-          {this.props.data.city},{" "}
-          {this.props.data.state},{" "}
-          {this.props.data.zip}
-        </Text>
-        <Text style={{margin: 10}}>
-          {/* blank to create a nice barrier between above and below */}
-        </Text>
-        <Text style={styles.elementText}>
-          Overall Rating
-        </Text>
-        <Text style={styles.ratingText}>
-          {this.props.data.overallRating}
-          {this.props.data.overallRating ? null : 'No rating yet'}
-        </Text>
-        <Text style={styles.elementText}>
-          Anonymity Rating
-        </Text>
-        <Text  style={styles.ratingText}>
-          {this.props.data.anonymityRating}
-          {this.props.data.anonymityRating ? null : 'No rating yet'}
-        </Text>
-        <Text style={styles.elementText}>
-          ELEVATOR: {this.props.data.elevator ? yesIcon : noIcon}
-        </Text>
-        <Text style={styles.elementText}>
-          RAMP:  {this.props.data.ramps ? yesIcon : noIcon}
-        </Text>
-        <Text style={styles.elementText}>
-          RAMP COMMNETS: 
-        </Text>
-        <Text style={styles.comment}>
-          {this.props.data.rampsComment}
-          {this.props.data.rampsComment ? null : 'No feedback yet'}
-        </Text>
-        <Text style={styles.elementText}>
-          RESTROOM: {this.props.data.restrooms ? yesIcon : noIcon}
-        </Text>
-        <Text style={styles.elementText}>
-          RESTROOM KEY?:  {this.props.data.false ? yesIcon : noIcon}
-        </Text>
-        <Text style={styles.elementText}>
-          RESTROOM COMMENTS
-        </Text>
-        <Text style={styles.comment}>
-          {this.props.data.restroomComment}
-          {this.props.data.restroomComment ? null : 'No feedback yet'}
-        </Text>
-        <Text>
-          <H2 style={styles.elementText}>VENUE REVIEWS</H2>
-        </Text>
-        <Text style={styles.comment}>
-          {this.props.data.overallComment}
-          {this.props.data.overallComment  ? null : 'No feedback yet'}
-        </Text>
-      </View>
+          <ScrollView>
+          <View style={styles.modalContent}>
+          <Button
+            style={styles.closeButton}
+            bordered dark
+            onPress={() => this.setState({ visibleModal: null })}
+            aria-label="close"
+            >
+              <Text style={[{fontWeight: "bold"}, {fontSize: 16}]}> X </Text>
+          </Button>
+            <Text style={styles.modalText}>
+              <H1 style={{color: '#8e2138'}}>{this.props.data.name}</H1>
+            </Text>
+            <Text
+              style={[{ color: 'blue' }, styles.modalText]}
+              onPress={() => Linking.openURL(this.props.data.href)}>
+              {this.props.data.href}
+            </Text>
+            <Text style={styles.modalText}>
+              {this.props.data.address},{" "} 
+              {this.props.data.city},{" "}
+              {this.props.data.state},{" "}
+              {this.props.data.zip}
+            </Text>
+            <Text style={{margin: 10}}>
+              {/* blank to create a nice barrier between above and below */}
+            </Text>
+            <Text style={styles.elementText}>
+              Overall Rating
+            </Text>
+            <Text style={styles.ratingText}>
+              {this.props.data.overallRating}
+              {this.props.data.overallRating ? null : 'No rating yet'}
+            </Text>
+            <Text style={styles.elementText}>
+              Anonymity Rating
+            </Text>
+            <Text  style={styles.ratingText}>
+              {this.props.data.anonymityRating}
+              {this.props.data.anonymityRating ? null : 'No rating yet'}
+            </Text>
+            <Text style={styles.elementText}>
+              ELEVATOR: {this.props.data.elevator ? yesIcon : noIcon}
+            </Text>
+            <Text style={styles.elementText}>
+              RAMP:  {this.props.data.ramps ? yesIcon : noIcon}
+            </Text>
+            <Text style={styles.elementText}>
+              RAMP COMMNETS: 
+            </Text>
+            <Text style={styles.comment}>
+              {this.props.data.rampsComment}
+              {this.props.data.rampsComment ? null : 'No feedback yet'}
+            </Text>
+            <Text style={styles.elementText}>
+              RESTROOM: {this.props.data.restrooms ? yesIcon : noIcon}
+            </Text>
+            <Text style={styles.elementText}>
+              RESTROOM KEY?:  {this.props.data.false ? yesIcon : noIcon}
+            </Text>
+            <Text style={styles.elementText}>
+              RESTROOM COMMENTS
+            </Text>
+            <Text style={styles.comment}>
+              {this.props.data.restroomComment}
+              {this.props.data.restroomComment ? null : 'No feedback yet'}
+            </Text>
+            <Text>
+              <H2 style={styles.elementText}>VENUE REVIEWS</H2>
+            </Text>
+            <Text style={styles.comment}>
+              {this.props.data.overallComment}
+              {this.props.data.overallComment  ? null : 'No feedback yet'}
+            </Text>
+        </View>
+        </ScrollView>
     </View>
   );
 

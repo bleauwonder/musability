@@ -172,6 +172,10 @@ export default StyleSheet.create({
       fontSize: 17,
     },
     closeButton: {
-      color: '#621424'
-        }
+      width: 20,
+      height: 30,
+      padding: 0,
+      margin: 0,
+      alignContent: 'flex-end'
+    },
 })
