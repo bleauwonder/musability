@@ -5,7 +5,7 @@ import { onSignOut } from "../auth";
 
 export default ({ navigation }) => (
   <View style={{ paddingVertical: 20 }}>
-    <Card title="John Doe">
+    <Card title="Kim Graff">
       <View
         style={{
           backgroundColor: "#bcbec1",
@@ -23,7 +23,7 @@ export default ({ navigation }) => (
       <Button
         backgroundColor="#03A9F4"
         title="SIGN OUT"
-        onPress={() => onSignOut().then(() => navigation.navigate("SignedOut"))}
+        onPress={() => onSignOut().then(() => navigation.navigate("HomeStack"))}
       />
     </Card>
   </View>
