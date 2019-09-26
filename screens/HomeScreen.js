@@ -25,24 +25,24 @@ import ImageCarousel from '../components/ImageCarousel';
 import LOGO from '../assets/images/muslogo.png';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
 import * as firebase from 'firebase';
+// import { element } from '../../../Library/Caches/typescript/3.6/node_modules/@types/prop-types';
+
 const IS_ANDROID = Platform.OS === 'android';
 const SLIDER_1_FIRST_ITEM = 1;
-// import { Container, Item, Form, Input, Button, Label } from "native-base";
+
 
 export default class HomeScreen extends Component {
 
-  //   componentDidMount() {
-  //     const { currentUser } = firebase.auth()
-  //     this.setState({ currentUser })
-  // }
+ 
   constructor(props) {
     super(props);
     this.state = {
       slider1ActiveSlide: SLIDER_1_FIRST_ITEM,
       visibleModalId: null,
       currentUser: null,
-      data: []
-    };
+      brooklynData: [],
+      manhattanData: []
+    }
   }
 
   componentDidMount() {
@@ -63,17 +63,50 @@ export default class HomeScreen extends Component {
 
     const database = firebase.database();
 
-    database.ref("/venues").on("value", snapshot => {
-      this.setState({ data: snapshot.val() })
+    
+    let bkarray = []
+    database.ref("/venues").once("value", snapshot => {
+      snapshot.forEach(childSnapshot => {
+        let childKey = childSnapshot.key;
+        let childData = childSnapshot.val();
+        bkarray.push(childData)
+      })
+      const bkArray = bkarray.filter(place => {
+        if (place.city === "Brooklyn") {
+          return true;
+        }
+      })
+      this.setState({ brooklynData: bkArray });
+    })
+    
+    let mnarray = []
+    database.ref("/venues").once("value", snapshot => {
+      snapshot.forEach(childSnapshot => {
+        let childKey = childSnapshot.key;
+        let childData = childSnapshot.val();
+        mnarray.push(childData)
+      })
+      const mnArray = mnarray.filter((place) => {
+          if(place.city === "New York") {
+            return true;
+          }
+      });
+      console.log(mnArray.length)
+      this.setState({ manhattanData: mnArray });
     })
 
+
+
+  
   }
+
+
 
   _renderItem({ item, index }) {
     return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal} />;
   }
 
-
+  
   _renderItemWithParallax({ item, index }, parallaxProps) {
     return (
       <CarouselItem
@@ -94,10 +127,10 @@ export default class HomeScreen extends Component {
   }
 
   // VENUE CARD INFORMATION 
-  venueCard(numbdataer, title, type) {
+  venueCard(number, title, type) {
     const isTinder = type === 'tinder';
-    const { data } = this.state;
-
+    const { brooklynData } = this.state;
+    // console.log(brooklynData)
     return (
       <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
         <Text style={[styles.title, isTinder ? {} : styles.titleDark]}  >
@@ -106,7 +139,7 @@ export default class HomeScreen extends Component {
         <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
         </Text>
         <Carousel
-          data={data}
+          data={brooklynData}
           renderItem={isTinder ? this._renderLightItem : this._renderItem}
           sliderWidth={sliderWidth}
           itemWidth={itemWidth}
@@ -123,7 +156,8 @@ export default class HomeScreen extends Component {
 
   venueCard2(number, title, type) {
     const isTinder = type === 'tinder';
-    const { data } = this.state;
+    const { manhattanData } = this.state;
+    // console.log(manhattanData)
 
     return (
       <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
@@ -133,7 +167,7 @@ export default class HomeScreen extends Component {
         <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
         </Text>
         <Carousel
-          data={data}
+          data={manhattanData}
           renderItem={isTinder ? this._renderLightItem : this._renderItem}
           sliderWidth={sliderWidth}
           itemWidth={itemWidth}
@@ -187,6 +221,7 @@ export default class HomeScreen extends Component {
                   style={{ height: 40, borderColor: 'white', borderRadius: 10, borderWidth: 1, backgroundColor: 'white', width: 300, marginLeft: 20 }}
                 />
                 <Button
+                  onSub
                   buttonStyle={{ borderRadius: 10, marginLeft: 5, marginRight: 0, marginBottom: 0, backgroundColor: '#000000' }}
                   title='Search' />
               </Row>

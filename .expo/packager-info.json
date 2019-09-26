@@ -3,7 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": "https://cm-s5v.anonymous.musability.exp.direct",
-  "packagerNgrokUrl": "https://packager.cm-s5v.anonymous.musability.exp.direct",
-  "ngrokPid": 47444
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
