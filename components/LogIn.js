@@ -1,4 +1,3 @@
-
 import * as WebBrowser from 'expo-web-browser';
 import React, { Component } from 'react';
 import {
@@ -11,15 +10,13 @@ import {
   TouchableOpacity,
   View,
   Dimensions,
-  TextInput
+  TextInput,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import styles, { colors } from '../src/style/index.style'
 import logo from '../assets/images/muslogo.png';
 import * as firebase from 'firebase';
 const IS_ANDROID = Platform.OS === 'android';
-import Video from 'react-native-video';
-import ExVideo from '../ex.mp4';
 import { Container, Item, Form, Input, Button, Label } from "native-base";
 const firebaseConfig = {
     apiKey: "AIzaSyBF2aWOLg8IYO9ntBNk6agDXdrasaQMwkM",
@@ -30,7 +27,6 @@ const firebaseConfig = {
     messagingSenderId: "93508034987",
     appId: "1:93508034987:web:454f410ea139fe4c2932ee"
   };
-
   firebase.initializeApp(firebaseConfig);
 
 export default class LogIn extends React.Component {
@@ -42,6 +38,7 @@ constructor(props) {
     password: ""
   };
 }
+
 
 //firebase signup function
   SignUp = (email, password) => {
@@ -59,12 +56,14 @@ constructor(props) {
 
 //firebase login function
   LogIn = (email, password) => {
+    const { navigate } = this.props.navigation;
     try {
       firebase
          .auth()
          .signInWithEmailAndPassword(email, password)
          .then(res => {
              console.log(res.user.email);
+             () => navigate("Home");
       });
       } catch (error) {
       console.log(error.toString(error));
@@ -77,12 +76,6 @@ render () {
     //CHANGE TO COPOMENT LATER 
     return (         
       <View style={styles.loginContainer}>
-        <Video 
-          repeat
-          source={ExVideo}
-          resizeMode="cover"
-          style={StyleSheet.absoluteFill}
-          />
         <View style={styles.loginContent}>
           <Container style={styles.logIn}>
               <Form>
@@ -104,6 +97,7 @@ render () {
                     onChangeText={password => this.setState({ password })}
                   />
                 </Item>
+
                 <Button 
                 full rounded 
                 bordered danger
@@ -111,6 +105,7 @@ render () {
                 onPress={() => this.LogIn(this.state.email, this.state.password)}>
                   <Text>Login</Text>
                 </Button>
+
                 <Button 
                 full rounded danger 
                 style={styles.logButton}
@@ -125,3 +120,4 @@ render () {
       );
     }
 }
+
