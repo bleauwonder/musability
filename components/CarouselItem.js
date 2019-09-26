@@ -8,7 +8,7 @@ import { Card, Button, Rating } from 'react-native-elements';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
 
-import { Container, Header, Content, H1, H2, H3 } from 'native-base';
+import { H1, H2, H3 } from 'native-base';
 
 import * as firebase from 'firebase';
 // const db = db.collection("venues");
