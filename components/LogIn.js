@@ -18,8 +18,6 @@ import styles, { colors } from '../src/style/index.style'
 import logo from '../assets/images/muslogo.png';
 import * as firebase from 'firebase';
 const IS_ANDROID = Platform.OS === 'android';
-import Video from 'react-native-video';
-import ExVideo from '../ex.mp4';
 import { Container, Item, Form, Input, Button, Label } from "native-base";
 const firebaseConfig = {
     apiKey: "AIzaSyBF2aWOLg8IYO9ntBNk6agDXdrasaQMwkM",
@@ -77,12 +75,6 @@ render () {
     //CHANGE TO COPOMENT LATER 
     return (         
       <View style={styles.loginContainer}>
-        <Video 
-          repeat
-          source={ExVideo}
-          resizeMode="cover"
-          style={StyleSheet.absoluteFill}
-          />
         <View style={styles.loginContent}>
           <Container style={styles.logIn}>
               <Form>
@@ -104,6 +96,7 @@ render () {
                     onChangeText={password => this.setState({ password })}
                   />
                 </Item>
+
                 <Button 
                 full rounded 
                 bordered danger
@@ -111,6 +104,7 @@ render () {
                 onPress={() => this.LogIn(this.state.email, this.state.password)}>
                   <Text>Login</Text>
                 </Button>
+
                 <Button 
                 full rounded danger 
                 style={styles.logButton}
