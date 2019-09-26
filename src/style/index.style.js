@@ -25,7 +25,8 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   loginContainer: {
-    flex: 1
+    flex: 1,
+    backgroundColor: transparent
   },
   logButton: {
     marginHorizontal: 20,
