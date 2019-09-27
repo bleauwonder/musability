@@ -74,7 +74,7 @@ export const VENUES = [
         restrooms: true,
         restroomKey: false,
         restroomsComment: "two accessible restrooms downstairs",
-        overallComment: "first floor where bands play and bowling is all have ramps",
+        overallComment: "first floor where bands play and bowling all have ramps",
         image: [
             "https://i.imgur.com/kEtwwdE.jpg",
             "https://i.imgur.com/3fyYMSV.jpg",

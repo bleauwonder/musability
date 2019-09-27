@@ -50,7 +50,6 @@ export default StyleSheet.create({
     padding: 20,
     flex: 1,
     backgroundColor: colors.background3
-
   },
   venueStyle: {
     color: 'blue',
@@ -82,7 +81,6 @@ export default StyleSheet.create({
     marginTop: -70,
     marginLeft: 180,
   },
-
   logImage: {
     width: 200,
     height: 200,

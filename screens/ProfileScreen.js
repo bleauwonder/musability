@@ -1,10 +1,10 @@
 import React from "react";
-import { View } from "react-native";
-import { Card, Button, Text } from "react-native-elements";
+import { View, Image } from "react-native";
+import { Card, Text } from "react-native-elements";
 import { onSignOut } from "../auth";
 import styles from '../src/style/index.style';
 import { LinearGradient } from 'expo-linear-gradient';
-
+import { Button } from "native-base";
 
 export default ({ navigation }) => (
   <View style={styles.profilePage}>
@@ -18,7 +18,8 @@ export default ({ navigation }) => (
           height: 850,
               }}
             />
-    <Card title="Kim Graff">
+    <Card title="Kim Graff"
+    image={require('../assets/images/spongebob.png')}>
       <View
         style={{
           backgroundColor: "#bcbec1",
@@ -34,10 +35,11 @@ export default ({ navigation }) => (
         <Text style={{ color: "white", fontSize: 28 }}>KG</Text>
       </View>
       <Button
-        backgroundColor="#03A9F4"
-        title="SIGN OUT"
-        onPress={() => onSignOut().then(() => navigation.navigate("HomeStack"))}
-      />
+        full rounded dark
+        style={styles.logButton}
+        onPress={() => onSignOut().then(() => navigation.navigate("HomeStack"))}>
+        <Text style={styles.buttonText}>SIGN OUT</Text>
+      </Button>
     </Card>
   </View>
 );

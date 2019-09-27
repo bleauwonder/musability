@@ -3,8 +3,8 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://s3-tsq.anonymous.musability.exp.direct",
+  "packagerNgrokUrl": "https://packager.s3-tsq.anonymous.musability.exp.direct",
+  "ngrokPid": 83059,
   "webpackServerPort": null
 }
