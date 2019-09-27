@@ -13,6 +13,7 @@ import {
   TextInput,
   Keyboard,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import Carousel, { props, visibleModal, renderModalContent } from 'react-native-snap-carousel';
 import CarouselItem from '../components/CarouselItem';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -48,6 +49,13 @@ export default class HomeScreen extends Component {
       search: '',
     }
   }
+
+  static propTypes = {
+    data: PropTypes.object,
+    even: PropTypes.bool,
+    parallax: PropTypes.bool,
+    parallaxProps: PropTypes.object
+  };
 
   componentDidMount() {
     var firebaseConfig = {
@@ -132,7 +140,7 @@ export default class HomeScreen extends Component {
   }
 
   _renderItem({ item, index }) {
-    return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal} />;
+    return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal} ImageCarouse={this.image}/>;
   }
 
   

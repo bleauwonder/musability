@@ -178,4 +178,25 @@ export default StyleSheet.create({
       margin: 0,
       alignContent: 'flex-end'
     },
+    imageGallery: {
+      margin: 10,
+      width: wp(75),
+      height: 300,
+      flex: 1, 
+      backgroundColor: '#D3D3D3',
+    },
+  //   container: {
+  //     display: grid,
+  //     grid: columns,
+  //     template:
+  //     display: 'grid',
+  //     grid-template-columns: 50,
+  //     grid-template-rows: '31vh', '31vh', '31vh',
+  //     gap: 2
+  //     width: '90%',
+  //     margin: 0, 'auto',
+  //     height: '100vh',
+  //     overflow: 'hidden',
+  //     margin-bottom: 10,
+  // },
 })

@@ -3,7 +3,8 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": "https://df-y4v.anonymous.musability.exp.direct",
-  "packagerNgrokUrl": "https://packager.df-y4v.anonymous.musability.exp.direct",
-  "ngrokPid": 45399
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
+  "webpackServerPort": null
 }

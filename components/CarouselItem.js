@@ -9,6 +9,11 @@ import * as firebase from 'firebase';
 import { H1, H2, H3, Button, Container } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Col, Row, Grid } from 'react-native-easy-grid';
+// import ImageCarousel from '../components/ImageCarousel';
+import Gallery from 'react-native-image-gallery';
+import VenueGallery from '../components/VenueGallery';
+ 
+
 //icons that render yes or no based on information
 const yesIcon = <Icon
   size={20}
@@ -17,7 +22,6 @@ const yesIcon = <Icon
   color='#006400'
   aria-label='yes'
 />;
-
 const noIcon = <Icon
   size={20}
   name='times-circle'
@@ -25,7 +29,6 @@ const noIcon = <Icon
   color='#000'
   aira-label='no'
 />;
-
 const unknownIcon = <Icon
   size={20}
   name='question-circle'
@@ -38,12 +41,28 @@ export class CarouselItem extends Component {
   state = {
     visibleModalId: null,
   };
+
   static propTypes = {
     data: PropTypes.object,
     even: PropTypes.bool,
     parallax: PropTypes.bool,
     parallaxProps: PropTypes.object
   };
+
+_renderItem({ item, index }) {
+    return <ImageCarousel data={item} even={(index + 1) % 2 === 0}/>;
+  }
+
+_renderItemWithParallax({ item, index }, parallaxProps) {
+    return (
+      <ImageCarousel
+        data={item}
+        even={(index + 1) % 2 === 0}
+        parallax={true}
+        parallaxProps={parallaxProps}
+      />
+    );
+  }
 
   renderModalContent = (type) => (
     <View>
@@ -71,9 +90,9 @@ export class CarouselItem extends Component {
               {this.props.data.state},{" "}
               {this.props.data.zip}
             </Text>
-            <Text style={{margin: 10}}>
-              {/* blank to create a nice barrier between above and below */}
-            </Text>
+            {/* <Text style={{margin: 10}}> </Text>*/}
+              <VenueGallery />
+
             <Text style={styles.elementText}>
               Overall Rating
             </Text>

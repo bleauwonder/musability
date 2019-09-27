@@ -208,6 +208,11 @@ export default StyleSheet.create({
       // color: 'rgb(255, 255, 255)',
       // backgroundColor: colors.background2,
     },
+    // imageGallery: {
+    //   width: wp(70),
+    //   flex: 1, 
+    //   backgroundColor: 'black',
+    // },
     subtitle: {
         marginTop: 5,
         paddingHorizontal: 30,
