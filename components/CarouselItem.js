@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
-import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
-import { View, Text, Image, TouchableOpacity, Linking, Dimensions, ScrollView, StyleSheet } from 'react-native';
+import ParallaxImage from 'react-native-snap-carousel';
+import { 
+  View, 
+  Text, 
+  Image, 
+  TouchableOpacity, 
+  Linking, 
+  ScrollView, 
+} from 'react-native';
 import PropTypes from 'prop-types';
 import styles, { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import Modal from "react-native-modal";
-import MUSIC_IMAGE from '../assets/images/musicnote.png';
-// import * as firebase from 'firebase';
 import { H1, H2, H3, Button, Container } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Col, Row, Grid } from 'react-native-easy-grid';
-// import ImageCarousel from '../components/ImageCarousel';
-import Gallery from 'react-native-image-gallery';
 import VenueGallery from '../components/VenueGallery';
- 
+
+// For future iterations to put a grid into the modal and music images for the rating
+// import { Col, Row, Grid } from 'react-native-easy-grid';
+// import MUSIC_IMAGE from '../assets/images/musicnote.png';
+
 
 //icons that render yes or no based on information
 const yesIcon = <Icon
@@ -49,20 +55,20 @@ export class CarouselItem extends Component {
     parallaxProps: PropTypes.object
   };
 
-_renderItem({ item, index }) {
-    return <ImageCarousel data={item} even={(index + 1) % 2 === 0}/>;
-  }
+  _renderItem({ item, index }) {
+      return <ImageCarousel data={item} even={(index + 1) % 2 === 0}/>;
+    }
 
-_renderItemWithParallax({ item, index }, parallaxProps) {
-    return (
-      <ImageCarousel
-        data={item}
-        even={(index + 1) % 2 === 0}
-        parallax={true}
-        parallaxProps={parallaxProps}
-      />
-    );
-  }
+  _renderItemWithParallax({ item, index }, parallaxProps) {
+      return (
+        <ImageCarousel
+          data={item}
+          even={(index + 1) % 2 === 0}
+          parallax={true}
+          parallaxProps={parallaxProps}
+        />
+      );
+    }
 
   renderModalContent = (type) => (
     <View>
@@ -74,7 +80,7 @@ _renderItemWithParallax({ item, index }, parallaxProps) {
             onPress={() => this.setState({ visibleModal: null })}
             aria-label="close"
             >
-              <Text style={[{fontWeight: "bold"}, {fontSize: 16}]}> X </Text>
+              <Text style={[{fontWeight: "normal"}, {fontSize: 16}]}> X </Text>
           </Button>
             
           <Text style={styles.modalText}>
@@ -96,7 +102,7 @@ _renderItemWithParallax({ item, index }, parallaxProps) {
             
         <VenueGallery >
           {this.props.data.image}
-          </VenueGallery>
+        </VenueGallery>
 
           <Text style={styles.elementText}>
               Overall Rating
@@ -113,33 +119,33 @@ _renderItemWithParallax({ item, index }, parallaxProps) {
             {this.props.data.anonymityRating ? null : 'No rating yet'}
           </Text>
           <Text style={styles.elementText}>
-              ELEVATOR: {this.props.data.elevator ? yesIcon : noIcon}
+              Elevator: {this.props.data.elevator ? yesIcon : noIcon}
           </Text>
           <Text style={styles.elementText}>
-              RAMP:  {this.props.data.ramps ? yesIcon : noIcon}
+              Ramp:  {this.props.data.ramps ? yesIcon : noIcon}
           </Text>
           <Text style={styles.elementText}>
-              RAMP COMMENTS: 
+              Ramp/Elevator Comments: 
           </Text>
           <Text style={styles.comment}>
             {this.props.data.rampComment}
             {this.props.data.rampComment ? null : 'No feedback yet'}
           </Text>
           <Text style={styles.elementText}>
-              RESTROOM: {this.props.data.restrooms ? yesIcon : noIcon}
+              Restroom: {this.props.data.restrooms ? yesIcon : noIcon}
           </Text>
           <Text style={styles.elementText}>
-              RESTROOM KEY?:  {this.props.data.false ? yesIcon : noIcon}
+              Restroom Key?:  {this.props.data.false ? yesIcon : noIcon}
           </Text>
           <Text style={styles.elementText}>
-              RESTROOM COMMENTS
+              Restroom Comments
           </Text>
           <Text style={styles.comment}>
               {this.props.data.restroomsComment}
               {this.props.data.restroomsComment ? null : 'No feedback yet'}
           </Text>
           <Text>
-            <H2 style={styles.elementText}>VENUE REVIEWS</H2>
+            <H2 style={styles.elementText}>Overall Reviews for Venue</H2>
           </Text>
             <Text style={styles.comment}>
               {this.props.data.overallComment}

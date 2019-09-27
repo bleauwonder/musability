@@ -1,4 +1,3 @@
-import * as WebBrowser from 'expo-web-browser';
 import React, { Component } from 'react';
 import {
   Image,
@@ -7,32 +6,29 @@ import {
   StatusBar,
   SafeAreaView,
   Text,
-  TouchableOpacity,
   View,
-  Dimensions,
   TextInput,
   Keyboard,
 } from 'react-native';
-import PropTypes from 'prop-types';
-import Carousel, { props, visibleModal, renderModalContent } from 'react-native-snap-carousel';
-import CarouselItem from '../components/CarouselItem';
+import { Button } from 'react-native-elements';
+import Carousel, { visibleModal } from 'react-native-snap-carousel';
+import { Row, Grid } from 'react-native-easy-grid';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Card, Button, Rating, SearchBar } from 'react-native-elements';
+import PropTypes from 'prop-types';
+
+import CarouselItem from '../components/CarouselItem';
 import styles, { colors } from '../src/style/index.style'
 import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
-// import { VENUES } from '../components/venueJSON';
-import { Col, Row, Grid } from 'react-native-easy-grid';
-import Modal from "react-native-modal";
-import ImageCarousel from '../components/ImageCarousel';
-import LOGO from '../assets/images/muslogo.png';
-import MUSIC_IMAGE from '../assets/images/musicnote.png';
+
 import * as firebase from 'firebase';
-import Icon from 'react-native-vector-icons/Ionicons';
+
+// To be used for future iterations
+// import MUSIC_IMAGE from '../assets/images/musicnote.png';
 // import * as Animatable from 'react-native-animatable'; 
 
 const IS_ANDROID = Platform.OS === 'android';
 const SLIDER_1_FIRST_ITEM = 1;
-
 
 export default class HomeScreen extends Component {
 
@@ -67,13 +63,14 @@ export default class HomeScreen extends Component {
       messagingSenderId: "93508034987",
       appId: "1:93508034987:web:454f410ea139fe4c2932ee"
     };
-    //   // // Initialize Firebase
+   // Initialize Firebase
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
     }
 
     const database = firebase.database();
 
+    // Filter Firebase JSON for each borough
     let bkarray = []
     database.ref("/venues").once("value", snapshot => {
       snapshot.forEach(childSnapshot => {
@@ -119,6 +116,7 @@ export default class HomeScreen extends Component {
       this.setState({ queensData: qsArray });
     })
 
+    // Show keyboard for Search Bar
     this.keyboardDidShow = Keyboard.addListener('keyboardDidShow', this.keyboardWillShow)
     this.keyboardWillShow = Keyboard.addListener('keyboardWillShow', this.keyboardWillShow)
     this.keyboardWillHide = Keyboard.addListener('keyboardWillHide', this.keyboardWillHide)
@@ -127,15 +125,14 @@ export default class HomeScreen extends Component {
   keyboardDidShow = () => {
     this.setState({ searchBarFocused: true })
   }
-
   keyboardWillShow = () => {
     this.setState({ searchBarFocused: true })
   }
-
   keyboardWillHide = () => {
     this.setState({ searchBarFocused: false })
   }
 
+  // Render items on Carousels
   _renderItem({ item, index }) {
     return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal} ImageCarouse={this.image}/>;
   }
@@ -159,7 +156,7 @@ export default class HomeScreen extends Component {
     return <CarouselItem data={item} even={true} />;
   }
 
-  // VENUE CARD INFORMATION 
+  // Information from Firebase and how it should look on the carousel cards
   venueCard(number, title, type) {
     const isTinder = type === 'tinder';
     const { brooklynData } = this.state;
@@ -247,14 +244,14 @@ export default class HomeScreen extends Component {
           style={styles.container}
           contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
-            <LinearGradient
-              colors={['rgba(58, 18, 26, .8)', 'rgba(98, 20, 36, .8)', 'transparent']}
+          <LinearGradient
+              colors={['rgba(142, 33, 56, 100)', 'rgba(121, 9, 9, 100)', 'transparent']}
               style={{
                 position: 'absolute',
                 left: 0,
                 right: 0,
-                top: -30,
-                height: 600,
+                top: 0,
+                height: 850,
               }}
             />
             <Image
@@ -288,7 +285,7 @@ export default class HomeScreen extends Component {
                   }/>
               </Row>
 
-            {/* New Search Bar to be used when properly adjusted*/} 
+            {/* New Search Bar to be used when properly adjusted */} 
              
               {/* <View style={{ flex: 1 }}>
                 <View style={{ height: 50, backgroundColor: '#8e2138', justifyContent: 'center', paddingHorizontal: 5 }}>
@@ -324,7 +321,7 @@ export default class HomeScreen extends Component {
                 </SafeAreaView>
               </Row>
 
-            </ Grid>
+            </Grid>
           </View>
         </ScrollView>
       </View>

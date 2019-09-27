@@ -117,19 +117,19 @@ export default StyleSheet.create({
     ratingText: {
       marginLeft: 10,
       fontSize: 18,
-      fontWeight: 'bold'
+      fontWeight: 'normal'
     },
     elementText: {
       padding: 10,
       fontSize: 16,
       color: '#8e2138',
-      fontWeight: 'bold'
+      fontWeight: 'normal'
     },
     comment: {
       padding: 10,
       margin: 10,
       fontSize: 14,
-      backgroundColor: '#D3D3D3'
+      backgroundColor: '#faf7f7'
     },
     contentTitle: {
       fontSize: 20,
@@ -183,7 +183,7 @@ export default StyleSheet.create({
       width: wp(75),
       height: 300,
       flex: 1, 
-      backgroundColor: '#D3D3D3',
+      backgroundColor: '#faf7f7',
     },
   //   container: {
   //     display: grid,

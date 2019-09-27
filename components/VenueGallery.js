@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { 
+    View, 
+    Text, 
+    // ActivityIndicator
+} from 'react-native';
 import Gallery from 'react-native-image-gallery';
 import styles from '../src/style/SliderEntry.style';
 
@@ -10,13 +14,9 @@ export default class VenueGallery extends Component {
 
         this.state = {
             index: 0,
+            // Hard-coded images for now, a bit of code to work on calling from Firebase
             // image: this.props.data.image[index],
             image: [
-                // {
-                //     caption: 'This image is bundled with the app, so you must provide dimensions for it',
-                //     source: require('./static/images/placehold.jpg'),
-                //     dimensions: { width: 540, height: 720 }
-                // },
                 {
                     caption: 'Dance floor',
                     source: { uri: 'https://i.imgur.com/u9UYwWL.jpg' }
@@ -25,10 +25,6 @@ export default class VenueGallery extends Component {
                     caption: 'Ramp to access dance floor',
                     source: { uri: 'https://i.imgur.com/qy5fW3X.jpg' }
                 },
-                {
-                    caption: 'Lounge area',
-                    source: { uri: 'https://i.imgur.com/O8WljZn.jpg' }
-                },  
                 {
                     caption: 'Another ramp area',
                     source: { uri: 'https://i.imgur.com/4RVEPzx.jpg' }
@@ -49,7 +45,6 @@ export default class VenueGallery extends Component {
         };
 
         this.onChangeImage = this.onChangeImage.bind(this);
-
         // this.addImages();
         // this.removeImages();
         // this.removeImage(2, 3000);
@@ -98,6 +93,7 @@ export default class VenueGallery extends Component {
         );
     }
 
+    // In future iteration, add caption option to photos added
     get caption () {
         const { image, index } = this.state;
         return (

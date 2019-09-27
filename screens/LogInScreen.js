@@ -1,26 +1,20 @@
-import * as WebBrowser from 'expo-web-browser';
 import React, { Component } from 'react';
 import {
   Image,
   Platform,
-  ScrollView,
-  StatusBar,
-  SafeAreaView,
   Text,
-  TouchableOpacity,
-  ImageBackground,
   View,
-  Dimensions,
-  TextInput,
+// ImageBackground,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import loginImage from '../assets/images/login.jpg';
 import styles, { colors } from '../src/style/index.style';
-import logo from '../assets/images/muslogo.png';
 import * as firebase from 'firebase';
 const IS_ANDROID = Platform.OS === 'android';
 import { Container, Item, Form, Input, Button, Label } from "native-base";
+
 // const { navigate } = this.props.navigation;
+
 const firebaseConfig = {
   apiKey: "AIzaSyBF2aWOLg8IYO9ntBNk6agDXdrasaQMwkM",
   authDomain: "musability-app.firebaseapp.com",
@@ -41,7 +35,6 @@ export default class LogInScreen extends React.Component {
       password: ""
     };
   }
-
 
 //creating sign up function
   SignUp = (email, password) => {
@@ -70,7 +63,6 @@ export default class LogInScreen extends React.Component {
     }
   };
 
-  //RENDERING PAGE VIEW BELOW 
   render() {
     return (
         <View style={styles.loginContainer}>
