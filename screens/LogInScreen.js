@@ -12,6 +12,7 @@ import {
   View,
   Dimensions,
   TextInput,
+  Alert
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import loginImage from '../assets/images/login.jpg';
@@ -38,10 +39,9 @@ export default class LogInScreen extends React.Component {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
     };
   }
-
 
 //creating sign up function
   SignUp = (email, password) => {
@@ -50,11 +50,12 @@ export default class LogInScreen extends React.Component {
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then(() => this.props.navigation.navigate('Home'))
-    } catch (error) {
-      console.log(error.toString(error));
-    }
-  };
-
+  } catch (error) {
+    console.log(error.toString(error));
+    // .then(() => < AlertExample />);
+  }
+};
+  
 //creating log in function
   LogIn = (email, password) => {
     try {
@@ -65,9 +66,10 @@ export default class LogInScreen extends React.Component {
         // .then(res => {
         //   console.log(res.user.email);
         //         });
-    } catch (error) {
+    } 
+    catch (error) {
       console.log(error.toString(error));
-    }
+        }
   };
 
   //RENDERING PAGE VIEW BELOW 
