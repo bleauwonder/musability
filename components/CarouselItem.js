@@ -95,11 +95,11 @@ export class CarouselItem extends Component {
               RAMP:  {this.props.data.ramps ? yesIcon : noIcon}
             </Text>
             <Text style={styles.elementText}>
-              RAMP COMMNETS: 
+              RAMP COMMENTS: 
             </Text>
             <Text style={styles.comment}>
-              {this.props.data.rampsComment}
-              {this.props.data.rampsComment ? null : 'No feedback yet'}
+              {this.props.data.rampComment}
+              {this.props.data.rampComment ? null : 'No feedback yet'}
             </Text>
             <Text style={styles.elementText}>
               RESTROOM: {this.props.data.restrooms ? yesIcon : noIcon}
@@ -111,8 +111,8 @@ export class CarouselItem extends Component {
               RESTROOM COMMENTS
             </Text>
             <Text style={styles.comment}>
-              {this.props.data.restroomComment}
-              {this.props.data.restroomComment ? null : 'No feedback yet'}
+              {this.props.data.restroomsComment}
+              {this.props.data.restroomsComment ? null : 'No feedback yet'}
             </Text>
             <Text>
               <H2 style={styles.elementText}>VENUE REVIEWS</H2>
