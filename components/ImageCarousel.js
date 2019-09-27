@@ -3,9 +3,7 @@ import Carousel, { ParallaxImage, isTinder } from 'react-native-snap-carousel';
 import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from '../src/style/SliderEntry.style';
-import VENUES, { data, image } from '../components/venueJSON';
-
-
+// import VENUES, { data, image } from '../components/venueJSON';
 
 
 export class ImageCarousel extends Component {
@@ -33,7 +31,7 @@ export class ImageCarousel extends Component {
             />
         ) : (
             <Image
-              source={{ uri: 'https://www.billboard.com/files/styles/article_main_image/public/media/le-poisson-rouge-2018-billboard-1548.jpg' }}
+              source={{ uri: image[0] }}
               style={styles.image}
             />
         );
