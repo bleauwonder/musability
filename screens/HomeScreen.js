@@ -10,22 +10,25 @@ import {
   TouchableOpacity,
   View,
   Dimensions,
-  TextInput
+  TextInput,
+  Keyboard,
 } from 'react-native';
 import Carousel, { props, visibleModal, renderModalContent } from 'react-native-snap-carousel';
 import CarouselItem from '../components/CarouselItem';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Card, Button, Rating } from 'react-native-elements';
+import { Card, Button, Rating, SearchBar } from 'react-native-elements';
 import styles, { colors } from '../src/style/index.style'
 import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
-import { VENUES } from '../components/venueJSON';
+// import { VENUES } from '../components/venueJSON';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import Modal from "react-native-modal";
 import ImageCarousel from '../components/ImageCarousel';
 import LOGO from '../assets/images/muslogo.png';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
 import * as firebase from 'firebase';
-// import { element } from '../../../Library/Caches/typescript/3.6/node_modules/@types/prop-types';
+import Icon from 'react-native-vector-icons/Ionicons';
+import * as Animatable from 'react-native-animatable'; 
+
 
 const IS_ANDROID = Platform.OS === 'android';
 const SLIDER_1_FIRST_ITEM = 1;
@@ -33,7 +36,6 @@ const SLIDER_1_FIRST_ITEM = 1;
 
 export default class HomeScreen extends Component {
 
- 
   constructor(props) {
     super(props);
     this.state = {
@@ -42,7 +44,8 @@ export default class HomeScreen extends Component {
       currentUser: null,
       brooklynData: [],
       manhattanData: [],
-      queensData: []
+      queensData: [],
+      search: '',
     }
   }
 
@@ -64,7 +67,6 @@ export default class HomeScreen extends Component {
 
     const database = firebase.database();
 
-    
     let bkarray = []
     database.ref("/venues").once("value", snapshot => {
       snapshot.forEach(childSnapshot => {
@@ -112,14 +114,22 @@ export default class HomeScreen extends Component {
       this.setState({ queensData: qsArray });
     })
 
-
-
-
-
-  
+    this.keyboardDidShow = Keyboard.addListener('keyboardDidShow', this.keyboardWillShow)
+    this.keyboardWillShow = Keyboard.addListener('keyboardWillShow', this.keyboardWillShow)
+    this.keyboardWillHide = Keyboard.addListener('keyboardWillHide', this.keyboardWillHide)
   }
 
+  keyboardDidShow = () => {
+    this.setState({ searchBarFocused: true })
+  }
 
+  keyboardWillShow = () => {
+    this.setState({ searchBarFocused: true })
+  }
+
+  keyboardWillHide = () => {
+    this.setState({ searchBarFocused: false })
+  }
 
   _renderItem({ item, index }) {
     return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal} />;
@@ -200,9 +210,6 @@ export default class HomeScreen extends Component {
     );
   };
 
-
-
-
   venueCard3(number, title, type) {
     const isTinder = type === 'tinder';
     const { queensData } = this.state;
@@ -229,8 +236,6 @@ export default class HomeScreen extends Component {
       </View>
     );
   };
-
-
 
   render() {
     const renderCard = this.venueCard(3, '"Stack of cards" layout | Loop', 'stack');
@@ -269,12 +274,32 @@ export default class HomeScreen extends Component {
                 <TextInput
                   // onChangeText={text => onChangeText(text)}
                   // value={value}
-                  style={{ height: 40, borderColor: 'white', borderRadius: 10, borderWidth: 1, backgroundColor: 'white', width: 300, marginLeft: 20 }}
+                  style={{ height: 30, borderColor: 'white', borderRadius: 10, borderWidth: 1, backgroundColor: 'white', width: 300, marginLeft: 20 }}
                 />
-                <Button
+              {/* <View style={{ flex: 1 }}>
+                <View style={{ height: 50, backgroundColor: '#8e2138', justifyContent: 'center', paddingHorizontal: 5 }}>
+                <Animatable.View animation="slideInRight" duration={500} style={{ height: 30, backgroundColor: 'white', flexDirection: 'row', padding: 5, alignItems: 'center' }}>
+                  <Animatable.View animation={this.state.searchBarFocused?"fadeInLeft":"fadeInRight"} duration= {400}>
+                <Icon name={this.state.searchBarFocused?"md-arrow-back":"ios-search"} style={{ fontSize: 24 }} />
+                </Animatable.View>
+                <TextInput placeholder="Search" style={{ fontSize: 24, marginLeft: 15, flex: 1 }}/>
+                </Animatable.View>
+                </View>
+              </View> */}
+                
+                <Button     
+                  type="clear" 
                   onSub
-                  buttonStyle={{ borderRadius: 10, marginLeft: 5, marginRight: 0, marginBottom: 0, backgroundColor: '#000000' }}
-                  title='Search' />
+                  buttonStyle={{ borderRadius: 10, marginLeft: 10, marginRight: 5, marginBottom: 0 }}
+                  icon={
+                    <Icon
+                      name="ios-search"
+                      size={15}
+                      color="white"
+                    />
+                  }
+
+ />
               </Row>
 
               <Row>
