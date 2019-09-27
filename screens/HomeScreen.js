@@ -28,8 +28,7 @@ import LOGO from '../assets/images/muslogo.png';
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
 import * as firebase from 'firebase';
 import Icon from 'react-native-vector-icons/Ionicons';
-import * as Animatable from 'react-native-animatable'; 
-
+// import * as Animatable from 'react-native-animatable'; 
 
 const IS_ANDROID = Platform.OS === 'android';
 const SLIDER_1_FIRST_ITEM = 1;
@@ -102,7 +101,6 @@ export default class HomeScreen extends Component {
             return true;
           }
       });
-      console.log(mnArray.length)
       this.setState({ manhattanData: mnArray });
     })
 
@@ -118,7 +116,6 @@ export default class HomeScreen extends Component {
           return true;
         }
       });
-      console.log(qsArray.length)
       this.setState({ queensData: qsArray });
     })
 
@@ -143,7 +140,6 @@ export default class HomeScreen extends Component {
     return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal} ImageCarouse={this.image}/>;
   }
 
-  
   _renderItemWithParallax({ item, index }, parallaxProps) {
     return (
       <CarouselItem
@@ -167,10 +163,9 @@ export default class HomeScreen extends Component {
   venueCard(number, title, type) {
     const isTinder = type === 'tinder';
     const { brooklynData } = this.state;
-    // console.log(brooklynData)
     return (
       <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
-        <Text style={[styles.title, isTinder ? {} : styles.titleDark]}  >
+        <Text style={[styles.title, isTinder ? {} : styles.titleDark]}>
           {`Brooklyn`}
         </Text>
         <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>
@@ -190,12 +185,9 @@ export default class HomeScreen extends Component {
     );
   };
 
-
   venueCard2(number, title, type) {
     const isTinder = type === 'tinder';
     const { manhattanData } = this.state;
-    // console.log(manhattanData)
-
     return (
       <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
         <Text style={[styles.title, isTinder ? {} : styles.titleDark]}>
@@ -221,8 +213,6 @@ export default class HomeScreen extends Component {
   venueCard3(number, title, type) {
     const isTinder = type === 'tinder';
     const { queensData } = this.state;
-    // console.log(manhattanData)
-
     return (
       <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
         <Text style={[styles.title, isTinder ? {} : styles.titleDark]}>
@@ -250,9 +240,9 @@ export default class HomeScreen extends Component {
     const renderCard2 = this.venueCard2(3, '"Stack of cards" layout | Loop', 'stack');
     const renderCard3 = this.venueCard3(3, '"Stack of cards" layout | Loop', 'stack');
 
-
     return (
       <View style={styles.container}>
+        {/* Header */}
         <ScrollView
           style={styles.container}
           contentContainerStyle={styles.contentContainer}>
@@ -284,16 +274,6 @@ export default class HomeScreen extends Component {
                   // value={value}
                   style={{ height: 30, borderColor: 'white', borderRadius: 10, borderWidth: 1, backgroundColor: 'white', width: 300, marginLeft: 20 }}
                 />
-              {/* <View style={{ flex: 1 }}>
-                <View style={{ height: 50, backgroundColor: '#8e2138', justifyContent: 'center', paddingHorizontal: 5 }}>
-                <Animatable.View animation="slideInRight" duration={500} style={{ height: 30, backgroundColor: 'white', flexDirection: 'row', padding: 5, alignItems: 'center' }}>
-                  <Animatable.View animation={this.state.searchBarFocused?"fadeInLeft":"fadeInRight"} duration= {400}>
-                <Icon name={this.state.searchBarFocused?"md-arrow-back":"ios-search"} style={{ fontSize: 24 }} />
-                </Animatable.View>
-                <TextInput placeholder="Search" style={{ fontSize: 24, marginLeft: 15, flex: 1 }}/>
-                </Animatable.View>
-                </View>
-              </View> */}
                 
                 <Button     
                   type="clear" 
@@ -305,11 +285,23 @@ export default class HomeScreen extends Component {
                       size={15}
                       color="white"
                     />
-                  }
-
- />
+                  }/>
               </Row>
 
+            {/* New Search Bar to be used when properly adjusted*/} 
+             
+              {/* <View style={{ flex: 1 }}>
+                <View style={{ height: 50, backgroundColor: '#8e2138', justifyContent: 'center', paddingHorizontal: 5 }}>
+                <Animatable.View animation="slideInRight" duration={500} style={{ height: 30, backgroundColor: 'white', flexDirection: 'row', padding: 5, alignItems: 'center' }}>
+                  <Animatable.View animation={this.state.searchBarFocused?"fadeInLeft":"fadeInRight"} duration= {400}>
+                <Icon name={this.state.searchBarFocused?"md-arrow-back":"ios-search"} style={{ fontSize: 24 }} />
+                </Animatable.View>
+                <TextInput placeholder="Search" style={{ fontSize: 24, marginLeft: 15, flex: 1 }}/>
+                </Animatable.View>
+                </View>
+              </View> */}
+
+          {/* Where the carousels are rendering within a ScrollView */} 
               <Row>
                 <SafeAreaView style={styles.safeArea}>
                   <View>
