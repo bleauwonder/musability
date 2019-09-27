@@ -183,7 +183,7 @@ export default StyleSheet.create({
       width: wp(75),
       height: 300,
       flex: 1, 
-      backgroundColor: 'black',
+      backgroundColor: '#D3D3D3',
     },
   //   container: {
   //     display: grid,

@@ -98,7 +98,7 @@ export default class VenueGallery extends Component {
     get caption () {
         const { images, index } = this.state;
         return (
-            <View style={{ bottom: 0, height: 65, backgroundColor: 'rgba(98, 20, 36, 0.7)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
+            <View style={{ bottom: 0, height: 40, backgroundColor: 'rgba(98, 20, 36, 0.7)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
                 <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
             </View>
         );
@@ -107,7 +107,7 @@ export default class VenueGallery extends Component {
     get galleryCount () {
         const { index, images } = this.state;
         return (
-            <View style={{ top: 0, height: 65, backgroundColor: 'rgba(98, 20, 36, 0.7)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
+            <View style={{ top: 0, height: 40, backgroundColor: 'rgba(98, 20, 36, 0.7)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
                 <Text style={{ textAlign: 'right', color: 'white', fontSize: 15, fontStyle: 'italic', paddingRight: '10%' }}>{ index + 1 } / { images.length }</Text>
             </View>
         );
