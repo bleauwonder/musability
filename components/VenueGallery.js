@@ -7,9 +7,11 @@ export default class VenueGallery extends Component {
 
     constructor (props) {
         super(props);
+
         this.state = {
             index: 0,
-            images: [
+            // image: this.props.data.image[index],
+            image: [
                 // {
                 //     caption: 'This image is bundled with the app, so you must provide dimensions for it',
                 //     source: require('./static/images/placehold.jpg'),
@@ -45,6 +47,7 @@ export default class VenueGallery extends Component {
                 },
             ]
         };
+
         this.onChangeImage = this.onChangeImage.bind(this);
 
         // this.addImages();
@@ -55,8 +58,8 @@ export default class VenueGallery extends Component {
     addImages () {
         // Debugging helper : keep adding images at the end of the gallery.
         setInterval(() => {
-            const newArray = [...this.state.images, { source: { uri: 'https://i.imgur.com/O8WljZn.jpg' } }];
-            this.setState({ images: newArray });
+            const newArray = [...this.state.image, { source: { uri: 'https://i.imgur.com/O8WljZn.jpg' } }];
+            this.setState({ image: newArray });
         }, 5000);
     }
 
@@ -64,7 +67,7 @@ export default class VenueGallery extends Component {
         // Debugging helper : remove a given image after some delay.
         // Ensure the gallery doesn't crash and the scroll is updated accordingly.
         setTimeout(() => {
-            const newArray = this.state.images.filter((element, index) => index !== slideIndex);
+            const newArray = this.state.image.filter((element, index) => index !== slideIndex);
             this.setState({ images: newArray });
         }, delay);
     }
@@ -72,13 +75,13 @@ export default class VenueGallery extends Component {
     removeImages () {
         // Debugging helper : keep removing the last slide of the gallery.
         setInterval(() => {
-            const { images } = this.state;
-            console.log(images.length);
+            const { image } = this.state;
+            console.log(image.length);
             if (images.length <= 1) {
                 return;
             }
-            const newArray = this.state.images.filter((element, index) => index !== this.state.images.length - 1);
-            this.setState({ images: newArray });
+            const newArray = this.state.image.filter((element, index) => index !== this.state.image.length - 1);
+            this.setState({ image: newArray });
         }, 2000);
     }
 
@@ -96,19 +99,19 @@ export default class VenueGallery extends Component {
     }
 
     get caption () {
-        const { images, index } = this.state;
+        const { image, index } = this.state;
         return (
             <View style={{ bottom: 0, height: 40, backgroundColor: 'rgba(98, 20, 36, 0.7)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
-                <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
+                <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontStyle: 'italic' }}>{ (image[index] && image[index].caption) || '' } </Text>
             </View>
         );
     }
 
     get galleryCount () {
-        const { index, images } = this.state;
+        const { index, image } = this.state;
         return (
             <View style={{ top: 0, height: 40, backgroundColor: 'rgba(98, 20, 36, 0.7)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
-                <Text style={{ textAlign: 'right', color: 'white', fontSize: 15, fontStyle: 'italic', paddingRight: '10%' }}>{ index + 1 } / { images.length }</Text>
+                <Text style={{ textAlign: 'right', color: 'white', fontSize: 15, fontStyle: 'italic', paddingRight: '10%' }}>{ index + 1 } / { image.length }</Text>
             </View>
         );
     }
@@ -117,11 +120,11 @@ export default class VenueGallery extends Component {
         return (
             <View style={{ flex: 1 }} >
                 <Gallery
-                  style={styles.imageGallery}
-                  images={this.state.images}
-                  errorComponent={this.renderError}
-                  onPageSelected={this.onChangeImage}
-                  initialPage={0}
+                    style={styles.imageGallery}
+                    images={this.state.image}
+                    errorComponent={this.renderError}
+                    onPageSelected={this.onChangeImage}
+                    initialPage={0}
                 />
                 { this.galleryCount }
                 { this.caption }

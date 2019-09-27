@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styles, { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 import Modal from "react-native-modal";
 import MUSIC_IMAGE from '../assets/images/musicnote.png';
-import * as firebase from 'firebase';
+// import * as firebase from 'firebase';
 import { H1, H2, H3, Button, Container } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Col, Row, Grid } from 'react-native-easy-grid';
@@ -66,8 +66,8 @@ _renderItemWithParallax({ item, index }, parallaxProps) {
 
   renderModalContent = (type) => (
     <View>
-          <ScrollView>
-          <View style={styles.modalContent}>
+      <ScrollView>
+        <View style={styles.modalContent}>
           <Button
             style={styles.closeButton}
             bordered dark
@@ -76,72 +76,77 @@ _renderItemWithParallax({ item, index }, parallaxProps) {
             >
               <Text style={[{fontWeight: "bold"}, {fontSize: 16}]}> X </Text>
           </Button>
-            <Text style={styles.modalText}>
-              <H1 style={{color: '#8e2138'}}>{this.props.data.name}</H1>
-            </Text>
-            <Text
-              style={[{ color: 'blue' }, styles.modalText]}
-              onPress={() => Linking.openURL(this.props.data.href)}>
-              {this.props.data.href}
-            </Text>
-            <Text style={styles.modalText}>
-              {this.props.data.address},{" "} 
-              {this.props.data.city},{" "}
-              {this.props.data.state},{" "}
-              {this.props.data.zip}
-            </Text>
-            {/* <Text style={{margin: 10}}> </Text>*/}
-              <VenueGallery />
+            
+          <Text style={styles.modalText}>
+            <H1 style={{color: '#8e2138'}}>{this.props.data.name}</H1>
+          </Text>
+          <Text
+            style={[{ color: 'blue' }, styles.modalText]}
+            onPress={() => Linking.openURL(this.props.data.href)}>
+            {this.props.data.href}
+          </Text>
+          <Text style={styles.modalText}>
+            {this.props.data.address},{" "} 
+            {this.props.data.city},{" "}
+            {this.props.data.state},{" "}
+            {this.props.data.zip}
+          </Text>
+          
+          {/* <Text style={{margin: 10}}> </Text>*/}
+            
+        <VenueGallery >
+          {this.props.data.image}
+          </VenueGallery>
 
-            <Text style={styles.elementText}>
+          <Text style={styles.elementText}>
               Overall Rating
-            </Text>
-            <Text style={styles.ratingText}>
-              {this.props.data.overallRating}
-              {this.props.data.overallRating ? null : 'No rating yet'}
-            </Text>
-            <Text style={styles.elementText}>
+          </Text>
+          <Text style={styles.ratingText}>
+            {this.props.data.overallRating}
+            {this.props.data.overallRating ? null : 'No rating yet'}
+          </Text>
+          <Text style={styles.elementText}>
               Anonymity Rating
-            </Text>
-            <Text  style={styles.ratingText}>
-              {this.props.data.anonymityRating}
-              {this.props.data.anonymityRating ? null : 'No rating yet'}
-            </Text>
-            <Text style={styles.elementText}>
+          </Text>
+          <Text  style={styles.ratingText}>
+            {this.props.data.anonymityRating}
+            {this.props.data.anonymityRating ? null : 'No rating yet'}
+          </Text>
+          <Text style={styles.elementText}>
               ELEVATOR: {this.props.data.elevator ? yesIcon : noIcon}
-            </Text>
-            <Text style={styles.elementText}>
+          </Text>
+          <Text style={styles.elementText}>
               RAMP:  {this.props.data.ramps ? yesIcon : noIcon}
-            </Text>
-            <Text style={styles.elementText}>
+          </Text>
+          <Text style={styles.elementText}>
               RAMP COMMENTS: 
-            </Text>
-            <Text style={styles.comment}>
-              {this.props.data.rampComment}
-              {this.props.data.rampComment ? null : 'No feedback yet'}
-            </Text>
-            <Text style={styles.elementText}>
+          </Text>
+          <Text style={styles.comment}>
+            {this.props.data.rampComment}
+            {this.props.data.rampComment ? null : 'No feedback yet'}
+          </Text>
+          <Text style={styles.elementText}>
               RESTROOM: {this.props.data.restrooms ? yesIcon : noIcon}
-            </Text>
-            <Text style={styles.elementText}>
+          </Text>
+          <Text style={styles.elementText}>
               RESTROOM KEY?:  {this.props.data.false ? yesIcon : noIcon}
-            </Text>
-            <Text style={styles.elementText}>
+          </Text>
+          <Text style={styles.elementText}>
               RESTROOM COMMENTS
-            </Text>
-            <Text style={styles.comment}>
+          </Text>
+          <Text style={styles.comment}>
               {this.props.data.restroomsComment}
               {this.props.data.restroomsComment ? null : 'No feedback yet'}
-            </Text>
-            <Text>
-              <H2 style={styles.elementText}>VENUE REVIEWS</H2>
-            </Text>
+          </Text>
+          <Text>
+            <H2 style={styles.elementText}>VENUE REVIEWS</H2>
+          </Text>
             <Text style={styles.comment}>
               {this.props.data.overallComment}
               {this.props.data.overallComment  ? null : 'No feedback yet'}
-            </Text>
+          </Text>
         </View>
-        </ScrollView>
+      </ScrollView>
     </View>
   );
 
