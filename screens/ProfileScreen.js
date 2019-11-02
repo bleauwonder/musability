@@ -6,6 +6,7 @@ import styles from '../src/style/index.style';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Button } from "native-base";
 
+
 export default ({ navigation }) => (
   <View style={styles.profilePage}>
       <LinearGradient
@@ -18,7 +19,7 @@ export default ({ navigation }) => (
           height: 850,
               }}
             />
-    <Card title="Kim Graff"
+    <Card title="Spongbob Squarepants"
     image={require('../assets/images/spongebob.png')}>
       <View
         style={{
@@ -32,13 +33,19 @@ export default ({ navigation }) => (
           marginBottom: 20
         }}
       >
-        <Text style={{ color: "white", fontSize: 28 }}>KG</Text>
+        <Text style={{ color: "white", fontSize: 28 }}>SS</Text>
       </View>
       <Button
         full rounded dark
         style={styles.logButton}
+        onPress={() => onSignOut().then(() => navigation.navigate("ReviewStack"))}>
+        <Text style={styles.buttonText}>add review</Text>
+      </Button>
+      <Button
+        full rounded dark
+        style={styles.logButton}
         onPress={() => onSignOut().then(() => navigation.navigate("HomeStack"))}>
-        <Text style={styles.buttonText}>SIGN OUT</Text>
+        <Text style={styles.buttonText}>sign out</Text>
       </Button>
     </Card>
   </View>

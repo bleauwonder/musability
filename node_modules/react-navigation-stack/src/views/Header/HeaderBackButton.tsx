@@ -8,21 +8,21 @@ import {
   StyleSheet,
   LayoutChangeEvent,
 } from 'react-native';
+import { ThemeContext, ThemeColors } from 'react-navigation';
 
 import TouchableItem from '../TouchableItem';
 
 import defaultBackImage from '../assets/back-icon.png';
 import BackButtonWeb from './BackButtonWeb';
-import { HeaderBackbuttonProps } from '../../types';
+import { HeaderBackButtonProps } from '../../types';
+
+type Props = Omit<HeaderBackButtonProps, 'layoutPreset' | 'scene'>;
 
 type State = {
   initialTextWidth?: number;
 };
 
-class HeaderBackButton extends React.PureComponent<
-  HeaderBackbuttonProps,
-  State
-> {
+class HeaderBackButton extends React.PureComponent<Props, State> {
   static defaultProps = {
     pressColorAndroid: 'rgba(0, 0, 0, .32)',
     tintColor: Platform.select({
@@ -34,6 +34,9 @@ class HeaderBackButton extends React.PureComponent<
       web: BackButtonWeb,
     }),
   };
+
+  static contextType = ThemeContext;
+  context!: React.ContextType<typeof ThemeContext>;
 
   state: State = {};
 
@@ -47,16 +50,22 @@ class HeaderBackButton extends React.PureComponent<
   };
 
   private renderBackImage() {
-    const { backImage, backTitleVisible, tintColor } = this.props;
+    const { backImage, backTitleVisible } = this.props;
+
+    let { tintColor } = this.props;
+    if (!tintColor && Platform.OS === 'android') {
+      tintColor = ThemeColors[this.context].label;
+    }
 
     let title = this.getTitleText();
 
     if (React.isValidElement(backImage)) {
       return backImage;
     } else if (backImage) {
-      const BackImage = backImage;
-
-      return <BackImage tintColor={tintColor} title={title} />;
+      return backImage({
+        tintColor,
+        title,
+      });
     } else {
       return (
         <Image

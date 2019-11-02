@@ -27,7 +27,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 export default class LogInScreen extends React.Component {
-//props and states related to singin function
+//props and states related to signin function
   constructor(props) {
     super(props);
     this.state = {

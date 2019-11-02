@@ -39,6 +39,11 @@ export default StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold'
   },
+  buttonText2: {
+    color: '#3a121a',
+    fontSize: 14,
+    fontWeight: 'bold'
+  },
   titleText: {
     fontFamily: 'Helvetica',
     fontSize: 30,
@@ -198,7 +203,7 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         fontStyle: 'italic',
         textAlign: 'center',
-        textTransform: 'uppercase',
+        textTransform: 'lowercase',
         letterSpacing: 1,
         width: wp(95),
     },

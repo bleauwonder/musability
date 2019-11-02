@@ -58,6 +58,8 @@ function handleFinishLoading(setLoadingComplete) {
   setLoadingComplete(true);
 } 
 
+
+
 // Check for Signed in Profile for future iteration
 // export default class App extends React.Component {
 //   constructor(props) {

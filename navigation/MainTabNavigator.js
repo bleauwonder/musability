@@ -5,7 +5,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LoginScreen from '../screens/LogInScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import SignUpScreen from '../screens/SignUpScreen';
+import NewReviewScreen from '../screens/NewReviewScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -67,11 +67,27 @@ LogInStack.navigationOptions = {
 
 LogInStack.path = '';
 
+const ReviewStack = createStackNavigator(
+  {
+    Settings: NewReviewScreen,
+  },
+  config
+);
+
+ReviewStack.navigationOptions = {
+  tabBarLabel: 'Review',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-log-in' : 'md-log-in'} />
+  ),
+};
+
+ReviewStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LogInStack,
-  ProfileStack
+  ProfileStack,
+  ReviewStack
 });
 
 tabNavigator.path = '';

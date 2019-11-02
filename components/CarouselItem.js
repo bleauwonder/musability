@@ -14,6 +14,7 @@ import Modal from "react-native-modal";
 import { H1, H2, H3, Button, Container } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import VenueGallery from '../components/VenueGallery';
+import { onSignOut } from "../auth";
 
 // For future iterations to put a grid into the modal and music images for the rating
 // import { Col, Row, Grid } from 'react-native-easy-grid';
@@ -56,6 +57,7 @@ export class CarouselItem extends Component {
   };
 
   _renderItem({ item, index }) {
+    console.log(this.props.data);
       return <ImageCarousel data={item} even={(index + 1) % 2 === 0}/>;
     }
 
@@ -101,7 +103,7 @@ export class CarouselItem extends Component {
           {/* <Text style={{margin: 10}}> </Text>*/}
             
         <VenueGallery >
-          {this.props.data.image}
+        {this.props.data.image}
         </VenueGallery>
 
           <Text style={styles.elementText}>
@@ -151,6 +153,12 @@ export class CarouselItem extends Component {
               {this.props.data.overallComment}
               {this.props.data.overallComment  ? null : 'No feedback yet'}
           </Text>
+          <Button
+            full rounded light
+            style={styles.logButton}
+            onPress={() => this.props.navigation.navigate("ReviewStack")}>
+          <Text style={styles.buttonText2}>add review</Text>
+        </Button>
         </View>
       </ScrollView>
     </View>
@@ -182,7 +190,7 @@ export class CarouselItem extends Component {
         style={[styles.title, even ? styles.titleEven : {}]}
         numberOfLines={2}
       >
-        {name.toUpperCase()}
+        {name.toLowerCase()}
       </Text>
     ) : false;
     return (

@@ -14,8 +14,8 @@ export default class VenueGallery extends Component {
 
         this.state = {
             index: 0,
-            // Hard-coded images for now, a bit of code to work on calling from Firebase
-            // image: this.props.data.image[index],
+            // // Hard-coded images for now, a bit of code to work on calling from Firebase
+            // image: this.props.data.image,
             image: [
                 {
                     caption: 'Dance floor',

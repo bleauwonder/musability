@@ -22,6 +22,9 @@ import styles, { colors } from '../src/style/index.style'
 import { sliderWidth, itemWidth } from '../src/style/SliderEntry.style';
 
 import * as firebase from 'firebase';
+import NewReviewScreen from './NewReviewScreen';
+import { createAppContainer } from 'react-navigation';
+
 
 // To be used for future iterations
 // import MUSIC_IMAGE from '../assets/images/musicnote.png';
@@ -134,7 +137,7 @@ export default class HomeScreen extends Component {
 
   // Render items on Carousels
   _renderItem({ item, index }) {
-    return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal} ImageCarouse={this.image}/>;
+    return <CarouselItem data={item} even={(index + 1) % 2 === 0} onPress={visibleModal} ImageCarousel={this.image}/>;
   }
 
   _renderItemWithParallax({ item, index }, parallaxProps) {
@@ -207,6 +210,7 @@ export default class HomeScreen extends Component {
     );
   };
 
+
   venueCard3(number, title, type) {
     const isTinder = type === 'tinder';
     const { queensData } = this.state;
@@ -250,7 +254,7 @@ export default class HomeScreen extends Component {
                 position: 'absolute',
                 left: 0,
                 right: 0,
-                top: 0,
+                top:    0,
                 height: 850,
               }}
             />
@@ -328,3 +332,5 @@ export default class HomeScreen extends Component {
     );
   }
 };
+
+
