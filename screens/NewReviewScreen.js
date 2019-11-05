@@ -311,6 +311,17 @@ export default class NewReviewScreen extends React.Component {
                   onChangeText={overallComment => this.setState({ overallComment })}
                 />
               </Item>
+              <Item floatingLabel>
+                <Label style={{color: 'white'}}>Add your photos</Label>
+                <Input
+                  style={styles.styleInput}
+                  color='white'
+                  secureTextEntry={true}
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  onChangeText={overallComment => this.setState({ overallComment })}
+                />
+              </Item>
 
             <Button
                 full rounded light
