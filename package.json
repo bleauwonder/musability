@@ -36,7 +36,7 @@
     "expo-linear-gradient": "~7.0.0",
     "expo-web-browser": "~7.0.0",
     "fb-watchman": "^2.0.0",
-    "firebase": "^6.6.2",
+    "firebase": "^7.16.1",
     "kind-of": "^6.0.3",
     "minimist": "^1.2.5",
     "moment": "^2.24.0",
@@ -76,7 +76,7 @@
   },
   "devDependencies": {
     "babel-preset-expo": "^6.0.0",
-    "jest-expo": "^34.0.0"
+    "jest-expo": "^38.0.2"
   },
   "private": true
 }
