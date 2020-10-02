@@ -37,11 +37,13 @@
     "expo-web-browser": "~7.0.0",
     "fb-watchman": "^2.0.0",
     "firebase": "^7.16.1",
+    "handlebars": "^4.7.6",
     "kind-of": "^6.0.3",
     "minimist": "^1.2.5",
     "moment": "^2.24.0",
     "mongodb-stitch-react-native-sdk": "^4.5.0",
     "native-base": "^2.13.8",
+    "node-fetch": "^2.6.1",
     "prop-types": "^15.7.2",
     "react": "16.8.3",
     "react-animated-text": "^0.1.4",
@@ -72,7 +74,8 @@
     "react-native-web": "^0.11.4",
     "react-navigation": "^3.13.0",
     "react-navigation-stack": "^1.10.3",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "yargs-parser": "^20.2.1"
   },
   "devDependencies": {
     "babel-preset-expo": "^6.0.0",
