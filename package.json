@@ -37,7 +37,7 @@
     "expo-web-browser": "~7.0.0",
     "fb-watchman": "^2.0.0",
     "firebase": "^7.16.1",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "kind-of": "^6.0.3",
     "minimist": "^1.2.5",
     "moment": "^2.24.0",
