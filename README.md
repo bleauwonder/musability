@@ -1,7 +1,7 @@
 # musability
 
 ## A free-wheelin' community app for music lovers
-![musability logo](./assets/images/musability-app.png)
+![musability logo](./assets/musability-app.png)
 ----------------------------------------------------------------------------------------
 ### Imagine knowing before you get to a music venue what the entrance is like, if there's elevators or ramps, if there's a key to the accessible bathroom, and if you can actually see the band! Well, now there's a community that can help you with that.
 
@@ -12,9 +12,9 @@
 
 ## See it in Action:
 ----------------------------------------------------------------------------------------
-![Venue Carousel](./assets/images/musability-demo1.gif)
+![Venue Carousel](./assets/musability-demo1.gif)
 ----------------------------------------------------------------------------------------
-![Log In Page](./assets/images/musability-demo2.gif)
+![Log In Page](./assets/musability-demo2.gif)
 ----------------------------------------------------------------------------------------
 
 ### The technologies used in this app:
