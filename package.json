@@ -39,7 +39,7 @@
     "firebase": "^7.16.1",
     "handlebars": "^4.7.7",
     "kind-of": "^6.0.3",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "moment": "^2.24.0",
     "mongodb-stitch-react-native-sdk": "^4.5.0",
     "native-base": "^2.13.8",
